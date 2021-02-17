@@ -19,4 +19,17 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>my first blog</title>
+    <url>/2021/02/17/my-first-blog/</url>
+    <content><![CDATA[<p>[TOC]</p>
+<h1 id="how-to-build-a-blog-with-Hexo-amp-GitHub"><a href="#how-to-build-a-blog-with-Hexo-amp-GitHub" class="headerlink" title="how to build a blog with Hexo &amp; GitHub"></a>how to build a blog with Hexo &amp; GitHub</h1><h2 id="get-your-repository"><a href="#get-your-repository" class="headerlink" title="get your repository"></a>get your repository</h2><p>create a new repository on GitHub, remember, name the repository same as your GitHub username, like mine is adampan0527, so my repository name is adampan0527.github.io</p>
+]]></content>
+      <categories>
+        <category>try out</category>
+      </categories>
+      <tags>
+        <tag>first one</tag>
+      </tags>
+  </entry>
 </search>
