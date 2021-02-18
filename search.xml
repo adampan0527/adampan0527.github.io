@@ -27,4 +27,92 @@
         <tag>first one</tag>
       </tags>
   </entry>
+  <entry>
+    <title>1490F Equalize the Array</title>
+    <url>/2021/02/19/1490F-Equalize-the-Array/</url>
+    <content><![CDATA[<h1 id="Equalize-the-Array"><a href="#Equalize-the-Array" class="headerlink" title="Equalize the Array"></a>Equalize the Array</h1><h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="C:\Users\AdamPan\AppData\Roaming\Typora\typora-user-images\image-20210219015958443.png" alt="image-20210219015958443"></p>
+<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="C:\Users\AdamPan\AppData\Roaming\Typora\typora-user-images\image-20210219020041899.png" alt="image-20210219020041899"></p>
+<h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array beautiful, which means every number in the array appears same times</p>
+<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ll a[maxn];
+map&lt;ll, int&gt; mp;
+vector&lt;pair&lt;int, int&gt;&gt; b;
+
+bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
+    return x.second &gt; y.second;
+&#125;
+
+for (int i &#x3D; 0; i &lt; n; i++) &#123;
+    cin &gt;&gt; a[i];
+    mp[a[i]]++;
+&#125;
+for (auto it:mp) &#123;
+    b.emplace_back(it.first, it.second);
+&#125;
+sort(b.begin(), b.end(), cmp);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p>
+<p>b[i].second*(i+1) means the number of elements will be left, so n-b[i].second*(i+1) will be the number of elements we will delete(for this one).</p>
+<p>Then we just find the minimum one and output</p>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int ans &#x3D; inf;
+for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
+    ans &#x3D; min(ans, n - b[i].second * (i + 1));
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+
+using namespace std;
+
+const int maxn &#x3D; 2e5 + 5;
+const int inf &#x3D; INT_MAX;
+const int mod &#x3D; 1e9 + 7;
+
+typedef long long ll;
+
+ll a[maxn];
+map&lt;ll, int&gt; mp;
+vector&lt;pair&lt;int, int&gt;&gt; b;
+
+bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
+    return x.second &gt; y.second;
+&#125;
+
+void solve() &#123;
+    int n;
+    cin &gt;&gt; n;
+    b.clear();
+    mp.clear();
+    for (int i &#x3D; 0; i &lt; n; i++) &#123;
+        cin &gt;&gt; a[i];
+        mp[a[i]]++;
+    &#125;
+    for (auto it:mp) &#123;
+        b.emplace_back(it.first, it.second);
+    &#125;
+    sort(b.begin(), b.end(), cmp);
+    int ans &#x3D; inf;
+    for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
+        ans &#x3D; min(ans, n - b[i].second * (i + 1));
+    &#125;
+    cout &lt;&lt; ans &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+    ios::sync_with_stdio(false);
+    int t;
+    cin &gt;&gt; t;
+    while (t--) &#123;
+        solve();
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>CF</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+        <tag>sorting</tag>
+        <tag>1500</tag>
+      </tags>
+  </entry>
 </search>
