@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>1490F Equalize the Array | Adam&#39;s blog</title>
+  <title>1486B Eastern Exhibition | Adam&#39;s blog</title>
 
   
     
@@ -529,7 +529,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/5.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/6.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>
@@ -540,7 +540,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['1490F Equalize the Array'],
+              strings: ['1486B Eastern Exhibition'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -573,16 +573,12 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/math/" class="">
-              math
-            </a>
-          
             <a href="/tags/sorting/" class="">
               sorting
             </a>
           
-            <a href="/tags/1500/" class="">
-              1500
+            <a href="/tags/geometry/" class="">
+              geometry
             </a>
           
         </div>
@@ -599,34 +595,29 @@
         
       </div>
       <div class="post-content">
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/155245/36/17707/109508/602eae8dE7453c7e9/4bd6b888f152de36.png" alt="CF 1490F Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png" alt="CF 1490F S.png"></p>
-<h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array <span class='p red'>beautiful</span>, which means every number in the array appears same times</p>
-<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ll a[maxn];
-map&lt;ll, int&gt; mp;
-vector&lt;pair&lt;int, int&gt;&gt; b;
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
+<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
+<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
+<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we use Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+sort(x.begin(), x.end());
+sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
+<p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
+if(x.size()&amp;1) cx&#x3D;1;
+else &#123;
+    int mid&#x3D;x.size()&gt;&gt;1;
+    cx&#x3D;x[mid]-x[mid-1]+1;
+&#125;
+if(y.size()&amp;1) cy&#x3D;1;
+else &#123;
+    int mid&#x3D;y.size()&gt;&gt;1;
+    cy&#x3D;y[mid]-y[mid-1]+1;
+&#125;
+cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
-    return x.second &gt; y.second;
-&#125;
 
-for (int i &#x3D; 0; i &lt; n; i++) &#123;
-    cin &gt;&gt; a[i];
-    mp[a[i]]++;
-&#125;
-for (auto it:mp) &#123;
-    b.emplace_back(it.first, it.second);
-&#125;
-sort(b.begin(), b.end(), cmp);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p>
-<p>b[i].second*(i+1) means the number of elements will be left, so n-b[i].second*(i+1) will be the number of elements we will delete(for this one).</p>
-<p>Then we just find the minimum one and output</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int ans &#x3D; inf;
-for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
-    ans &#x3D; min(ans, n - b[i].second * (i + 1));
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
 
 using namespace std;
@@ -637,44 +628,38 @@ const int mod &#x3D; 1e9 + 7;
 
 typedef long long ll;
 
-ll a[maxn];
-map&lt;ll, int&gt; mp;
-vector&lt;pair&lt;int, int&gt;&gt; b;
-
-bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
-    return x.second &gt; y.second;
-&#125;
-
-void solve() &#123;
-    int n;
-    cin &gt;&gt; n;
-    b.clear();
-    mp.clear();
-    for (int i &#x3D; 0; i &lt; n; i++) &#123;
-        cin &gt;&gt; a[i];
-        mp[a[i]]++;
-    &#125;
-    for (auto it:mp) &#123;
-        b.emplace_back(it.first, it.second);
-    &#125;
-    sort(b.begin(), b.end(), cmp);
-    int ans &#x3D; inf;
-    for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
-        ans &#x3D; min(ans, n - b[i].second * (i + 1));
-    &#125;
-    cout &lt;&lt; ans &lt;&lt; endl;
-&#125;
+vector&lt;int&gt; x, y;
 
 int main() &#123;
     ios::sync_with_stdio(false);
     int t;
-    cin &gt;&gt; t;
-    while (t--) &#123;
-        solve();
+    cin&gt;&gt;t;
+    while(t--)&#123;
+        int n;
+        cin&gt;&gt;n;
+        x.resize(n);
+        y.resize(n);
+        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+        sort(x.begin(), x.end());
+        sort(y.begin(), y.end());
+        ll cx, cy;
+        if(x.size()&amp;1) cx&#x3D;1;
+        else &#123;
+            int mid&#x3D;x.size()&gt;&gt;1;
+            cx&#x3D;x[mid]-x[mid-1]+1;
+        &#125;
+        if(y.size()&amp;1) cy&#x3D;1;
+        else &#123;
+            int mid&#x3D;y.size()&gt;&gt;1;
+            cy&#x3D;y[mid]-y[mid-1]+1;
+        &#125;
+        cout&lt;&lt;cx*cy&lt;&lt;endl;
     &#125;
 
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
       </div>
       
@@ -685,7 +670,7 @@ int main() &#123;
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/02/19/1490F-Equalize-the-Array/" target="_blank" title="1490F Equalize the Array">http://adampan0527.github.io/2021/02/19/1490F-Equalize-the-Array/</a>
+    <a href="/2021/02/19/1486B-Eastern-Exhibition/" target="_blank" title="1486B Eastern Exhibition">http://adampan0527.github.io/2021/02/19/1486B-Eastern-Exhibition/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -703,40 +688,23 @@ int main() &#123;
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/02/19/1486B-Eastern-Exhibition/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>1486B Eastern Exhibition</div>
-      </div>
-      
-      <!-- <div class="content">
-        Eastern Exhibition
-The question
-Input &amp; Output
-SolveThe 
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/5.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/02/17/my-first-blog/" class="post-nav-link">
+    <a href="/2021/02/19/1490F-Equalize-the-Array/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>my first blog</div>
+        <div>1490F Equalize the Array</div>
       </div>
       <!-- <div class="content">
-        how to build a blog with Hexo &amp; GitHubget your repositor
+        Equalize the Array
+The question
+Input &amp; Output
+Simplify 
       </div> -->
     </a>
   </div>
