@@ -1,33 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>my first blog</title>
-    <url>/2021/02/17/my-first-blog/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
+    <title>1486B Eastern Exhibition</title>
+    <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
+    <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
+<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
+<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
+<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+sort(x.begin(), x.end());
+sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
+<p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
+if(x.size()&amp;1) cx&#x3D;1;
+else &#123;
+    int mid&#x3D;x.size()&gt;&gt;1;
+    cx&#x3D;x[mid]-x[mid-1]+1;
+&#125;
+if(y.size()&amp;1) cy&#x3D;1;
+else &#123;
+    int mid&#x3D;y.size()&gt;&gt;1;
+    cy&#x3D;y[mid]-y[mid-1]+1;
+&#125;
+cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>In this blog, I will share some <span class='p red'>algos</span> and <span class='p blue'>explanation of some problems</span>.</p>
-<p>Since I’m a <span class='p large info'>beginner</span> so I will start with easy ones, I will surly <span class='p green'>try</span> to keep updating, hope this blog would help you a little bit.</p>
-<p>Note: for some reason, this blog will be written only by English, but don’t worry, I would always make my blog short and clear.</p>
+
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+
+using namespace std;
+
+const int maxn &#x3D; 2e5 + 5;
+const int inf &#x3D; INT_MAX;
+const int mod &#x3D; 1e9 + 7;
+
+typedef long long ll;
+
+vector&lt;int&gt; x, y;
+
+int main() &#123;
+    ios::sync_with_stdio(false);
+    int t;
+    cin&gt;&gt;t;
+    while(t--)&#123;
+        int n;
+        cin&gt;&gt;n;
+        x.resize(n);
+        y.resize(n);
+        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+        sort(x.begin(), x.end());
+        sort(y.begin(), y.end());
+        ll cx, cy;
+        if(x.size()&amp;1) cx&#x3D;1;
+        else &#123;
+            int mid&#x3D;x.size()&gt;&gt;1;
+            cx&#x3D;x[mid]-x[mid-1]+1;
+        &#125;
+        if(y.size()&amp;1) cy&#x3D;1;
+        else &#123;
+            int mid&#x3D;y.size()&gt;&gt;1;
+            cy&#x3D;y[mid]-y[mid-1]+1;
+        &#125;
+        cout&lt;&lt;cx*cy&lt;&lt;endl;
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 ]]></content>
       <categories>
-        <category>try out</category>
+        <category>CF</category>
       </categories>
       <tags>
-        <tag>first one</tag>
+        <tag>geometry</tag>
+        <tag>sorting</tag>
       </tags>
   </entry>
   <entry>
@@ -114,86 +161,39 @@ int main() &#123;
         <category>CF</category>
       </categories>
       <tags>
-        <tag>math</tag>
         <tag>sorting</tag>
+        <tag>math</tag>
         <tag>1500</tag>
       </tags>
   </entry>
   <entry>
-    <title>1486B Eastern Exhibition</title>
-    <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
-    <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
-<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-sort(x.begin(), x.end());
-sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
-<p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
-if(x.size()&amp;1) cx&#x3D;1;
-else &#123;
-    int mid&#x3D;x.size()&gt;&gt;1;
-    cx&#x3D;x[mid]-x[mid-1]+1;
-&#125;
-if(y.size()&amp;1) cy&#x3D;1;
-else &#123;
-    int mid&#x3D;y.size()&gt;&gt;1;
-    cy&#x3D;y[mid]-y[mid-1]+1;
-&#125;
-cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <title>Hello World</title>
+    <url>/2021/02/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>my first blog</title>
+    <url>/2021/02/17/my-first-blog/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
 
-
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
-
-using namespace std;
-
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
-
-typedef long long ll;
-
-vector&lt;int&gt; x, y;
-
-int main() &#123;
-    ios::sync_with_stdio(false);
-    int t;
-    cin&gt;&gt;t;
-    while(t--)&#123;
-        int n;
-        cin&gt;&gt;n;
-        x.resize(n);
-        y.resize(n);
-        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-        sort(x.begin(), x.end());
-        sort(y.begin(), y.end());
-        ll cx, cy;
-        if(x.size()&amp;1) cx&#x3D;1;
-        else &#123;
-            int mid&#x3D;x.size()&gt;&gt;1;
-            cx&#x3D;x[mid]-x[mid-1]+1;
-        &#125;
-        if(y.size()&amp;1) cy&#x3D;1;
-        else &#123;
-            int mid&#x3D;y.size()&gt;&gt;1;
-            cy&#x3D;y[mid]-y[mid-1]+1;
-        &#125;
-        cout&lt;&lt;cx*cy&lt;&lt;endl;
-    &#125;
-
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<p>In this blog, I will share some <span class='p red'>algos</span> and <span class='p blue'>explanation of some problems</span>.</p>
+<p>Since I’m a <span class='p large info'>beginner</span> so I will start with easy ones, I will surly <span class='p green'>try</span> to keep updating, hope this blog would help you a little bit.</p>
+<p>Note: for some reason, this blog will be written only by English, but don’t worry, I would always make my blog short and clear.</p>
 ]]></content>
       <categories>
-        <category>CF</category>
+        <category>try out</category>
       </categories>
       <tags>
-        <tag>sorting</tag>
-        <tag>geometry</tag>
+        <tag>first one</tag>
       </tags>
   </entry>
 </search>
