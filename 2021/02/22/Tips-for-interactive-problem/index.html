@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>1486B Eastern Exhibition | Adam&#39;s blog</title>
+  <title>Tips for interactive problem | Adam&#39;s blog</title>
 
   
     
@@ -529,7 +529,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/6.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/15.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>
@@ -540,7 +540,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['1486B Eastern Exhibition'],
+              strings: ['Tips for interactive problem'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -565,23 +565,10 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-02-19</span>
+        <span class="post-time">2021-02-22</span>
       </div>
       
       <div class="post-tags-categories">
-        
-        <div class="tags">
-          <i class="iconfont icontag"></i>
-          
-            <a href="/tags/geometry/" class="">
-              geometry
-            </a>
-          
-            <a href="/tags/sorting/" class="">
-              sorting
-            </a>
-          
-        </div>
         
         
         <div class="categories">
@@ -591,75 +578,21 @@
               CF
             </a>
           
+            <a href="/categories/CF/tips/" class="">
+              tips
+            </a>
+          
         </div>
         
       </div>
       <div class="post-content">
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
-<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-sort(x.begin(), x.end());
-sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
-<p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
-if(x.size()&amp;1) cx&#x3D;1;
-else &#123;
-    int mid&#x3D;x.size()&gt;&gt;1;
-    cx&#x3D;x[mid]-x[mid-1]+1;
-&#125;
-if(y.size()&amp;1) cy&#x3D;1;
-else &#123;
-    int mid&#x3D;y.size()&gt;&gt;1;
-    cy&#x3D;y[mid]-y[mid-1]+1;
-&#125;
-cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
 
-
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
-
-using namespace std;
-
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
-
-typedef long long ll;
-
-vector&lt;int&gt; x, y;
-
-int main() &#123;
-    ios::sync_with_stdio(false);
-    int t;
-    cin&gt;&gt;t;
-    while(t--)&#123;
-        int n;
-        cin&gt;&gt;n;
-        x.resize(n);
-        y.resize(n);
-        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-        sort(x.begin(), x.end());
-        sort(y.begin(), y.end());
-        ll cx, cy;
-        if(x.size()&amp;1) cx&#x3D;1;
-        else &#123;
-            int mid&#x3D;x.size()&gt;&gt;1;
-            cx&#x3D;x[mid]-x[mid-1]+1;
-        &#125;
-        if(y.size()&amp;1) cy&#x3D;1;
-        else &#123;
-            int mid&#x3D;y.size()&gt;&gt;1;
-            cy&#x3D;y[mid]-y[mid-1]+1;
-        &#125;
-        cout&lt;&lt;cx*cy&lt;&lt;endl;
-    &#125;
-
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
 
       </div>
       
@@ -670,7 +603,7 @@ int main() &#123;
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/02/19/1486B-Eastern-Exhibition/" target="_blank" title="1486B Eastern Exhibition">http://adampan0527.github.io/2021/02/19/1486B-Eastern-Exhibition/</a>
+    <a href="/2021/02/22/Tips-for-interactive-problem/" target="_blank" title="Tips for interactive problem">http://adampan0527.github.io/2021/02/22/Tips-for-interactive-problem/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -688,44 +621,23 @@ int main() &#123;
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/02/22/Tips-for-interactive-problem/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>Tips for interactive problem</div>
-      </div>
-      
-      <!-- <div class="content">
-        Little tips
-
-While solving interactive problems, we should
-
-
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/5.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/02/19/1490F-Equalize-the-Array/" class="post-nav-link">
+    <a href="/2021/02/19/1486B-Eastern-Exhibition/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>1490F Equalize the Array</div>
+        <div>1486B Eastern Exhibition</div>
       </div>
       <!-- <div class="content">
-        Equalize the Array
+        Eastern Exhibition
 The question
 Input &amp; Output
-Simplify 
+SolveThe 
       </div> -->
     </a>
   </div>
