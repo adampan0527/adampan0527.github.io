@@ -218,4 +218,55 @@ int main() &#123;
         <category>tips</category>
       </categories>
   </entry>
+  <entry>
+    <title>bamboo instruction</title>
+    <url>/2021/03/08/bamboo-instruction/</url>
+    <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
+
+<h2 class="bamboo-h " id="标题">标题</h2><br/>
+
+<pre class="line-numbers language-none"><code class="language-none">&#123;% title h2, 标题内容 %&#125;
+&#123;% titleB h2, 标题内容 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 class="bamboo-h " id="文字颜色">文字颜色</h2><br/>
+
+<pre class="line-numbers language-none"><code class="language-none">&#123;% span 文字样式, 文字内容 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>文字样式包括颜色、大小、是否居中等</p>
+<h2 class="bamboo-h " id="tabs">tabs</h2><br/>
+
+<pre class="line-numbers language-none"><code class="language-none">&#123;% tabs tab-id %&#125;
+
+&lt;!-- tab tab1 --&gt;
+
+tab1内容
+
+&lt;!-- endtab --&gt;
+
+&lt;!-- tab tab2 --&gt;
+
+tab内容
+
+&lt;!-- endtab --&gt;
+
+&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 class="bamboo-h " id="Text文本样式标签演示">Text文本样式标签演示</h2><br/>
+
+<pre class="line-numbers language-none"><code class="language-none">&#123;% title h2, Text文本样式标签演示 %&#125;
+
+带 &#123;% u 下划线 %&#125; 的文本
+
+带 &#123;% emp 着重号 %&#125; 的文本
+
+带 &#123;% wavy 波浪线 %&#125; 的文本
+
+带 &#123;% del 删除线 %&#125; 的文本
+
+键盘样式的文本 &#123;% kbd command %&#125; + &#123;% kbd D %&#125;
+
+密码样式的文本：&#123;% psw 这里没有验证码 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>后续待补充……</p>
+]]></content>
+      <tags>
+        <tag>instructions</tag>
+      </tags>
+  </entry>
 </search>
