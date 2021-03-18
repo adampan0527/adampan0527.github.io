@@ -24,8 +24,6 @@ else &#123;
     cy&#x3D;y[mid]-y[mid-1]+1;
 &#125;
 cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
 
 using namespace std;
@@ -66,8 +64,6 @@ int main() &#123;
 
     return 0;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
 ]]></content>
       <categories>
         <category>CF</category>
@@ -76,6 +72,21 @@ int main() &#123;
         <tag>geometry</tag>
         <tag>sorting</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
   </entry>
   <entry>
     <title>1490F Equalize the Array</title>
@@ -102,7 +113,7 @@ for (auto it:mp) &#123;
 &#125;
 sort(b.begin(), b.end(), cmp);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p>
-<p>b[i].second*(i+1) means the number of elements will be left, so n-b[i].second*(i+1) will be the number of elements we will delete(for this one).</p>
+<p>b[i].second<em>(i+1) means the number of elements will be left, so n-b[i].second</em>(i+1) will be the number of elements we will delete(for this one).</p>
 <p>Then we just find the minimum one and output</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int ans &#x3D; inf;
 for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
@@ -167,72 +178,16 @@ int main() &#123;
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>my first blog</title>
-    <url>/2021/02/17/my-first-blog/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
-
-<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
-</ol>
-<p>那你必然没来错地方</p>
-<p>为了<del>锻炼大家的英语水平</del>装逼，我会随机抽几个幸运博客用全英文编写，祝大家幸福（？奇奇怪怪的）</p>
-]]></content>
-      <categories>
-        <category>try out</category>
-      </categories>
-      <tags>
-        <tag>first one</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
-  </entry>
-  <entry>
     <title>bamboo instruction</title>
     <url>/2021/03/08/bamboo-instruction/</url>
     <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
-
 <h2 class="bamboo-h " id="标题">标题</h2><br/>
-
 <pre class="line-numbers language-none"><code class="language-none">&#123;% title h2, 标题内容 %&#125;
 &#123;% titleB h2, 标题内容 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 class="bamboo-h " id="文字颜色">文字颜色</h2><br/>
-
 <pre class="line-numbers language-none"><code class="language-none">&#123;% span 文字样式, 文字内容 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>文字样式包括颜色、大小、是否居中等</p>
 <h2 class="bamboo-h " id="tabs">tabs</h2><br/>
-
 <pre class="line-numbers language-none"><code class="language-none">&#123;% tabs tab-id %&#125;
 
 &lt;!-- tab tab1 --&gt;
@@ -249,7 +204,6 @@ tab内容
 
 &#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 class="bamboo-h " id="Text文本样式标签演示">Text文本样式标签演示</h2><br/>
-
 <pre class="line-numbers language-none"><code class="language-none">&#123;% title h2, Text文本样式标签演示 %&#125;
 
 带 &#123;% u 下划线 %&#125; 的文本
@@ -270,24 +224,61 @@ tab内容
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/02/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>高数公式合集</title>
     <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
-
 <p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记的公式，方便查看。</p>
 <h2 class="bamboo-h-b" id="参数方程表示的函数求导" style="color:!important">参数方程表示的函数求导</h2><div></div>
-
 <p>如果现在有x=x(t)，y=y(t)，则</p>
-<p><font size=5>$x=x(t)$</font></p>
-<p><font size=5>$y=y(t)$</font></p>
-<p><font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$</font></p>
-<p><font size=16>$\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}$</font></p>
+<font size=5>$x=x(t)$</font>
+
+<font size=5>$y=y(t)$</font>
+
+<font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$</font>
+
+<font size=16>$\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}$</font>
+
 ]]></content>
       <categories>
         <category>考研</category>
       </categories>
       <tags>
         <tag>高等数学公式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>my first blog</title>
+    <url>/2021/02/17/my-first-blog/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
+<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
+<ol>
+<li>题解（ACM菜逼一个）</li>
+<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
+<li>考研知识点（考研党路过~）</li>
+<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
+</ol>
+<p>那你必然没来错地方</p>
+<p>为了<del>锻炼大家的英语水平</del>装逼，我会随机抽几个幸运博客用全英文编写，祝大家幸福（？奇奇怪怪的）</p>
+]]></content>
+      <categories>
+        <category>try out</category>
+      </categories>
+      <tags>
+        <tag>first one</tag>
       </tags>
   </entry>
 </search>
