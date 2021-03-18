@@ -74,21 +74,6 @@ int main() &#123;
       </tags>
   </entry>
   <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
-  </entry>
-  <entry>
     <title>1490F Equalize the Array</title>
     <url>/2021/02/19/1490F-Equalize-the-Array/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
@@ -178,6 +163,35 @@ int main() &#123;
       </tags>
   </entry>
   <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>bamboo instruction</title>
     <url>/2021/03/08/bamboo-instruction/</url>
     <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
@@ -224,18 +238,25 @@ tab内容
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <title>my first blog</title>
+    <url>/2021/02/17/my-first-blog/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
+<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
+<ol>
+<li>题解（ACM菜逼一个）</li>
+<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
+<li>考研知识点（考研党路过~）</li>
+<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
+</ol>
+<p>那你必然没来错地方</p>
+<p>为了<del>锻炼大家的英语水平</del>装逼，我会随机抽几个幸运博客用全英文编写，祝大家幸福（？奇奇怪怪的）</p>
 ]]></content>
+      <categories>
+        <category>try out</category>
+      </categories>
+      <tags>
+        <tag>first one</tag>
+      </tags>
   </entry>
   <entry>
     <title>高数公式合集</title>
@@ -259,27 +280,6 @@ tab内容
       </categories>
       <tags>
         <tag>高等数学公式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my first blog</title>
-    <url>/2021/02/17/my-first-blog/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
-<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
-</ol>
-<p>那你必然没来错地方</p>
-<p>为了<del>锻炼大家的英语水平</del>装逼，我会随机抽几个幸运博客用全英文编写，祝大家幸福（？奇奇怪怪的）</p>
-]]></content>
-      <categories>
-        <category>try out</category>
-      </categories>
-      <tags>
-        <tag>first one</tag>
       </tags>
   </entry>
 </search>
