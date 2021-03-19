@@ -267,11 +267,7 @@ tab内容
 <p>如果现在有</p>
 <script type="math/tex; mode=display">
 x=x(t)
-y=y(t)</script><font size=5>$x=x(t)$</font><br>
-
-<font size=5>$y=y(t)$</font>
-
-<p> 则：</p>
+y=y(t)</script><p> 则：</p>
 <font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$</font><br>
 
 <font size=16>$\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}$</font>
