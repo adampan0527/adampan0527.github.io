@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
+  </entry>
+  <entry>
     <title>1486B Eastern Exhibition</title>
     <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
@@ -72,21 +87,6 @@ int main() &#123;
         <tag>geometry</tag>
         <tag>sorting</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
   </entry>
   <entry>
     <title>1490F Equalize the Array</title>
@@ -178,20 +178,6 @@ int main() &#123;
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>bamboo instruction</title>
     <url>/2021/03/08/bamboo-instruction/</url>
     <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
@@ -238,6 +224,47 @@ tab内容
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2021/02/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>高数公式合集</title>
+    <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
+<p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记的公式，方便查看。</p>
+<h2 class="bamboo-h-b" id="参数方程表示的函数求导" style="color:!important">参数方程表示的函数求导</h2><div></div>
+<p>如果现在有s</p>
+<font size=5>$x=x(t)$</font><br>
+
+<font size=5>$y=y(t)$</font>
+
+<p> 则：</p>
+<font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$</font><br>
+
+<font size=16>$\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}$</font>
+
+
+
+<p>$\begin{equation} \sum_{k=1}^{n} \frac{1}{1+8 \sin ^{2} \frac{k \pi}{n}}=\frac{n\left(2^{n}+1\right)}{3\left(2^{n}-1\right)} \end{equation}$</p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>高等数学公式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>my first blog</title>
     <url>/2021/02/17/my-first-blog/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
@@ -256,30 +283,6 @@ tab内容
       </categories>
       <tags>
         <tag>first one</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>高数公式合集</title>
-    <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
-<p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记的公式，方便查看。</p>
-<h2 class="bamboo-h-b" id="参数方程表示的函数求导" style="color:!important">参数方程表示的函数求导</h2><div></div>
-<p>如果现在有s</p>
-<font size=5>$x=x(t)$</font><br>
-
-<font size=5>$y=y(t)$</font>
-
-<p> 则：</p>
-<font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$</font><br>
-
-<font size=16>$\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}$</font>
-
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>高等数学公式</tag>
       </tags>
   </entry>
 </search>
