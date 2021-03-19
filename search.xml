@@ -263,16 +263,20 @@ tab内容
     <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
 <p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记的公式，方便查看。</p>
+<h2 class="bamboo-h-b" id="重要不定积分" style="color:!important">重要不定积分</h2><div></div>
+<font size=6>$\int_{-\infty}^\infty{e^{-x^2}dx}=\sqrt{\pi}$</font>
+
 <h2 class="bamboo-h-b" id="参数方程表示的函数求导" style="color:!important">参数方程表示的函数求导</h2><div></div>
 <p>如果现在有</p>
-<font size=5>$x=x(t)$</font><br>
-
-<font size=5>$y=y(t)$</font>
-
-<p> 则：</p>
-<font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt} }{\frac{dx}{dt} }$</font><br>
-
-<font size=16>$\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}$</font>]]></content>
+<script type="math/tex; mode=display">
+\begin{cases}
+\LARGE x=x(t)\\
+\LARGE y=y(t)
+\end{cases}</script><p> 则：</p>
+<script type="math/tex; mode=display">
+\Huge\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\\
+\Huge\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}</script><h2 class="bamboo-h-b" id="泰勒展开" style="color:!important">泰勒展开</h2><div></div>
+]]></content>
       <categories>
         <category>考研</category>
       </categories>
