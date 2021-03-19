@@ -270,14 +270,10 @@ tab内容
 <font size=5>$y=y(t)$</font>
 
 <p> 则：</p>
-<font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$</font><br>
+<script type="math/tex; mode=display">
+x=x(t)</script><font size=10>$\frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}$</font><br>
 
-<font size=16>$\begin{equation}\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}\end{equation}$</font>
-
-
-
-<p>\begin{equation} \sum_{k=1}^{n} \frac{1}{1+8 \sin ^{2} \frac{k \pi}{n}}=\frac{n\left(2^{n}+1\right)}{3\left(2^{n}-1\right)} \end{equation}​</p>
-]]></content>
+<font size=16>$\begin{equation}\frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}\end{equation}$</font>]]></content>
       <categories>
         <category>考研</category>
       </categories>
