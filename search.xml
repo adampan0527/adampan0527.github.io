@@ -74,6 +74,21 @@ int main() &#123;
       </tags>
   </entry>
   <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
+  </entry>
+  <entry>
     <title>1490F Equalize the Array</title>
     <url>/2021/02/19/1490F-Equalize-the-Array/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
@@ -161,21 +176,6 @@ int main() &#123;
         <tag>math</tag>
         <tag>1500</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
   </entry>
   <entry>
     <title>bamboo instruction</title>
