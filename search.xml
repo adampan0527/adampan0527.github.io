@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
-  </entry>
-  <entry>
     <title>1486B Eastern Exhibition</title>
     <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
@@ -178,6 +163,21 @@ int main() &#123;
       </tags>
   </entry>
   <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
+  </entry>
+  <entry>
     <title>bamboo instruction</title>
     <url>/2021/03/08/bamboo-instruction/</url>
     <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
@@ -238,6 +238,27 @@ tab内容
 ]]></content>
   </entry>
   <entry>
+    <title>my first blog</title>
+    <url>/2021/02/17/my-first-blog/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
+<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
+<ol>
+<li>题解（ACM菜逼一个）</li>
+<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
+<li>考研知识点（考研党路过~）</li>
+<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
+</ol>
+<p>那你必然没来错地方</p>
+<p>为了<del>锻炼大家的英语水平</del>装逼，我会随机抽几个幸运博客用全英文编写，祝大家幸福（？奇奇怪怪的）</p>
+]]></content>
+      <categories>
+        <category>try out</category>
+      </categories>
+      <tags>
+        <tag>first one</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>高数公式合集</title>
     <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
@@ -262,27 +283,6 @@ tab内容
       </categories>
       <tags>
         <tag>高等数学公式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my first blog</title>
-    <url>/2021/02/17/my-first-blog/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
-<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
-</ol>
-<p>那你必然没来错地方</p>
-<p>为了<del>锻炼大家的英语水平</del>装逼，我会随机抽几个幸运博客用全英文编写，祝大家幸福（？奇奇怪怪的）</p>
-]]></content>
-      <categories>
-        <category>try out</category>
-      </categories>
-      <tags>
-        <tag>first one</tag>
       </tags>
   </entry>
 </search>
