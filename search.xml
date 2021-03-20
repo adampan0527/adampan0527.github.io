@@ -283,7 +283,7 @@ tab内容
 \LARGE ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+...+\frac{(-1)^{n-1}}{n}x^n\\
 \LARGE sinx=x-\frac{x^3}{3!}+\frac{x^5}{5!}+...+\frac{(-1)^{n-1}}{(2n-1)!}x^{2n+1}\\
 \LARGE cosx=1-\frac{x^2}{2!}+\frac{x^4}{4!}+...+\frac{(-1)^{n-1}}{2n-2}x^{2n-2}\\
-\LARGE tanx=1+\frac{x^3}{3}+\frac{x^5}{5}+...+\frac{x^{2n-1}}{2n-1}\\
+\LARGE tanx=x+\frac{x^3}{3}+\frac{x^5}{5}+...+\frac{x^{2n-1}}{2n-1}\\
 \LARGE arctanx=x-\frac{x^3}{3}+\frac{x^5}{5}+...+\frac{(-1)^{n-1}}{2n-1}x^{2n-1}\\
 \LARGE (1+x)^a=1+ax+\frac{a(a-1)}{2!}x^2+...+\frac{a(a-1)...(a-n+1)}{n!}x^n</script><p>在所有的公式中$R_n(x)$为拉格朗日余项，多用于证明题</p>
 <script type="math/tex; mode=display">
