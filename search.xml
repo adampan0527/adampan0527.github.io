@@ -298,7 +298,7 @@ tab内容
 <p><font size=5>$ds=\sqrt{1+(y^{‘})^2}$</font><br></p>
 <p><font size=5>$ds=\sqrt{(x^{‘})^2+(y^{‘})^2}$</font><br></p>
 <h3 class="bamboo-h-b" id="曲率" style="color:!important">曲率</h3><div></div>
-<p><font size=6>$k=\frac{|y^}{|}{(1+(y^{‘})^2)^{\frac{3}{2}}}$</font><br></p>
+<p><font size=6>$k=\frac{|y^{‘’}|}{(1+(y^{‘})^2)^{\frac{3}{2}}}$</font><br></p>
 <p><font size=6>$k=\frac{|x^{‘}y^{‘’}-x^{‘’}y^{‘}|}{((x^{‘})^2+(y^{‘})^2)^{\frac{3}{2}}}$</font><br></p>
 <h3 class="bamboo-h-b" id="曲率半径" style="color:!important">曲率半径</h3><div></div>
 <p><font size=5>$R=\frac{1}{k}$</font><br></p>
