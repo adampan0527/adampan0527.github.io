@@ -297,14 +297,15 @@ tab内容
 \LARGE x=x(t)\\
 \LARGE y=y(t)
 \end{cases}</script><h3 class="bamboo-h-b" id="弧微分" style="color:!important">弧微分</h3><div></div>
-<p><font size=5>$ds=\sqrt{1+(y’)^2}$</font><br></p>
-<p><font size=5>$ds=\sqrt{(x’)^2+(y’)^2}$</font><br></p>
-<h3 class="bamboo-h-b" id="曲率" style="color:!important">曲率</h3><div></div>
-<p><font size=6>$k=\frac{|y’’|}{(1+(y’)^2)^{\frac{3}{2}}}$</font><br></p>
-<p><font size=6>$k=\frac{|x’y’’-x’’y’|}{((x’)^2+(y’)^2)^{\frac{3}{2}}}$</font><br></p>
-<h3 class="bamboo-h-b" id="曲率半径" style="color:!important">曲率半径</h3><div></div>
-<p><font size=5>$R=\frac{1}{k}$</font><br></p>
-<h3 class="bamboo-h-b" id="曲率圆" style="color:!important">曲率圆</h3><div></div>
+<script type="math/tex; mode=display">
+\Large ds=\sqrt{1+(y')^2}\\
+\Large ds=\sqrt{(x')^2+(y')^2}</script><h3 class="bamboo-h-b" id="曲率" style="color:!important">曲率</h3><div></div>
+<script type="math/tex; mode=display">
+\LARGE k=\frac{|y''|}{(1+(y')^2)^{\frac{3}{2}}}\\
+
+\LARGE k=\frac{|x'y''-x''y'|}{((x')^2+(y')^2)^{\frac{3}{2}}}</script><h3 class="bamboo-h-b" id="曲率半径" style="color:!important">曲率半径</h3><div></div>
+<script type="math/tex; mode=display">
+\Large R=\frac{1}{k}</script><h3 class="bamboo-h-b" id="曲率圆" style="color:!important">曲率圆</h3><div></div>
 <p>法线凹向取一点D，使得$|MD|=R$<br></p>
 ]]></content>
       <categories>
