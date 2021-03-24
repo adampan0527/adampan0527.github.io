@@ -636,8 +636,58 @@
 \LARGE k=\frac{|x'y''-x''y'|}{((x')^2+(y')^2)^{\frac{3}{2}}}</script><h3 class="bamboo-h-b" id="曲率半径" style="color:!important">曲率半径</h3><div></div>
 <script type="math/tex; mode=display">
 \Large R=\frac{1}{k}</script><h3 class="bamboo-h-b" id="曲率圆" style="color:!important">曲率圆</h3><div></div>
-<p>法线凹向取一点D，使得$|MD|=R$<br></p>
-
+<p>法线凹向取一点D，使得$|MD|=R$</p>
+<h2 class="bamboo-h-b" id="向量代数与空间解析几何" style="color:!important">向量代数与空间解析几何</h2><div></div>
+<p>向量代数和空间解析几何在高中已经有所接触，所以基础知识会非常简单，而且这个章节的重点是各种定理的运用，只需要记好公式即可。若是能力较强则可以在理解的基础上帮助记忆，以免考试的时候忘记。</p>
+<h3 class="bamboo-h-b" id="角度" style="color:!important">角度</h3><div></div>
+<script type="math/tex; mode=display">
+\Large \vec{OM}=(x, y, z)\\
+\Large cos\alpha=\frac{x}{\sqrt{x^2+y^2+z^2}}\\
+\Large cos\beta=\frac{y}{\sqrt{x^2+y^2+z^2}}\\
+\Large cos\gamma=\frac{z}{\sqrt{x^2+y^2+z^2}}\\
+\Large cos^2\alpha+cos^2\beta+cos^2\gamma=1</script><h3 class="bamboo-h-b" id="向量积" style="color:!important">向量积</h3><div></div>
+<p>这里仅需注意在做叉乘的时候$\vec{j}$前面是正号（除非系数是负数）</p>
+<h3 class="bamboo-h-b" id="平面方程与法向量" style="color:!important">平面方程与法向量</h3><div></div>
+<script type="math/tex; mode=display">
+\Large A(x-x_0)+B(y-y_0)+C(z-z_0)=0\\
+\Large \vec{s}=(A,B,C)</script><h3 class="bamboo-h-b" id="点到直线的距离" style="color:!important">点到直线的距离</h3><div></div>
+<script type="math/tex; mode=display">
+\Large d=\frac{|(x-x_0,y-y_0,z-z_0)\times(l,m,n)|}{\sqrt{l^2+m^2+n^2}}</script><h3 class="bamboo-h-b" id="空间曲面" style="color:!important">空间曲面</h3><div></div>
+<p>空间曲面的基本方程是$F(x,y,z)=0$<br></p>
+<h4 class="bamboo-h-b" id="旋转曲面" style="color:!important">旋转曲面</h4><div></div>
+<p>由一条直线绕轴旋转一周形成的曲面</p>
+<ol>
+<li><p>若有$f(y,z)$绕z轴旋转，则曲面方程为$f(\pm\sqrt{x^2+y^2},z)=0$<br></p>
+</li>
+<li><script type="math/tex; mode=display">
+\large L:
+        \begin{cases}
+            x&=&x(t)\\
+            y&=&y(t)\\
+            z&=&z(t)
+        \end{cases}
+        \implies
+        \begin{cases}
+            x^2+y^2=x^2(t)+y^2(t)\\
+            z=z(t)
+        \end{cases}
+        \implies
+        \text{消去t}</script></li>
+</ol>
+<h4 class="bamboo-h-b" id="常见二次曲面" style="color:!important">常见二次曲面</h4><div></div>
+<script type="math/tex; mode=display">
+\Large\begin{align}
+&\text{椭球面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}&=1\\
+&\text{旋转抛物面}&\frac{x^2}{2p}+\frac{y^2}{2p}&=z\\
+&\text{椭圆抛物面}&\frac{x^2}{2p}+\frac{y^2}{2q}&=z\quad\text{(pq>0)}\\
+&\text{双曲抛物面}&-\frac{x^2}{2p}+\frac{y^2}{2q}&=z\quad\text{(pq>0)}\\
+&\text{单叶双曲面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}&=1\\
+&\text{双叶双曲面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}&=-1\\
+&\text{二次锥面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}&=0\\
+&\text{椭圆柱面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}&=1\\
+&\text{双曲柱面}&\frac{x^2}{a^2}-\frac{y^2}{b^2}&=1\\
+&\text{抛物柱面}&\frac{x^2}{2p}&=y\quad\text{(p>0)}
+\end{align}</script>
       </div>
       
         <div class="copyright">
@@ -1770,7 +1820,7 @@
 
     <script>
       let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-      let open = eval('undefined' || 'true');
+      let open = eval('' || 'true');
       openOrCloseBtn.click(function() {
         if (open === true) {
           $(".toc-aside").css({'width': 0, 'padding': 0});
@@ -2000,20 +2050,5 @@
     </script>
     
     <script src="/js/app.js"></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>
