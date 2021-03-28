@@ -377,6 +377,9 @@ tab内容
 <p>PC：程序计数器(Program Counter)</p>
 <p>IR：指令寄存器(Instruction Register)</p>
 <p>CU：控制单元(Control Unit)</p>
+<p>MIPS：每秒执行百万条指令数(Million Instruction Per Second)</p>
+<p>ACC：累加器(Accumulator)</p>
+<p>MQ：乘商寄存器(Multiplier-Quotient Register)</p>
 ]]></content>
       <categories>
         <category>408</category>
