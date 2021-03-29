@@ -404,7 +404,7 @@
 
 
 
-<div class="swiper-length" style="display: none;">1</div>
+<div class="swiper-length" style="display: none;">0</div>
 <div id="appSwiper"
   class="swiper-no-swiping"
   @mouseenter="stopAutoPlay()" 
@@ -412,64 +412,28 @@
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-          
-          <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/t5.jpg" style=" background-size: 90000px; 
-            background-position: center center;" style="position: relative;">
-            <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
-              <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/t5.jpg" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
+      <swiper-slide>
+        <div class="item swiper-lazy" data-background="/medias/1.jpg" style="background-size: 90000px; 
+          background-position: center center;" style="position: relative;">
+          <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
+            <div class="flag">
+              <div class="img-mask swiper-lazy" data-background="/medias/1.jpg" style="height: 100%; background-size: cover; 
+                background-position: center center;">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
+              </div>
+              <div class="flag-text">
+                <div>
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">Hexo-theme-Bamboo</div>
+                  <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">大家好，这是一个Hexo主题，希望这款主题能得到你的喜爱</div>
                 </div>
-                <div class="flag-text">
-                  <div>
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">my first blog</div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">Welcome to Adam's blog
-我会在这个博客不停更新各种奇奇怪怪的内容，如果你想找
-
-题解（ACM菜逼一个）
-游戏攻略（？我tm直接竟有此事）
-考研知识点（考研党路过~）
-奇奇怪怪的软件的安装+配置教程
-
-那你必然没来错地方</div>
-                  </div>
-                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2021/02/17/my-first-blog/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">Read more</a></div>
+                <div style="display: flex;">
+                  <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">Read more</a></div>
+                  <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://github.com/yuang01/hexo-theme-bamboo" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;">Download theme</a></div>
                 </div>
               </div>
             </div>
-
-          </swiper-slide>
-        
-      
-        
-        
-      
-    <div class="swiper-pagination" slot="pagination" style="display: none;"></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="display: none;"></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style="display: none;"></div>
+          </div>
+      </swiper-slide>
     
   </swiper>
 </div>
