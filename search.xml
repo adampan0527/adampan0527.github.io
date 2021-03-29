@@ -74,6 +74,31 @@ int main() &#123;
       </tags>
   </entry>
   <entry>
+    <title>408 计组公式与缩写</title>
+    <url>/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="计组公式与缩写" style="color:!important">计组公式与缩写</h1><div></div>
+<h2 class="bamboo-h " id="名词缩写">名词缩写</h2><br/>
+<p>MAR：地址寄存器(Memory Address Register)</p>
+<p>MDR：数据寄存器(Memory Data Register)</p>
+<p>ALU：算数逻辑单元(Arithmetic Logic Unit)</p>
+<p>CPU：中央处理器(Central Processing Unit)</p>
+<p>PC：程序计数器(Program Counter)</p>
+<p>IR：指令寄存器(Instruction Register)</p>
+<p>CU：控制单元(Control Unit)</p>
+<p>MIPS：每秒执行百万条指令数(Million Instruction Per Second)</p>
+<p>ACC：累加器(Accumulator)</p>
+<p>MQ：乘商寄存器(Multiplier-Quotient Register)</p>
+]]></content>
+      <categories>
+        <category>408</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+        <tag>基础</tag>
+        <tag>公式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1490F Equalize the Array</title>
     <url>/2021/02/19/1490F-Equalize-the-Array/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
@@ -363,31 +388,6 @@ tab内容
       </categories>
       <tags>
         <tag>高等数学公式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>408 计组公式与缩写</title>
-    <url>/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="计组公式与缩写" style="color:!important">计组公式与缩写</h1><div></div>
-<h2 class="bamboo-h " id="名词缩写">名词缩写</h2><br/>
-<p>MAR：地址寄存器(Memory Address Register)</p>
-<p>MDR：数据寄存器(Memory Data Register)</p>
-<p>ALU：算数逻辑单元(Arithmetic Logic Unit)</p>
-<p>CPU：中央处理器(Central Processing Unit)</p>
-<p>PC：程序计数器(Program Counter)</p>
-<p>IR：指令寄存器(Instruction Register)</p>
-<p>CU：控制单元(Control Unit)</p>
-<p>MIPS：每秒执行百万条指令数(Million Instruction Per Second)</p>
-<p>ACC：累加器(Accumulator)</p>
-<p>MQ：乘商寄存器(Multiplier-Quotient Register)</p>
-]]></content>
-      <categories>
-        <category>408</category>
-      </categories>
-      <tags>
-        <tag>计算机组成原理</tag>
-        <tag>基础</tag>
-        <tag>公式</tag>
       </tags>
   </entry>
 </search>
