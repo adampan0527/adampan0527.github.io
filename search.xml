@@ -262,7 +262,7 @@ tab内容
     <title>高数公式合集</title>
     <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
-<p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记/重要的公式，方便查看。阿斯蒂芬</p>
+<p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记/重要的公式，方便查看。</p>
 <h2 class="bamboo-h " id="重要不定积分">重要不定积分</h2><br/>
 <script type="math/tex; mode=display">
 \LARGE \int_{-\infty}^\infty{e^{-x^2}dx}=\sqrt{\pi}\\
