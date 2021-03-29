@@ -481,7 +481,7 @@
             clearInterval(this.time);
         },
         mounted() {
-            let prop = ''|| '';
+            let prop = ''|| 'https://img12.360buyimg.com/ddimg/jfs/t1/163655/35/15465/162714/60618dc5Ecf0ef897/8b9b25f55daf9b1a.jpg,https://img11.360buyimg.com/ddimg/jfs/t1/169977/16/15370/209584/60619cd3Ec55e5288/a8d3688168bebe8d.jpg,https://img12.360buyimg.com/ddimg/jfs/t1/166973/11/15385/165790/60619cd3E61338b0b/596f7c76c06173fa.jpg,https://img12.360buyimg.com/ddimg/jfs/t1/163655/35/15465/162714/60618dc5Ecf0ef897/8b9b25f55daf9b1a.jpg';
             let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg')
             if (isImg) {
                 let img = prop.split(',');
