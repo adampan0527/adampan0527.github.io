@@ -382,7 +382,29 @@ tab内容
 &\text{椭圆柱面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}&=1\\
 &\text{双曲柱面}&\frac{x^2}{a^2}-\frac{y^2}{b^2}&=1\\
 &\text{抛物柱面}&\frac{x^2}{2p}&=y\quad\text{(p>0)}
-\end{align}</script>]]></content>
+\end{align}</script><h2 class="bamboo-h " id="曲线曲面积分">曲线曲面积分</h2><br/>
+<h3 class="bamboo-h " id="第一类曲线积分">第一类曲线积分</h3><br/>
+<p>第一类曲线积分是对弧长积分，可以表示为$\int_cf(x, y)ds$，特别的，当$f(x,y)=1$时，$\int_cds=s$（s为曲线c的弧长）</p>
+<span class='p red'>计算方法如下</span>
+<ol>
+<li><script type="math/tex; mode=display">
+\LARGE
+    \begin{cases}
+        x=x(t)\\
+        y=y(t)\\
+    \end{cases}
+    \qquad(\alpha\le t\le\beta)
+    \qquad((x'(t))^2+(y'(t))^2\ne0)\\
+\LARGE \int_cf(x,y)ds=\int_\alpha^\beta f(x(t),y(t))\sqrt{(x'(t))^2+(y'(t))^2}dt</script></li>
+<li><script type="math/tex; mode=display">
+\LARGE y=y(x)\qquad(a\le x\le b)\\
+\LARGE \int_cf(x,y)ds=\int_\alpha^\beta f(x,y(x))\sqrt{1+(y')^2}dt</script></li>
+<li><script type="math/tex; mode=display">
+\LARGE r=r(\theta)\qquad (\alpha\le\theta\le\beta)\\
+\LARGE \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
+<li></li>
+</ol>
+]]></content>
       <categories>
         <category>考研</category>
       </categories>
