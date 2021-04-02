@@ -387,19 +387,37 @@ tab内容
 <p>第一类曲线积分是对弧长积分，可以表示为$\int_cf(x, y)ds$，特别的，当$f(x,y)=1$时，$\int_cds=s$（s为曲线c的弧长）</p>
 <span class='p red'>计算方法如下</span>
 <ol>
-<li><p>$\begin{cases}</p>
-<pre><code>    x=x(t)\\
+<li><p>$\large</p>
+<pre><code>\begin&#123;cases&#125;
+    x=x(t)\\
     y=y(t)\\
 \end&#123;cases&#125;
 \qquad(\alpha\le t\le\beta)
-\qquad((x&#39;(t))^2+(y&#39;(t))^2\ne0)$
+\qquad((x&#39;(t))^2+(y&#39;(t))^2\ne0)\\$
 </code></pre><script type="math/tex; mode=display">
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(x(t),y(t))\sqrt{(x'(t))^2+(y'(t))^2}dt</script></li>
 <li><p>$\large y=y(x)\qquad(a\le x\le b)\$</p>
 <script type="math/tex; mode=display">
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(x,y(x))\sqrt{1+(y')^2}dt</script></li>
-<li><p>$\large r=r(\theta)\qquad (\alpha\le\theta\le\beta)\$</p>
+<li><p>$\large r=r(\theta)\qquad (\alpha\le\theta\le\beta)$</p>
 <script type="math/tex; mode=display">
+\large \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
+</ol>
+<ol>
+<li><script type="math/tex; mode=display">
+\large
+    \begin{cases}
+        x=x(t)\\
+        y=y(t)\\
+    \end{cases}
+    \qquad(\alpha\le t\le\beta)
+    \qquad((x'(t))^2+(y'(t))^2\ne0)\\
+\large \int_cf(x,y)ds=\int_\alpha^\beta f(x(t),y(t))\sqrt{(x'(t))^2+(y'(t))^2}dt</script></li>
+<li><script type="math/tex; mode=display">
+\large y=y(x)\qquad(a\le x\le b)\\
+\large \int_cf(x,y)ds=\int_\alpha^\beta f(x,y(x))\sqrt{1+(y')^2}dt</script></li>
+<li><script type="math/tex; mode=display">
+\large r=r(\theta)\qquad (\alpha\le\theta\le\beta)\\
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
 </ol>
 ]]></content>
