@@ -683,22 +683,21 @@
 <p>第一类曲线积分是对弧长积分，可以表示为$\int_cf(x, y)ds$，特别的，当$f(x,y)=1$时，$\int_cds=s$（s为曲线c的弧长）</p>
 <span class='p red'>计算方法如下</span>
 <ol>
-<li><script type="math/tex; mode=display">
-\large
-    \begin{cases}
-        x=x(t)\\
-        y=y(t)\\
-    \end{cases}
-    \qquad(\alpha\le t\le\beta)
-    \qquad((x'(t))^2+(y'(t))^2\ne0)\\
+<li><p>$\large</p>
+<pre><code>\begin&#123;cases&#125;
+    x=x(t)\\
+    y=y(t)\\
+\end&#123;cases&#125;
+\qquad(\alpha\le t\le\beta)
+\qquad((x&#39;(t))^2+(y&#39;(t))^2\ne0)\\$
+</code></pre><script type="math/tex; mode=display">
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(x(t),y(t))\sqrt{(x'(t))^2+(y'(t))^2}dt</script></li>
-<li><script type="math/tex; mode=display">
-\large y=y(x)\qquad(a\le x\le b)\\
+<li><p>$\large y=y(x)\qquad(a\le x\le b)\$</p>
+<script type="math/tex; mode=display">
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(x,y(x))\sqrt{1+(y')^2}dt</script></li>
-<li><script type="math/tex; mode=display">
-\large r=r(\theta)\qquad (\alpha\le\theta\le\beta)\\
+<li><p>$\large r=r(\theta)\qquad (\alpha\le\theta\le\beta)\$</p>
+<script type="math/tex; mode=display">
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
-<li></li>
 </ol>
 
       </div>
@@ -1853,7 +1852,7 @@ MDR：数据寄存器(Me
 
     <script>
       let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-      let open = eval('' || 'true');
+      let open = eval('undefined' || 'true');
       openOrCloseBtn.click(function() {
         if (open === true) {
           $(".toc-aside").css({'width': 0, 'padding': 0});
@@ -2079,5 +2078,20 @@ MDR：数据寄存器(Me
     </script>
     
     <script src="/js/app.js"></script>
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
