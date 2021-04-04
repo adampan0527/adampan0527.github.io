@@ -397,23 +397,6 @@ tab内容
 <script type="math/tex; mode=display">
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
 </ol>
-<ol>
-<li><script type="math/tex; mode=display">
-\large
-    \begin{cases}
-        x=x(t)\\
-        y=y(t)\\
-    \end{cases}
-    \qquad(\alpha\le t\le\beta)
-    \qquad((x'(t))^2+(y'(t))^2\ne0)\\
-\large \int_cf(x,y)ds=\int_\alpha^\beta f(x(t),y(t))\sqrt{(x'(t))^2+(y'(t))^2}dt</script></li>
-<li><script type="math/tex; mode=display">
-\large y=y(x)\qquad(a\le x\le b)\\
-\large \int_cf(x,y)ds=\int_\alpha^\beta f(x,y(x))\sqrt{1+(y')^2}dt</script></li>
-<li><script type="math/tex; mode=display">
-\large r=r(\theta)\qquad (\alpha\le\theta\le\beta)\\
-\large \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
-</ol>
 ]]></content>
       <categories>
         <category>考研</category>
