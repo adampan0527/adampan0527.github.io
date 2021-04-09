@@ -88,7 +88,10 @@ int main() &#123;
 <p>MIPS：每秒执行百万条指令数(Million Instruction Per Second)</p>
 <p>ACC：累加器(Accumulator)</p>
 <p>MQ：乘商寄存器(Multiplier-Quotient Register)</p>
-]]></content>
+<h2 class="bamboo-h " id="公式">公式</h2><br/>
+<h3 id="计算MIPS"><a href="#计算MIPS" class="headerlink" title="计算MIPS"></a>计算MIPS</h3><script type="math/tex; mode=display">
+MIPS=\frac{I_n}{t_{cpu}\times 10^6}=\frac {f}{CPI \times 10^6}\\
+t_{cpu}=N_c·T</script>]]></content>
       <categories>
         <category>408</category>
       </categories>
