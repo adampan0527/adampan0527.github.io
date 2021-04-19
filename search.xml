@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1486B Eastern Exhibition</title>
+    <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
+    <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
+<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
+<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
+<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+sort(x.begin(), x.end());
+sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
+<p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
+if(x.size()&amp;1) cx&#x3D;1;
+else &#123;
+    int mid&#x3D;x.size()&gt;&gt;1;
+    cx&#x3D;x[mid]-x[mid-1]+1;
+&#125;
+if(y.size()&amp;1) cy&#x3D;1;
+else &#123;
+    int mid&#x3D;y.size()&gt;&gt;1;
+    cy&#x3D;y[mid]-y[mid-1]+1;
+&#125;
+cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+
+using namespace std;
+
+const int maxn &#x3D; 2e5 + 5;
+const int inf &#x3D; INT_MAX;
+const int mod &#x3D; 1e9 + 7;
+
+typedef long long ll;
+
+vector&lt;int&gt; x, y;
+
+int main() &#123;
+    ios::sync_with_stdio(false);
+    int t;
+    cin&gt;&gt;t;
+    while(t--)&#123;
+        int n;
+        cin&gt;&gt;n;
+        x.resize(n);
+        y.resize(n);
+        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+        sort(x.begin(), x.end());
+        sort(y.begin(), y.end());
+        ll cx, cy;
+        if(x.size()&amp;1) cx&#x3D;1;
+        else &#123;
+            int mid&#x3D;x.size()&gt;&gt;1;
+            cx&#x3D;x[mid]-x[mid-1]+1;
+        &#125;
+        if(y.size()&amp;1) cy&#x3D;1;
+        else &#123;
+            int mid&#x3D;y.size()&gt;&gt;1;
+            cy&#x3D;y[mid]-y[mid-1]+1;
+        &#125;
+        cout&lt;&lt;cx*cy&lt;&lt;endl;
+    &#125;
+
+    return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>CF</category>
+      </categories>
+      <tags>
+        <tag>geometry</tag>
+        <tag>sorting</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1490F Equalize the Array</title>
     <url>/2021/02/19/1490F-Equalize-the-Array/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
@@ -84,82 +157,9 @@ int main() &#123;
         <category>CF</category>
       </categories>
       <tags>
+        <tag>sorting</tag>
         <tag>math</tag>
-        <tag>sorting</tag>
         <tag>1500</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>1486B Eastern Exhibition</title>
-    <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
-    <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
-<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-sort(x.begin(), x.end());
-sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
-<p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
-if(x.size()&amp;1) cx&#x3D;1;
-else &#123;
-    int mid&#x3D;x.size()&gt;&gt;1;
-    cx&#x3D;x[mid]-x[mid-1]+1;
-&#125;
-if(y.size()&amp;1) cy&#x3D;1;
-else &#123;
-    int mid&#x3D;y.size()&gt;&gt;1;
-    cy&#x3D;y[mid]-y[mid-1]+1;
-&#125;
-cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
-
-using namespace std;
-
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
-
-typedef long long ll;
-
-vector&lt;int&gt; x, y;
-
-int main() &#123;
-    ios::sync_with_stdio(false);
-    int t;
-    cin&gt;&gt;t;
-    while(t--)&#123;
-        int n;
-        cin&gt;&gt;n;
-        x.resize(n);
-        y.resize(n);
-        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-        sort(x.begin(), x.end());
-        sort(y.begin(), y.end());
-        ll cx, cy;
-        if(x.size()&amp;1) cx&#x3D;1;
-        else &#123;
-            int mid&#x3D;x.size()&gt;&gt;1;
-            cx&#x3D;x[mid]-x[mid-1]+1;
-        &#125;
-        if(y.size()&amp;1) cy&#x3D;1;
-        else &#123;
-            int mid&#x3D;y.size()&gt;&gt;1;
-            cy&#x3D;y[mid]-y[mid-1]+1;
-        &#125;
-        cout&lt;&lt;cx*cy&lt;&lt;endl;
-    &#125;
-
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>CF</category>
-      </categories>
-      <tags>
-        <tag>sorting</tag>
-        <tag>geometry</tag>
       </tags>
   </entry>
   <entry>
@@ -189,21 +189,6 @@ t_{cpu}=N_c·T</script>]]></content>
         <tag>基础</tag>
         <tag>公式</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
   </entry>
   <entry>
     <title>bamboo instruction</title>
@@ -252,6 +237,21 @@ tab内容
       </tags>
   </entry>
   <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/02/16/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -264,6 +264,36 @@ tab内容
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>操原重难点</title>
+    <url>/2021/04/17/%E6%93%8D%E5%8E%9F%E9%87%8D%E9%9A%BE%E7%82%B9/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>数据结构笔记</title>
+    <url>/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="数据结构笔记" style="color:!important">数据结构笔记</h1><div></div>
+<h2 class="bamboo-h-b" id="卡特兰数" style="color:!important">卡特兰数</h2><div></div>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>有2n个人排成一行进入剧场，入场费5元，其中n个人有5元钞票，n个人有10元钞票，剧院无多余钞票。问有多少种方法使得只要有10元人买票，售票处就有5元的钞票找零</li>
+<li>一个边长为n的正方形，从左下角走到右上角，不穿过对角线，问有几种不同的方法</li>
+<li>圆上选择2n个点，问有多少种方法将这些点两两相连，所得到的n条线段两两不相交</li>
+<li>对角线不相交的情况下，将凸n边形分成三角形区域的方法数</li>
+<li>n个元素进栈，问有多少种出栈方法</li>
+<li>n个节点可以构造多少个不同的二叉树</li>
+<li>n个1和n个-1构成2n项序列，问从a~1~开始，部分和始终大于等于0的序列有多少种</li>
+</ol>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><script type="math/tex; mode=display">
+\large f(n)=C_n^{2n}-c_{n-1}^{2n}</script>]]></content>
+      <categories>
+        <category>408</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
+        <tag>公式</tag>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
   <entry>
     <title>my first blog</title>
@@ -285,11 +315,6 @@ tab内容
       <tags>
         <tag>first one</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>操原重难点</title>
-    <url>/2021/04/17/%E6%93%8D%E5%8E%9F%E9%87%8D%E9%9A%BE%E7%82%B9/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>高数公式合集</title>
@@ -412,31 +437,6 @@ tab内容
       </categories>
       <tags>
         <tag>高等数学公式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构笔记</title>
-    <url>/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="数据结构笔记" style="color:!important">数据结构笔记</h1><div></div>
-<h2 class="bamboo-h-b" id="卡特兰数" style="color:!important">卡特兰数</h2><div></div>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
-<li>有2n个人排成一行进入剧场，入场费5元，其中n个人有5元钞票，n个人有10元钞票，剧院无多余钞票。问有多少种方法使得只要有10元人买票，售票处就有5元的钞票找零</li>
-<li>一个边长为n的正方形，从左下角走到右上角，不穿过对角线，问有几种不同的方法</li>
-<li>圆上选择2n个点，问有多少种方法将这些点两两相连，所得到的n条线段两两不相交</li>
-<li>对角线不相交的情况下，将凸n边形分成三角形区域的方法数</li>
-<li>n个元素进栈，问有多少种出栈方法</li>
-<li>n个节点可以构造多少个不同的二叉树</li>
-<li>n个1和n个-1构成2n项序列，问从a~1~开始，部分和始终大于等于0的序列有多少种</li>
-</ol>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><script type="math/tex; mode=display">
-\large f(n)=C_n^{2n}-c_{n-1}^{2n}</script>]]></content>
-      <categories>
-        <category>408</category>
-      </categories>
-      <tags>
-        <tag>基础</tag>
-        <tag>公式</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
