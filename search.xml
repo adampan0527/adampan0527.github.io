@@ -252,20 +252,6 @@ tab内容
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/02/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>my first blog</title>
     <url>/2021/02/17/my-first-blog/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
@@ -285,6 +271,50 @@ tab内容
       <tags>
         <tag>first one</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>操原重难点</title>
+    <url>/2021/04/17/%E6%93%8D%E5%8E%9F%E9%87%8D%E9%9A%BE%E7%82%B9/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>数据结构笔记</title>
+    <url>/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="数据结构笔记" style="color:!important">数据结构笔记</h1><div></div>
+<h2 class="bamboo-h-b" id="卡特兰数" style="color:!important">卡特兰数</h2><div></div>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>有2n个人排成一行进入剧场，入场费5元，其中n个人有5元钞票，n个人有10元钞票，剧院无多余钞票。问有多少种方法使得只要有10元人买票，售票处就有5元的钞票找零</li>
+<li>一个边长为n的正方形，从左下角走到右上角，不穿过对角线，问有几种不同的方法</li>
+<li>圆上选择2n个点，问有多少种方法将这些点两两相连，所得到的n条线段两两不相交</li>
+<li>对角线不相交的情况下，将凸n边形分成三角形区域的方法数</li>
+<li>n个元素进栈，问有多少种出栈方法</li>
+<li>n个节点可以构造多少个不同的二叉树</li>
+<li>n个1和n个-1构成2n项序列，问从a~1~开始，部分和始终大于等于0的序列有多少种</li>
+</ol>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><script type="math/tex; mode=display">
+\large f(n)=C_n^{2n}-c_{n-1}^{2n}</script>]]></content>
+      <categories>
+        <category>408</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
+        <tag>公式</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>高数公式合集</title>
@@ -400,37 +430,13 @@ tab内容
 <script type="math/tex; mode=display">
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
 </ol>
+<h2 class="bamboo-h red" id="微分方程">微分方程</h2><br/>
 ]]></content>
       <categories>
         <category>考研</category>
       </categories>
       <tags>
         <tag>高等数学公式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据结构笔记</title>
-    <url>/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="数据结构笔记" style="color:!important">数据结构笔记</h1><div></div>
-<h2 class="bamboo-h-b" id="卡特兰数" style="color:!important">卡特兰数</h2><div></div>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
-<li>有2n个人排成一行进入剧场，入场费5元，其中n个人有5元钞票，n个人有10元钞票，剧院无多余钞票。问有多少种方法使得只要有10元人买票，售票处就有5元的钞票找零</li>
-<li>一个边长为n的正方形，从左下角走到右上角，不穿过对角线，问有几种不同的方法</li>
-<li>圆上选择2n个点，问有多少种方法将这些点两两相连，所得到的n条线段两两不相交</li>
-<li>对角线不相交的情况下，将凸n边形分成三角形区域的方法数</li>
-<li>n个元素进栈，问有多少种出栈方法</li>
-<li>n个节点可以构造多少个不同的二叉树</li>
-<li>n个1和n个-1构成2n项序列，问从a~1~开始，部分和始终大于等于0的序列有多少种</li>
-</ol>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><script type="math/tex; mode=display">
-\large f(n)=C_n^{2n}-c_{n-1}^{2n}</script>]]></content>
-      <categories>
-        <category>408</category>
-      </categories>
-      <tags>
-        <tag>基础</tag>
-        <tag>公式</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
