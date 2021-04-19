@@ -558,12 +558,12 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/sorting/" class="">
-              sorting
-            </a>
-          
             <a href="/tags/math/" class="">
               math
+            </a>
+          
+            <a href="/tags/sorting/" class="">
+              sorting
             </a>
           
             <a href="/tags/1500/" class="">
@@ -589,7 +589,7 @@
 <h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png" alt="CF 1490F S.png"></p>
 <h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array <span class='p red'>beautiful</span>, which means every number in the array appears same times</p>
 <h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ll a[maxn];
+<pre><code class="lang-C++">ll a[maxn];
 map&lt;ll, int&gt; mp;
 vector&lt;pair&lt;int, int&gt;&gt; b;
 
@@ -597,28 +597,30 @@ bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
     return x.second &gt; y.second;
 &#125;
 
-for (int i &#x3D; 0; i &lt; n; i++) &#123;
+for (int i = 0; i &lt; n; i++) &#123;
     cin &gt;&gt; a[i];
     mp[a[i]]++;
 &#125;
 for (auto it:mp) &#123;
     b.emplace_back(it.first, it.second);
 &#125;
-sort(b.begin(), b.end(), cmp);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+sort(b.begin(), b.end(), cmp);
+</code></pre>
 <p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p>
 <p>b[i].second<em>(i+1) means the number of elements will be left, so n-b[i].second</em>(i+1) will be the number of elements we will delete(for this one).</p>
 <p>Then we just find the minimum one and output</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int ans &#x3D; inf;
-for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
-    ans &#x3D; min(ans, n - b[i].second * (i + 1));
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+<pre><code class="lang-C++">int ans = inf;
+for (int i = 0; i &lt; b.size(); i++) &#123;
+    ans = min(ans, n - b[i].second * (i + 1));
+&#125;
+</code></pre>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 
 using namespace std;
 
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
+const int maxn = 2e5 + 5;
+const int inf = INT_MAX;
+const int mod = 1e9 + 7;
 
 typedef long long ll;
 
@@ -635,7 +637,7 @@ void solve() &#123;
     cin &gt;&gt; n;
     b.clear();
     mp.clear();
-    for (int i &#x3D; 0; i &lt; n; i++) &#123;
+    for (int i = 0; i &lt; n; i++) &#123;
         cin &gt;&gt; a[i];
         mp[a[i]]++;
     &#125;
@@ -643,9 +645,9 @@ void solve() &#123;
         b.emplace_back(it.first, it.second);
     &#125;
     sort(b.begin(), b.end(), cmp);
-    int ans &#x3D; inf;
-    for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
-        ans &#x3D; min(ans, n - b[i].second * (i + 1));
+    int ans = inf;
+    for (int i = 0; i &lt; b.size(); i++) &#123;
+        ans = min(ans, n - b[i].second * (i + 1));
     &#125;
     cout &lt;&lt; ans &lt;&lt; endl;
 &#125;
@@ -659,7 +661,8 @@ int main() &#123;
     &#125;
 
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;
+</code></pre>
 
       </div>
       

@@ -1,36 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>1490F Equalize the Array</title>
+    <url>/2021/02/19/1490F-Equalize-the-Array/</url>
+    <content><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
+<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/155245/36/17707/109508/602eae8dE7453c7e9/4bd6b888f152de36.png" alt="CF 1490F Q.png"></p>
+<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png" alt="CF 1490F S.png"></p>
+<h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array <span class='p red'>beautiful</span>, which means every number in the array appears same times</p>
+<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p>
+<pre><code class="lang-C++">ll a[maxn];
+map&lt;ll, int&gt; mp;
+vector&lt;pair&lt;int, int&gt;&gt; b;
+
+bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
+    return x.second &gt; y.second;
+&#125;
+
+for (int i = 0; i &lt; n; i++) &#123;
+    cin &gt;&gt; a[i];
+    mp[a[i]]++;
+&#125;
+for (auto it:mp) &#123;
+    b.emplace_back(it.first, it.second);
+&#125;
+sort(b.begin(), b.end(), cmp);
+</code></pre>
+<p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p>
+<p>b[i].second<em>(i+1) means the number of elements will be left, so n-b[i].second</em>(i+1) will be the number of elements we will delete(for this one).</p>
+<p>Then we just find the minimum one and output</p>
+<pre><code class="lang-C++">int ans = inf;
+for (int i = 0; i &lt; b.size(); i++) &#123;
+    ans = min(ans, n - b[i].second * (i + 1));
+&#125;
+</code></pre>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
+
+using namespace std;
+
+const int maxn = 2e5 + 5;
+const int inf = INT_MAX;
+const int mod = 1e9 + 7;
+
+typedef long long ll;
+
+ll a[maxn];
+map&lt;ll, int&gt; mp;
+vector&lt;pair&lt;int, int&gt;&gt; b;
+
+bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
+    return x.second &gt; y.second;
+&#125;
+
+void solve() &#123;
+    int n;
+    cin &gt;&gt; n;
+    b.clear();
+    mp.clear();
+    for (int i = 0; i &lt; n; i++) &#123;
+        cin &gt;&gt; a[i];
+        mp[a[i]]++;
+    &#125;
+    for (auto it:mp) &#123;
+        b.emplace_back(it.first, it.second);
+    &#125;
+    sort(b.begin(), b.end(), cmp);
+    int ans = inf;
+    for (int i = 0; i &lt; b.size(); i++) &#123;
+        ans = min(ans, n - b[i].second * (i + 1));
+    &#125;
+    cout &lt;&lt; ans &lt;&lt; endl;
+&#125;
+
+int main() &#123;
+    ios::sync_with_stdio(false);
+    int t;
+    cin &gt;&gt; t;
+    while (t--) &#123;
+        solve();
+    &#125;
+
+    return 0;
+&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>CF</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+        <tag>sorting</tag>
+        <tag>1500</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1486B Eastern Exhibition</title>
     <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
 <h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
 <h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
 <h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+<pre><code class="lang-c++">for(int i=0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
 sort(x.begin(), x.end());
-sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+sort(y.begin(), y.end());
+</code></pre>
 <p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
 <p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
-if(x.size()&amp;1) cx&#x3D;1;
+<pre><code class="lang-c++">ll cx, cy;
+if(x.size()&amp;1) cx=1;
 else &#123;
-    int mid&#x3D;x.size()&gt;&gt;1;
-    cx&#x3D;x[mid]-x[mid-1]+1;
+    int mid=x.size()&gt;&gt;1;
+    cx=x[mid]-x[mid-1]+1;
 &#125;
-if(y.size()&amp;1) cy&#x3D;1;
+if(y.size()&amp;1) cy=1;
 else &#123;
-    int mid&#x3D;y.size()&gt;&gt;1;
-    cy&#x3D;y[mid]-y[mid-1]+1;
+    int mid=y.size()&gt;&gt;1;
+    cy=y[mid]-y[mid-1]+1;
 &#125;
-cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+cout&lt;&lt;cx*cy&lt;&lt;endl;
+</code></pre>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 
 using namespace std;
 
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
+const int maxn = 2e5 + 5;
+const int inf = INT_MAX;
+const int mod = 1e9 + 7;
 
 typedef long long ll;
 
@@ -45,32 +139,33 @@ int main() &#123;
         cin&gt;&gt;n;
         x.resize(n);
         y.resize(n);
-        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+        for(int i=0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
         sort(x.begin(), x.end());
         sort(y.begin(), y.end());
         ll cx, cy;
-        if(x.size()&amp;1) cx&#x3D;1;
+        if(x.size()&amp;1) cx=1;
         else &#123;
-            int mid&#x3D;x.size()&gt;&gt;1;
-            cx&#x3D;x[mid]-x[mid-1]+1;
+            int mid=x.size()&gt;&gt;1;
+            cx=x[mid]-x[mid-1]+1;
         &#125;
-        if(y.size()&amp;1) cy&#x3D;1;
+        if(y.size()&amp;1) cy=1;
         else &#123;
-            int mid&#x3D;y.size()&gt;&gt;1;
-            cy&#x3D;y[mid]-y[mid-1]+1;
+            int mid=y.size()&gt;&gt;1;
+            cy=y[mid]-y[mid-1]+1;
         &#125;
         cout&lt;&lt;cx*cy&lt;&lt;endl;
     &#125;
 
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;
+</code></pre>
 ]]></content>
       <categories>
         <category>CF</category>
       </categories>
       <tags>
-        <tag>geometry</tag>
         <tag>sorting</tag>
+        <tag>geometry</tag>
       </tags>
   </entry>
   <entry>
@@ -102,95 +197,6 @@ t_{cpu}=N_c·T</script>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>1490F Equalize the Array</title>
-    <url>/2021/02/19/1490F-Equalize-the-Array/</url>
-    <content><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/155245/36/17707/109508/602eae8dE7453c7e9/4bd6b888f152de36.png" alt="CF 1490F Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png" alt="CF 1490F S.png"></p>
-<h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array <span class='p red'>beautiful</span>, which means every number in the array appears same times</p>
-<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ll a[maxn];
-map&lt;ll, int&gt; mp;
-vector&lt;pair&lt;int, int&gt;&gt; b;
-
-bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
-    return x.second &gt; y.second;
-&#125;
-
-for (int i &#x3D; 0; i &lt; n; i++) &#123;
-    cin &gt;&gt; a[i];
-    mp[a[i]]++;
-&#125;
-for (auto it:mp) &#123;
-    b.emplace_back(it.first, it.second);
-&#125;
-sort(b.begin(), b.end(), cmp);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p>
-<p>b[i].second<em>(i+1) means the number of elements will be left, so n-b[i].second</em>(i+1) will be the number of elements we will delete(for this one).</p>
-<p>Then we just find the minimum one and output</p>
-<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">int ans &#x3D; inf;
-for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
-    ans &#x3D; min(ans, n - b[i].second * (i + 1));
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
-
-using namespace std;
-
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
-
-typedef long long ll;
-
-ll a[maxn];
-map&lt;ll, int&gt; mp;
-vector&lt;pair&lt;int, int&gt;&gt; b;
-
-bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
-    return x.second &gt; y.second;
-&#125;
-
-void solve() &#123;
-    int n;
-    cin &gt;&gt; n;
-    b.clear();
-    mp.clear();
-    for (int i &#x3D; 0; i &lt; n; i++) &#123;
-        cin &gt;&gt; a[i];
-        mp[a[i]]++;
-    &#125;
-    for (auto it:mp) &#123;
-        b.emplace_back(it.first, it.second);
-    &#125;
-    sort(b.begin(), b.end(), cmp);
-    int ans &#x3D; inf;
-    for (int i &#x3D; 0; i &lt; b.size(); i++) &#123;
-        ans &#x3D; min(ans, n - b[i].second * (i + 1));
-    &#125;
-    cout &lt;&lt; ans &lt;&lt; endl;
-&#125;
-
-int main() &#123;
-    ios::sync_with_stdio(false);
-    int t;
-    cin &gt;&gt; t;
-    while (t--) &#123;
-        solve();
-    &#125;
-
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>CF</category>
-      </categories>
-      <tags>
-        <tag>sorting</tag>
-        <tag>math</tag>
-        <tag>1500</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tips for interactive problem</title>
     <url>/2021/02/22/Tips-for-interactive-problem/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
@@ -210,29 +216,29 @@ int main() &#123;
     <url>/2021/03/08/bamboo-instruction/</url>
     <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
 <h2 class="bamboo-h " id="标题">标题</h2><br/>
-<pre class="line-numbers language-none"><code class="language-none">&#123;% title h2, 标题内容 %&#125;
-&#123;% titleB h2, 标题内容 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 class="bamboo-h " id="文字颜色">文字颜色</h2><br/>
-<pre class="line-numbers language-none"><code class="language-none">&#123;% span 文字样式, 文字内容 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>文字样式包括颜色、大小、是否居中等</p>
+<pre><code>&#123;% title h2, 标题内容 %&#125;
+&#123;% titleB h2, 标题内容 %&#125;
+</code></pre><h2 class="bamboo-h " id="文字颜色">文字颜色</h2><br/>
+<pre><code>&#123;% span 文字样式, 文字内容 %&#125;
+</code></pre><p>文字样式包括颜色、大小、是否居中等</p>
 <h2 class="bamboo-h " id="tabs">tabs</h2><br/>
-<pre class="line-numbers language-none"><code class="language-none">&#123;% tabs tab-id %&#125;
+<pre><code>&#123;% tabs tab-id %&#125;
 
-&lt;!-- tab tab1 --&gt;
+<!-- tab tab1 -->
 
 tab1内容
 
-&lt;!-- endtab --&gt;
+<!-- endtab -->
 
-&lt;!-- tab tab2 --&gt;
+<!-- tab tab2 -->
 
 tab内容
 
-&lt;!-- endtab --&gt;
+<!-- endtab -->
 
-&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 class="bamboo-h " id="Text文本样式标签演示">Text文本样式标签演示</h2><br/>
-<pre class="line-numbers language-none"><code class="language-none">&#123;% title h2, Text文本样式标签演示 %&#125;
+&#123;% endtabs %&#125;
+</code></pre><h2 class="bamboo-h " id="Text文本样式标签演示">Text文本样式标签演示</h2><br/>
+<pre><code>&#123;% title h2, Text文本样式标签演示 %&#125;
 
 带 &#123;% u 下划线 %&#125; 的文本
 
@@ -244,12 +250,30 @@ tab内容
 
 键盘样式的文本 &#123;% kbd command %&#125; + &#123;% kbd D %&#125;
 
-密码样式的文本：&#123;% psw 这里没有验证码 %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>后续待补充……</p>
+密码样式的文本：&#123;% psw 这里没有验证码 %&#125;
+</code></pre><p>后续待补充……</p>
 ]]></content>
       <tags>
         <tag>instructions</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="lang-bash">$ hexo new &quot;My New Post&quot;
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="lang-bash">$ hexo server
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="lang-bash">$ hexo generate
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="lang-bash">$ hexo deploy
+</code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
   </entry>
   <entry>
     <title>my first blog</title>
@@ -301,20 +325,6 @@ tab内容
         <tag>公式</tag>
         <tag>数据结构</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/02/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>高数公式合集</title>

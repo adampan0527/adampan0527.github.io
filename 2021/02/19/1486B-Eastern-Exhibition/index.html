@@ -558,12 +558,12 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/geometry/" class="">
-              geometry
-            </a>
-          
             <a href="/tags/sorting/" class="">
               sorting
+            </a>
+          
+            <a href="/tags/geometry/" class="">
+              geometry
             </a>
           
         </div>
@@ -584,30 +584,32 @@
 <h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
 <h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
 <h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+<pre><code class="lang-c++">for(int i=0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
 sort(x.begin(), x.end());
-sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+sort(y.begin(), y.end());
+</code></pre>
 <p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
 <p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
-if(x.size()&amp;1) cx&#x3D;1;
+<pre><code class="lang-c++">ll cx, cy;
+if(x.size()&amp;1) cx=1;
 else &#123;
-    int mid&#x3D;x.size()&gt;&gt;1;
-    cx&#x3D;x[mid]-x[mid-1]+1;
+    int mid=x.size()&gt;&gt;1;
+    cx=x[mid]-x[mid-1]+1;
 &#125;
-if(y.size()&amp;1) cy&#x3D;1;
+if(y.size()&amp;1) cy=1;
 else &#123;
-    int mid&#x3D;y.size()&gt;&gt;1;
-    cy&#x3D;y[mid]-y[mid-1]+1;
+    int mid=y.size()&gt;&gt;1;
+    cy=y[mid]-y[mid-1]+1;
 &#125;
-cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
+cout&lt;&lt;cx*cy&lt;&lt;endl;
+</code></pre>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 
 using namespace std;
 
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
+const int maxn = 2e5 + 5;
+const int inf = INT_MAX;
+const int mod = 1e9 + 7;
 
 typedef long long ll;
 
@@ -622,25 +624,26 @@ int main() &#123;
         cin&gt;&gt;n;
         x.resize(n);
         y.resize(n);
-        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
+        for(int i=0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
         sort(x.begin(), x.end());
         sort(y.begin(), y.end());
         ll cx, cy;
-        if(x.size()&amp;1) cx&#x3D;1;
+        if(x.size()&amp;1) cx=1;
         else &#123;
-            int mid&#x3D;x.size()&gt;&gt;1;
-            cx&#x3D;x[mid]-x[mid-1]+1;
+            int mid=x.size()&gt;&gt;1;
+            cx=x[mid]-x[mid-1]+1;
         &#125;
-        if(y.size()&amp;1) cy&#x3D;1;
+        if(y.size()&amp;1) cy=1;
         else &#123;
-            int mid&#x3D;y.size()&gt;&gt;1;
-            cy&#x3D;y[mid]-y[mid-1]+1;
+            int mid=y.size()&gt;&gt;1;
+            cy=y[mid]-y[mid-1]+1;
         &#125;
         cout&lt;&lt;cx*cy&lt;&lt;endl;
     &#125;
 
     return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;
+</code></pre>
 
       </div>
       
