@@ -49,7 +49,7 @@
     </style>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><script src="/js/prism.js"></script></head>
 
   <script src="/js/jquery3.5.1.js"></script>
   <script src="/js/vue2.6.11.js"></script>
@@ -589,16 +589,16 @@
 <h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png" alt="CF 1490F S.png"></p>
 <h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array <span class='p red'>beautiful</span>, which means every number in the array appears same times</p>
 <h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p>
-<pre><code class="lang-C++">ll a[maxn];
-map&lt;ll, int&gt; mp;
-vector&lt;pair&lt;int, int&gt;&gt; b;
+<pre class=" language-lang-C++"><code class="language-lang-C++">ll a[maxn];
+map<ll, int> mp;
+vector<pair<int, int>> b;
 
-bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
-    return x.second &gt; y.second;
+bool cmp(pair<int, int> x, pair<int, int> y) &#123;
+    return x.second > y.second;
 &#125;
 
-for (int i = 0; i &lt; n; i++) &#123;
-    cin &gt;&gt; a[i];
+for (int i = 0; i < n; i++) &#123;
+    cin >> a[i];
     mp[a[i]]++;
 &#125;
 for (auto it:mp) &#123;
@@ -609,12 +609,12 @@ sort(b.begin(), b.end(), cmp);
 <p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p>
 <p>b[i].second<em>(i+1) means the number of elements will be left, so n-b[i].second</em>(i+1) will be the number of elements we will delete(for this one).</p>
 <p>Then we just find the minimum one and output</p>
-<pre><code class="lang-C++">int ans = inf;
-for (int i = 0; i &lt; b.size(); i++) &#123;
+<pre class=" language-lang-C++"><code class="language-lang-C++">int ans = inf;
+for (int i = 0; i < b.size(); i++) &#123;
     ans = min(ans, n - b[i].second * (i + 1));
 &#125;
 </code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class=" language-lang-c++"><code class="language-lang-c++">#include<bits/stdc++.h>
 
 using namespace std;
 
@@ -625,20 +625,20 @@ const int mod = 1e9 + 7;
 typedef long long ll;
 
 ll a[maxn];
-map&lt;ll, int&gt; mp;
-vector&lt;pair&lt;int, int&gt;&gt; b;
+map<ll, int> mp;
+vector<pair<int, int>> b;
 
-bool cmp(pair&lt;int, int&gt; x, pair&lt;int, int&gt; y) &#123;
-    return x.second &gt; y.second;
+bool cmp(pair<int, int> x, pair<int, int> y) &#123;
+    return x.second > y.second;
 &#125;
 
 void solve() &#123;
     int n;
-    cin &gt;&gt; n;
+    cin >> n;
     b.clear();
     mp.clear();
-    for (int i = 0; i &lt; n; i++) &#123;
-        cin &gt;&gt; a[i];
+    for (int i = 0; i < n; i++) &#123;
+        cin >> a[i];
         mp[a[i]]++;
     &#125;
     for (auto it:mp) &#123;
@@ -646,16 +646,16 @@ void solve() &#123;
     &#125;
     sort(b.begin(), b.end(), cmp);
     int ans = inf;
-    for (int i = 0; i &lt; b.size(); i++) &#123;
+    for (int i = 0; i < b.size(); i++) &#123;
         ans = min(ans, n - b[i].second * (i + 1));
     &#125;
-    cout &lt;&lt; ans &lt;&lt; endl;
+    cout << ans << endl;
 &#125;
 
 int main() &#123;
     ios::sync_with_stdio(false);
     int t;
-    cin &gt;&gt; t;
+    cin >> t;
     while (t--) &#123;
         solve();
     &#125;
@@ -1816,7 +1816,7 @@ SolveThe
 
     <script>
       let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-      let open = eval('' || 'true');
+      let open = eval('undefined' || 'true');
       openOrCloseBtn.click(function() {
         if (open === true) {
           $(".toc-aside").css({'width': 0, 'padding': 0});
@@ -2042,5 +2042,20 @@ SolveThe
     </script>
     
     <script src="/js/app.js"></script>
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
