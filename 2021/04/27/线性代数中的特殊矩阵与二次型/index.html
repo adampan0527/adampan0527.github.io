@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>1486B Eastern Exhibition | Adam&#39;s blog</title>
+  <title>线性代数中的特殊矩阵与二次型 | Adam&#39;s blog</title>
 
   
     
@@ -405,7 +405,7 @@
     
     <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
     
-        <link href="/js/prism/prism-dark.min.css" rel="stylesheet">
+        <link href="/js/prism/prism.min.css" rel="stylesheet">
     
   
 
@@ -537,7 +537,7 @@
     <div class="title-box">
       
           <span class="title">
-            1486B Eastern Exhibition
+            线性代数中的特殊矩阵与二次型
           </span>
         
     </div>
@@ -556,7 +556,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-02-19</span>
+        <span class="post-time">2021-04-27</span>
       </div>
       
       <div class="post-tags-categories">
@@ -564,12 +564,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/geometry/" class="">
-              geometry
-            </a>
-          
-            <a href="/tags/sorting/" class="">
-              sorting
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="">
+              线性代数
             </a>
           
         </div>
@@ -578,75 +574,38 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/CF/" class="">
-              CF
+            <a href="/categories/%E8%80%83%E7%A0%94/" class="">
+              考研
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
-<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-sort(x.begin(), x.end());
-sort(y.begin(), y.end());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p>
-<p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">ll cx, cy;
-if(x.size()&amp;1) cx&#x3D;1;
-else &#123;
-    int mid&#x3D;x.size()&gt;&gt;1;
-    cx&#x3D;x[mid]-x[mid-1]+1;
-&#125;
-if(y.size()&amp;1) cy&#x3D;1;
-else &#123;
-    int mid&#x3D;y.size()&gt;&gt;1;
-    cy&#x3D;y[mid]-y[mid-1]+1;
-&#125;
-cout&lt;&lt;cx*cy&lt;&lt;endl;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;bits&#x2F;stdc++.h&gt;
-
-using namespace std;
-
-const int maxn &#x3D; 2e5 + 5;
-const int inf &#x3D; INT_MAX;
-const int mod &#x3D; 1e9 + 7;
-
-typedef long long ll;
-
-vector&lt;int&gt; x, y;
-
-int main() &#123;
-    ios::sync_with_stdio(false);
-    int t;
-    cin&gt;&gt;t;
-    while(t--)&#123;
-        int n;
-        cin&gt;&gt;n;
-        x.resize(n);
-        y.resize(n);
-        for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
-        sort(x.begin(), x.end());
-        sort(y.begin(), y.end());
-        ll cx, cy;
-        if(x.size()&amp;1) cx&#x3D;1;
-        else &#123;
-            int mid&#x3D;x.size()&gt;&gt;1;
-            cx&#x3D;x[mid]-x[mid-1]+1;
-        &#125;
-        if(y.size()&amp;1) cy&#x3D;1;
-        else &#123;
-            int mid&#x3D;y.size()&gt;&gt;1;
-            cy&#x3D;y[mid]-y[mid-1]+1;
-        &#125;
-        cout&lt;&lt;cx*cy&lt;&lt;endl;
-    &#125;
-
-    return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <h1 class="bamboo-h-b" id="特殊矩阵与二次型" style="color:!important">特殊矩阵与二次型</h1><div></div>
+<p>在线性代数中有各种奇奇怪怪的特殊矩阵，比如实对称矩阵、逆矩阵等等，这些矩阵都有一些特殊的性质，在后续的特征值、特征向量、二次型中都有相应的联系，所以在线性代数中一定要首先把握好矩阵的基本性质，再考虑如何去使用。</p>
+<h2 class="bamboo-h-b" id="实对称矩阵" style="color:!important">实对称矩阵</h2><div></div>
+<p>实对称矩阵的<strong>定义</strong>非常简单，一个矩阵的转置和这个矩阵本身相等（相等和转置不知道的可以放弃考研了）</p>
+<p>实对称矩阵的用途在后续的模块中会有提到，在这里就不特别列出来了。</p>
+<h2 class="bamboo-h-b" id="逆矩阵" style="color:!important">逆矩阵</h2><div></div>
+<p>逆矩阵是一个非常特殊的矩阵，一个矩阵的逆矩阵与该矩阵做乘法运算会得到单位矩阵，也就是$A^{-1}*A=E$</p>
+<p>这里讲一些特殊的概念（此概念与线性代数无关，与考研无关，有兴趣的兄弟们可以看看）：</p>
+<h3 class="bamboo-h-b" id="单位元" style="color:!important">单位元</h3><div></div>
+<p>单位元是某一运算中特殊的对象，如在加法运算中，单位元就是0，因为任何数加上0都是这个数本身，同理，在乘法运算中，单位元就是1。</p>
+<p>相信看到这里，对单位元已经有了一个大概的认识，那么在矩阵乘法的运算中，单位元就是对应阶数的单位矩阵E，因为E和任意矩阵做矩阵乘法运算，的出来的结果都会是这个矩阵本身。</p>
+<h3 class="bamboo-h-b" id="逆元" style="color:!important">逆元</h3><div></div>
+<p>了解逆元需要首先知道单位元的概念。</p>
+<p>一个对象与该对象的逆元做特定运算，得到的结果是这个运算的单位元。</p>
+<p>你可以把求逆元的过程看作是单位元对某一对象做该运算的逆运算。</p>
+<p>这么说可能有些复杂，下面我给出一些例子：</p>
+<ol>
+<li>加法运算中的单位元是0，一个数的逆元是这个数的相反数（加法的逆运算是减法）</li>
+<li>乘法运算中的单位元是1，一个数的逆元是这个数的倒数（乘法的逆运算是除法）</li>
+<li>矩阵乘法中的单位元是E，一个矩阵的逆元就是这个矩阵的逆矩阵</li>
+</ol>
+<p>为什么我在之前的描述中都用了“对象”这个词，而不是“数”，因为某些运算的对象并不是一个数，如矩阵乘法，求逆等等。</p>
+<h3 class="bamboo-h-b" id="逆矩阵与逆元的关系" style="color:!important">逆矩阵与逆元的关系</h3><div></div>
+<p>逆矩阵就是在矩阵乘法这个运算中，某一矩阵的逆元</p>
 
       </div>
       
@@ -657,7 +616,7 @@ int main() &#123;
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/02/19/1486B-Eastern-Exhibition/" target="_blank" title="1486B Eastern Exhibition">http://adampan0527.github.io/2021/02/19/1486B-Eastern-Exhibition/</a>
+    <a href="/2021/04/27/线性代数中的特殊矩阵与二次型/" target="_blank" title="线性代数中的特殊矩阵与二次型">http://adampan0527.github.io/2021/04/27/线性代数中的特殊矩阵与二次型/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -675,43 +634,20 @@ int main() &#123;
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/t11.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/02/22/Tips-for-interactive-problem/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>Tips for interactive problem</div>
-      </div>
-      
-      <!-- <div class="content">
-        Little tips
-While solving interactive problems, we should
-
-L
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/t2.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/t8.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/02/19/1490F-Equalize-the-Array/" class="post-nav-link">
+    <a href="/2021/04/17/%E6%93%8D%E5%8E%9F%E9%87%8D%E9%9A%BE%E7%82%B9/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>1490F Equalize the Array</div>
+        <div>操原重难点</div>
       </div>
       <!-- <div class="content">
-        Equalize the Array
-The question
-Input &amp; Output
-Simplify 
+        
       </div> -->
     </a>
   </div>

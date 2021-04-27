@@ -182,13 +182,28 @@ int main() &#123;
 MIPS=\frac{I_n}{t_{cpu}\times 10^6}=\frac {f}{CPI \times 10^6}\\
 t_{cpu}=N_c·T</script>]]></content>
       <categories>
-        <category>408</category>
+        <category>考研</category>
       </categories>
       <tags>
         <tag>计算机组成原理</tag>
         <tag>基础</tag>
         <tag>公式</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
   </entry>
   <entry>
     <title>bamboo instruction</title>
@@ -237,21 +252,6 @@ tab内容
       </tags>
   </entry>
   <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2021/02/16/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -264,6 +264,27 @@ tab内容
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>my first blog</title>
+    <url>/2021/02/17/my-first-blog/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
+<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
+<ol>
+<li>题解（ACM菜逼一个）</li>
+<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
+<li>考研知识点（考研党路过~）</li>
+<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
+</ol>
+<p>希望大家都能在这里找到自己想要的东西！</p>
+<p>如果有想看的东西可以给我留言嗷</p>
+]]></content>
+      <categories>
+        <category>try out</category>
+      </categories>
+      <tags>
+        <tag>first one</tag>
+      </tags>
   </entry>
   <entry>
     <title>操原重难点</title>
@@ -287,33 +308,12 @@ tab内容
 <h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><script type="math/tex; mode=display">
 \large f(n)=C_n^{2n}-c_{n-1}^{2n}</script>]]></content>
       <categories>
-        <category>408</category>
+        <category>考研</category>
       </categories>
       <tags>
         <tag>基础</tag>
         <tag>公式</tag>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my first blog</title>
-    <url>/2021/02/17/my-first-blog/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Welcome to Adam's blog" style="color:!important">Welcome to Adam's blog</h1><div></div>
-<p>我会在这个博客不停更新各种<del><span class='p blue'>奇奇怪怪的</span></del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
-</ol>
-<p>希望大家都能在这里找到自己想要的东西！</p>
-<p>如果有想看的东西可以给我留言嗷</p>
-]]></content>
-      <categories>
-        <category>try out</category>
-      </categories>
-      <tags>
-        <tag>first one</tag>
       </tags>
   </entry>
   <entry>
@@ -437,6 +437,41 @@ tab内容
       </categories>
       <tags>
         <tag>高等数学公式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数中的特殊矩阵与二次型</title>
+    <url>/2021/04/27/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B8%8E%E4%BA%8C%E6%AC%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="特殊矩阵与二次型" style="color:!important">特殊矩阵与二次型</h1><div></div>
+<p>在线性代数中有各种奇奇怪怪的特殊矩阵，比如实对称矩阵、逆矩阵等等，这些矩阵都有一些特殊的性质，在后续的特征值、特征向量、二次型中都有相应的联系，所以在线性代数中一定要首先把握好矩阵的基本性质，再考虑如何去使用。</p>
+<h2 class="bamboo-h-b" id="实对称矩阵" style="color:!important">实对称矩阵</h2><div></div>
+<p>实对称矩阵的<strong>定义</strong>非常简单，一个矩阵的转置和这个矩阵本身相等（相等和转置不知道的可以放弃考研了）</p>
+<p>实对称矩阵的用途在后续的模块中会有提到，在这里就不特别列出来了。</p>
+<h2 class="bamboo-h-b" id="逆矩阵" style="color:!important">逆矩阵</h2><div></div>
+<p>逆矩阵是一个非常特殊的矩阵，一个矩阵的逆矩阵与该矩阵做乘法运算会得到单位矩阵，也就是$A^{-1}*A=E$</p>
+<p>这里讲一些特殊的概念（此概念与线性代数无关，与考研无关，有兴趣的兄弟们可以看看）：</p>
+<h3 class="bamboo-h-b" id="单位元" style="color:!important">单位元</h3><div></div>
+<p>单位元是某一运算中特殊的对象，如在加法运算中，单位元就是0，因为任何数加上0都是这个数本身，同理，在乘法运算中，单位元就是1。</p>
+<p>相信看到这里，对单位元已经有了一个大概的认识，那么在矩阵乘法的运算中，单位元就是对应阶数的单位矩阵E，因为E和任意矩阵做矩阵乘法运算，的出来的结果都会是这个矩阵本身。</p>
+<h3 class="bamboo-h-b" id="逆元" style="color:!important">逆元</h3><div></div>
+<p>了解逆元需要首先知道单位元的概念。</p>
+<p>一个对象与该对象的逆元做特定运算，得到的结果是这个运算的单位元。</p>
+<p>你可以把求逆元的过程看作是单位元对某一对象做该运算的逆运算。</p>
+<p>这么说可能有些复杂，下面我给出一些例子：</p>
+<ol>
+<li>加法运算中的单位元是0，一个数的逆元是这个数的相反数（加法的逆运算是减法）</li>
+<li>乘法运算中的单位元是1，一个数的逆元是这个数的倒数（乘法的逆运算是除法）</li>
+<li>矩阵乘法中的单位元是E，一个矩阵的逆元就是这个矩阵的逆矩阵</li>
+</ol>
+<p>为什么我在之前的描述中都用了“对象”这个词，而不是“数”，因为某些运算的对象并不是一个数，如矩阵乘法，求逆等等。</p>
+<h3 class="bamboo-h-b" id="逆矩阵与逆元的关系" style="color:!important">逆矩阵与逆元的关系</h3><div></div>
+<p>逆矩阵就是在矩阵乘法这个运算中，某一矩阵的逆元</p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
       </tags>
   </entry>
 </search>
