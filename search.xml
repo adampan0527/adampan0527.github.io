@@ -467,6 +467,13 @@ tab内容
 <h3 class="bamboo-h-b" id="逆矩阵与逆元的关系" style="color:blue!important">逆矩阵与逆元的关系</h3><div></div>
 <p>逆矩阵就是在矩阵乘法这个运算中，某一矩阵的逆元就是这个矩阵的逆矩阵。</p>
 <p>众所周知，不是所有矩阵都可逆，也就是说，不是所有矩阵都有逆元，这一点也很好理解，因为在乘法运算中，0就没有逆元（$\frac{1}{0}$无意义）</p>
+<h2 class="bamboo-h-b" id="red" style="color:!important">red</h2><div></div>
+<p>特征值与特征向量是相互绑定的一对概念，对于某个矩阵来说，求出它的特征值，就能得到相应的特征向量（可能不止一个）</p>
+<p>定义：一个方阵A</p>
+<script type="math/tex; mode=display">
+\large A\alpha=\lambda\alpha</script><p>则$\lambda$为A的特征值，$\alpha$为A对应于$\lambda$的特征向量</p>
+<h3 class="bamboo-h-b" id="如何求特征值" style="color:blue!important">如何求特征值</h3><div></div>
+<p>我们对上述的式子进行移项并提取公因式，可以得出只要令$|A-\lambda E|=0$即可，即$(A-\lambda E)x=0$这个多元一次方程组有非零解</p>
 ]]></content>
       <categories>
         <category>考研</category>
