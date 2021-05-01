@@ -636,6 +636,41 @@
 <li>得到正交矩阵Q，且$Q^TAQ=diag(\lambda_1……\lambda_n)$（对角矩阵）</li>
 </ol>
 <h2 class="bamboo-h-b" id="二次型" style="color:red!important">二次型</h2><div></div>
+<p>首先了解二次型的定义：</p>
+<script type="math/tex; mode=display">
+\large f=x^TAx\quad(A^T=A)\\</script><p>即f为每一项都含有x~i~与x~j~相乘的多项式（i与j可以相等）</p>
+<h3 class="bamboo-h-b" id="标准型" style="color:blue!important">标准型</h3><div></div>
+<p>标准型是一种特殊的二次型，标准型中只含有平方项，有两种方法可以将二次型化为标准型：</p>
+<ol>
+<li><p>正交变换法</p>
+<p>求得正交矩阵Q使得x=Qy，即可得到$\large f=y^T\Lambda y$</p>
+</li>
+<li><p>配方法</p>
+</li>
+</ol>
+<p>规范型又是一种特殊的标准型，规范型中不仅只有平方项，平方项前的系数只有-1, 0, 1</p>
+<h3 class="bamboo-h-b" id="矩阵合同" style="color:blue!important">矩阵合同</h3><div></div>
+<p>若矩阵A，B为对称矩阵，C为可逆矩阵</p>
+<p>且$B=C^TAC$，则矩阵A与B合同</p>
+<p>充要条件：</p>
+<ol>
+<li>A与B的正负惯性指数个数相同</li>
+<li>A与B的正负特征值个数相同</li>
+</ol>
+<p>性质：</p>
+<ol>
+<li>矩阵合同是一种特殊的等价变换</li>
+<li>A与B具有相同的秩，且合同不改变矩阵的对称性</li>
+</ol>
+<h3 class="bamboo-h-b" id="正定二次型与正定矩阵" style="color:blue!important">正定二次型与正定矩阵</h3><div></div>
+<p>定义：若对于任意的$\alpha\ne0$都有$f=\alpha^TA\alpha&gt;0$</p>
+<p>则f为正定二次型，A为正定矩阵</p>
+<p>判别法：</p>
+<ol>
+<li>A的特征值都大于0</li>
+<li>A的各顺序主子式都大于0</li>
+</ol>
+
       </div>
       
         <div class="copyright">
