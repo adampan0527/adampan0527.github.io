@@ -491,8 +491,8 @@ tab内容
 \end{cases}</script></li>
 <li><p>若$\large f(x)=e^{\alpha x}(P_n(x)cos\beta x+Q_n(x)sin\beta x)$</p>
 <script type="math/tex; mode=display">
-\Large y^*=x^ke^{\alpha x}(R_l(x)cos\beta x+S_l(x)sin\beta x)\quad(l=min(n,m))\\
-\Large k=
+\large y^*=x^ke^{\alpha x}(R_l(x)cos\beta x+S_l(x)sin\beta x)\quad(l=min(n,m))\\[3ex]
+\large k=
 \begin{cases}
     0&\alpha\pm\beta i\ne r1\quad\&\&\quad\alpha\pm\beta i\ne r2\\[2ex]
     1&\alpha\pm\beta i=r1\quad||\quad\alpha\pm\beta i=r2
