@@ -482,7 +482,7 @@ tab内容
 <ol>
 <li><p>若$\large f(x)=e^{\lambda x}P_n(x)$</p>
 <script type="math/tex; mode=display">
-\large y^*=x^ke^{\lambda x}Q_n(x)\\
+\large y^*=x^ke^{\lambda x}Q_n(x)\\[3ex]
 \large k=
 \begin{cases}
     0&\lambda\ne r1\quad \&\&\quad\lambda\ne r2\\[2ex]
