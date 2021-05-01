@@ -321,11 +321,11 @@ tab内容
     <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
 <p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记/重要的公式，方便查看。</p>
-<h2 class="bamboo-h " id="重要不定积分">重要不定积分</h2><br/>
+<h2 class="bamboo-h red" id="重要不定积分">重要不定积分</h2><br/>
 <script type="math/tex; mode=display">
 \LARGE \int_{-\infty}^\infty{e^{-x^2}dx}=\sqrt{\pi}\\
 \LARGE \int_0^\frac{\pi}2f(sinx)=\int_0^\frac{\pi}2f(cosx)\\
-\LARGE \int_0^\frac{\pi}2\frac{sin^px}{sin^px+cos^px}=\frac{\pi}4\\</script><h2 class="bamboo-h " id="参数方程表示的函数求导">参数方程表示的函数求导</h2><br/>
+\LARGE \int_0^\frac{\pi}2\frac{sin^px}{sin^px+cos^px}=\frac{\pi}4\\</script><h2 class="bamboo-h red" id="参数方程表示的函数求导">参数方程表示的函数求导</h2><br/>
 <p>对于</p>
 <script type="math/tex; mode=display">
 \begin{cases}
@@ -337,7 +337,7 @@ tab内容
 \Huge \frac{d^2y}{dx^2}=\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}</script><h2 class="bamboo-h red" id="泰勒展开">泰勒展开</h2><br/>
 <p>基本公式</p>
 <script type="math/tex; mode=display">
-\LARGE f(x)=f(x_0)+f^{'}(x_0)(x-x_0)+...+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{R_n(x)}{o(x^n)}</script><span class='p red'>重要公式</span>
+\LARGE f(x)=f(x_0)+f^{'}(x_0)(x-x_0)+...+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{R_n(x)}{o(x^n)}</script><h3 class="bamboo-h blue" id="重要公式">重要公式</h3><br/>
 <script type="math/tex; mode=display">
 \LARGE e^x=1+x+\frac{x^2}{2!}+...+\frac{x^n}{n!}\\
 \LARGE ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+...+\frac{(-1)^{n-1}}{n}x^n\\
@@ -348,41 +348,41 @@ tab内容
 \LARGE (1+x)^a=1+ax+\frac{a(a-1)}{2!}x^2+...+\frac{a(a-1)...(a-n+1)}{n!}x^n</script><p>在所有的公式中$R_n(x)$为拉格朗日余项，多用于证明题</p>
 <script type="math/tex; mode=display">
 \LARGE R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}\\
-\LARGE \xi=\theta x</script><h2 class="bamboo-h " id="曲率公式">曲率公式</h2><br/>
+\LARGE \xi=\theta x</script><h2 class="bamboo-h red" id="曲率公式">曲率公式</h2><br/>
 <p>前提：<font size=5>$y=f(x)$</font>是光滑的曲线，参数方程表示为：</p>
 <script type="math/tex; mode=display">
 \begin{cases}
 \LARGE x=x(t)\\
 \LARGE y=y(t)
-\end{cases}</script><h3 class="bamboo-h-b" id="弧微分" style="color:!important">弧微分</h3><div></div>
+\end{cases}</script><h3 class="bamboo-h-b" id="弧微分" style="color:blue!important">弧微分</h3><div></div>
 <script type="math/tex; mode=display">
 \Large ds=\sqrt{1+(y')^2}\\
-\Large ds=\sqrt{(x')^2+(y')^2}</script><h3 class="bamboo-h-b" id="曲率" style="color:!important">曲率</h3><div></div>
+\Large ds=\sqrt{(x')^2+(y')^2}</script><h3 class="bamboo-h-b" id="曲率" style="color:blue!important">曲率</h3><div></div>
 <script type="math/tex; mode=display">
 \LARGE k=\frac{|y''|}{(1+(y')^2)^{\frac{3}{2}}}\\
 
-\LARGE k=\frac{|x'y''-x''y'|}{((x')^2+(y')^2)^{\frac{3}{2}}}</script><h3 class="bamboo-h-b" id="曲率半径" style="color:!important">曲率半径</h3><div></div>
+\LARGE k=\frac{|x'y''-x''y'|}{((x')^2+(y')^2)^{\frac{3}{2}}}</script><h3 class="bamboo-h-b" id="曲率半径" style="color:blue!important">曲率半径</h3><div></div>
 <script type="math/tex; mode=display">
-\Large R=\frac{1}{k}</script><h3 class="bamboo-h-b" id="曲率圆" style="color:!important">曲率圆</h3><div></div>
+\Large R=\frac{1}{k}</script><h3 class="bamboo-h-b" id="曲率圆" style="color:blue!important">曲率圆</h3><div></div>
 <p>法线凹向取一点D，使得$|MD|=R$</p>
-<h2 class="bamboo-h-b" id="向量代数与空间解析几何" style="color:!important">向量代数与空间解析几何</h2><div></div>
+<h2 class="bamboo-h-b" id="向量代数与空间解析几何" style="color:red!important">向量代数与空间解析几何</h2><div></div>
 <p>向量代数和空间解析几何在高中已经有所接触，所以基础知识会非常简单，而且这个章节的重点是各种定理的运用，只需要记好公式即可。若是能力较强则可以在理解的基础上帮助记忆，以免考试的时候忘记。</p>
-<h3 class="bamboo-h-b" id="角度" style="color:!important">角度</h3><div></div>
+<h3 class="bamboo-h-b" id="角度" style="color:blue!important">角度</h3><div></div>
 <script type="math/tex; mode=display">
 \Large \vec{OM}=(x, y, z)\\
 \Large cos\alpha=\frac{x}{\sqrt{x^2+y^2+z^2}}\\
 \Large cos\beta=\frac{y}{\sqrt{x^2+y^2+z^2}}\\
 \Large cos\gamma=\frac{z}{\sqrt{x^2+y^2+z^2}}\\
-\Large cos^2\alpha+cos^2\beta+cos^2\gamma=1</script><h3 class="bamboo-h-b" id="向量积" style="color:!important">向量积</h3><div></div>
+\Large cos^2\alpha+cos^2\beta+cos^2\gamma=1</script><h3 class="bamboo-h-b" id="向量积" style="color:blue!important">向量积</h3><div></div>
 <p>这里仅需注意在做叉乘的时候$\vec{j}$前面是正号（除非系数是负数）</p>
-<h3 class="bamboo-h-b" id="平面方程与法向量" style="color:!important">平面方程与法向量</h3><div></div>
+<h3 class="bamboo-h-b" id="平面方程与法向量" style="color:blue!important">平面方程与法向量</h3><div></div>
 <script type="math/tex; mode=display">
 \Large A(x-x_0)+B(y-y_0)+C(z-z_0)=0\\
-\Large \vec{s}=(A,B,C)</script><h3 class="bamboo-h-b" id="点到直线的距离" style="color:!important">点到直线的距离</h3><div></div>
+\Large \vec{s}=(A,B,C)</script><h3 class="bamboo-h-b" id="点到直线的距离" style="color:blue!important">点到直线的距离</h3><div></div>
 <script type="math/tex; mode=display">
-\Large d=\frac{|(x-x_0,y-y_0,z-z_0)\times(l,m,n)|}{\sqrt{l^2+m^2+n^2}}</script><h3 class="bamboo-h-b" id="空间曲面" style="color:!important">空间曲面</h3><div></div>
+\Large d=\frac{|(x-x_0,y-y_0,z-z_0)\times(l,m,n)|}{\sqrt{l^2+m^2+n^2}}</script><h3 class="bamboo-h-b" id="空间曲面" style="color:blue!important">空间曲面</h3><div></div>
 <p>空间曲面的基本方程是$F(x,y,z)=0$<br></p>
-<h4 class="bamboo-h-b" id="旋转曲面" style="color:!important">旋转曲面</h4><div></div>
+<h3 class="bamboo-h-b" id="旋转曲面" style="color:blue!important">旋转曲面</h3><div></div>
 <p>由一条直线绕轴旋转一周形成的曲面</p>
 <ol>
 <li><p>若有$f(y,z)$绕z轴旋转，则曲面方程为$f(\pm\sqrt{x^2+y^2},z)=0$<br></p>
@@ -402,7 +402,7 @@ tab内容
         \implies
         \text{消去t}</script></li>
 </ol>
-<h4 class="bamboo-h-b" id="常见二次曲面" style="color:!important">常见二次曲面</h4><div></div>
+<h3 class="bamboo-h-b" id="常见二次曲面" style="color:blue!important">常见二次曲面</h3><div></div>
 <script type="math/tex; mode=display">
 \Large\begin{align}
 &\text{椭球面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}&=1\\
@@ -415,10 +415,10 @@ tab内容
 &\text{椭圆柱面}&\frac{x^2}{a^2}+\frac{y^2}{b^2}&=1\\
 &\text{双曲柱面}&\frac{x^2}{a^2}-\frac{y^2}{b^2}&=1\\
 &\text{抛物柱面}&\frac{x^2}{2p}&=y\quad\text{(p>0)}
-\end{align}</script><h2 class="bamboo-h " id="曲线曲面积分">曲线曲面积分</h2><br/>
-<h3 class="bamboo-h " id="第一类曲线积分">第一类曲线积分</h3><br/>
+\end{align}</script><h2 class="bamboo-h red" id="曲线曲面积分">曲线曲面积分</h2><br/>
+<h3 class="bamboo-h blue" id="第一类曲线积分">第一类曲线积分</h3><br/>
 <p>第一类曲线积分是对弧长积分，可以表示为$\int_cf(x, y)ds$，特别的，当$f(x,y)=1$时，$\int_cds=s$（s为曲线c的弧长）</p>
-<span class='p red'>计算方法如下</span>
+<span class='p red'>计算方法</span>
 <ol>
 <li><p>$\large\begin{cases}x=x(t)\\y=y(t)\\\end{cases}\qquad(\alpha\le t\le\beta)\qquad((x’(t))^2+(y’(t))^2\ne0)$</p>
 <script type="math/tex; mode=display">
@@ -431,6 +431,73 @@ tab内容
 \large \int_cf(x,y)ds=\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r'(\theta))^2}d\theta</script></li>
 </ol>
 <h2 class="bamboo-h red" id="微分方程">微分方程</h2><br/>
+<h3 class="bamboo-h blue" id="一阶线性微分方程">一阶线性微分方程</h3><br/>
+<p>形式：</p>
+<script type="math/tex; mode=display">
+\Large y'+p(x)y=q(x)</script><p>通解：</p>
+<script type="math/tex; mode=display">
+\Large y=e^{-\int p(x)dx}(\int q(x)e^{\int p(x)dx}dx+c)</script><h3 class="bamboo-h blue" id="可降阶微分方程">可降阶微分方程</h3><br/>
+<ol>
+<li><script type="math/tex; mode=display">
+\Large y^{(n)}=f(x)\\
+\Large y=\int \int...\int f(x)dx...dxdx+\sum C_ix^{n-i}</script></li>
+<li><script type="math/tex; mode=display">
+\Large y^n=f(x, y')\\
+\Large p=y'\Rightarrow y''=p'\\
+\Large p'=f(x, p)</script></li>
+<li><script type="math/tex; mode=display">
+\Large y''=f(y, y')\\
+\Large p=y'\Rightarrow y''=p\frac{dp}{dy}</script></li>
+</ol>
+<h3 class="bamboo-h " id="二阶常系数齐次线性微分方程">二阶常系数齐次线性微分方程</h3><br/>
+<p>形式：$\large y’’+py’+qy=0$</p>
+<p>通解：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>特征方程的根</th>
+<th>通解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\large r1\ne r2$</td>
+<td>$\Large y=C_1e^{r_1x}+C_2e^{r_2x}$</td>
+</tr>
+<tr>
+<td>$\large r1=r2=r$</td>
+<td>$\Large y=(C_1+C_2x)e^{rx}$</td>
+</tr>
+<tr>
+<td>$\large r=\alpha \pm\beta i$</td>
+<td>$\Large y=e^{\alpha x}(C_1cos\beta x+C_2sin\beta x)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="bamboo-h " id="二阶常系数非齐次线性微分方程">二阶常系数非齐次线性微分方程</h3><br/>
+<p>形式：$\large y’’+py’+qy=f(x)$</p>
+<p>特解：</p>
+<ol>
+<li><p>若$\large f(x)=e^{\lambda x}P_n(x)$</p>
+<script type="math/tex; mode=display">
+\large y^*=x^ke^{\lambda x}Q_n(x)\\
+\large k=
+\begin{cases}
+    0&\lambda\ne r1\quad \&\&\quad\lambda\ne r2\\[2ex]
+    1&\lambda=r1\quad||\quad\lambda=r2\\[2ex]
+    2&\lambda=r1=r2
+\end{cases}</script></li>
+<li><p>若$\large f(x)=e^{\alpha x}(P_n(x)cos\beta x+Q_n(x)sin\beta x)$</p>
+<script type="math/tex; mode=display">
+\Large y^*=x^ke^{\alpha x}(R_l(x)cos\beta x+S_l(x)sin\beta x)\quad(l=min(n,m))\\
+\Large k=
+\begin{cases}
+    0&\alpha\pm\beta i\ne r1\quad\&\&\quad\alpha\pm\beta i\ne r2\\[2ex]
+    1&\alpha\pm\beta i=r1\quad||\quad\alpha\pm\beta i=r2
+\end{cases}</script></li>
+</ol>
 ]]></content>
       <categories>
         <category>考研</category>
