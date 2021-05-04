@@ -177,6 +177,7 @@ int main() &#123;
 <p>MIPS：每秒执行百万条指令数(Million Instruction Per Second)</p>
 <p>ACC：累加器(Accumulator)</p>
 <p>MQ：乘商寄存器(Multiplier-Quotient Register)</p>
+<p>CF：进位标志(Carry Flag)</p>
 <h2 class="bamboo-h " id="公式">公式</h2><br/>
 <h3 id="计算MIPS"><a href="#计算MIPS" class="headerlink" title="计算MIPS"></a>计算MIPS</h3><script type="math/tex; mode=display">
 MIPS=\frac{I_n}{t_{cpu}\times 10^6}=\frac {f}{CPI \times 10^6}\\
@@ -449,7 +450,7 @@ tab内容
 \Large y''=f(y, y')\\
 \Large p=y'\Rightarrow y''=p\frac{dp}{dy}</script></li>
 </ol>
-<h3 class="bamboo-h " id="二阶常系数齐次线性微分方程">二阶常系数齐次线性微分方程</h3><br/>
+<h3 class="bamboo-h blue" id="二阶常系数齐次线性微分方程">二阶常系数齐次线性微分方程</h3><br/>
 <p>形式：$\large y’’+py’+qy=0$</p>
 <p>通解：</p>
 <div class="table-container">
@@ -476,7 +477,7 @@ tab内容
 </tbody>
 </table>
 </div>
-<h3 class="bamboo-h " id="二阶常系数非齐次线性微分方程">二阶常系数非齐次线性微分方程</h3><br/>
+<h3 class="bamboo-h blue" id="二阶常系数非齐次线性微分方程">二阶常系数非齐次线性微分方程</h3><br/>
 <p>形式：$\large y’’+py’+qy=f(x)$</p>
 <p>特解：</p>
 <ol>
@@ -603,6 +604,23 @@ tab内容
       </categories>
       <tags>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计组笔记</title>
+    <url>/2021/05/04/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 class="bamboo-h " id="计组笔记">计组笔记</h1><br/>
+<h2 class="bamboo-h red" id="细碎知识点">细碎知识点</h2><br/>
+<ol>
+<li>主存（与Cache）是CPU唯一可以直接访问的存储器</li>
+</ol>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
 </search>
