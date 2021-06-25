@@ -561,10 +561,55 @@
       
       <div class="post-tags-categories">
         
+        <div class="tags">
+          <i class="iconfont icontag"></i>
+          
+            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/" class="">
+              操作系统原理
+            </a>
+          
+        </div>
+        
+        
+        <div class="categories">
+          <i class="iconfont iconbookmark1"></i>
+          
+            <a href="/categories/%E8%80%83%E7%A0%94/" class="">
+              考研
+            </a>
+          
+        </div>
         
       </div>
       <div class="post-content">
-        
+        <h1 id="操作系统原理重难点"><a href="#操作系统原理重难点" class="headerlink" title="操作系统原理重难点"></a>操作系统原理重难点</h1><h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><h3 id="死锁避免"><a href="#死锁避免" class="headerlink" title="死锁避免"></a>死锁避免</h3><h4 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">vector&lt;int&gt; Available(m);
+vector&lt;int&gt; Max[n](m);
+vector&lt;int&gt; Need[n](m);
+vector&lt;int&gt; Allocation[n](m);
+vector&lt;int&gt; Request[n];
+for(auto it: Request[i])&#123;
+    if(it&gt;Need[i][j])&#123;
+        return error;
+    &#125; else &#123;
+        if(Request[i][j]&lt;&#x3D;Available[j])&#123;
+            Available-&#x3D;Request[i];
+            Need[i]-&#x3D;Request[i];
+            Allocation[i]+&#x3D;Request[i]
+        &#125; else wait(it);
+        safeCheck();
+    &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="安全性算法"><a href="#安全性算法" class="headerlink" title="安全性算法"></a>安全性算法</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">saveCheck()&#123;
+    vector&lt;int&gt; Work &#x3D; Available;
+    int cnt&#x3D;n;
+    while(cnt--)&#123;
+        if(find(P[i]) let Need[i]&lt;&#x3D;Work)&#123;
+            Work+&#x3D;Allocation[i];
+        &#125; else break;
+    &#125;
+    return cnt&#x3D;&#x3D;0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
       </div>
       
         <div class="copyright">
