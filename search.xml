@@ -669,12 +669,12 @@ for(auto it: Request[i])&#123;
 <h2 class="bamboo-h-b" id="矩阵的秩" style="color:red!important">矩阵的秩</h2><div></div>
 <p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
 <script type="math/tex; mode=display">
-\large r(A+B)\le r(A)+r(B)\\
-\large r(AB)\le min(r(A), r(B))\\
-\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\
-\large r(A^TA)=r(A)\quad (A(m\times n))\\
-\large r(A_{m\times n})=n\implies r(AB)=r(B)\\
-\large r(B_{n\times s})=n\implies r(AB)=r(A)\\
+\large r(A+B)\le r(A)+r(B)\\[2ex]
+\large r(AB)\le min(r(A), r(B))\\[2ex]
+\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\[2ex]
+\large r(A^TA)=r(A)\quad (A(m\times n))\\[2ex]
+\large r(A_{m\times n})=n\implies r(AB)=r(B)\\[2ex]
+\large r(B_{n\times s})=n\implies r(AB)=r(A)\\[2ex]
 \large r(A_*)=
 \begin{cases}
     n,\quad r(A)=n\\
