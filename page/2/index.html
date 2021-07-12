@@ -97,7 +97,7 @@
 
     <!-- 头部导航等 -->
     
-<header class="header " id="navHeader"
+<header class="header header-bg-color" id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
 >
@@ -432,12 +432,10 @@
 
     <!-- 当头部导航设置为背景透明的时候  -->
     
-      <script src="/js/header/index.js"></script>
-    
 </header>
 
     <!-- 内容区域 -->
-    <main class="main" style="margin-top: 0;">
+    <main class="main" style="margin-top: 60px;">
       <!-- 首页轮播 -->
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 
@@ -447,9 +445,9 @@
 
 
 
-<div class="swiper-length" style="display: none;">1</div>
+<div class="swiper-length" style="display: none;">2</div>
 <div id="appSwiper"
-  class="swiper-no-swiping"
+  class=""
   @mouseenter="stopAutoPlay()" 
   @mouseleave="startAutoPlay()"
 >
@@ -473,6 +471,37 @@
         
       
         
+        
+          
+          <swiper-slide>
+            <div class="item swiper-lazy" data-background="/medias/t2.jpg" style=" background-size: 90000px; 
+            background-position: left center;" style="position: relative;">
+            <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
+              <div class="flag" style="z-index: 2;">
+                <div class="img-mask swiper-lazy" data-background="/medias/t2.jpg" style="height: 100%; background-size: cover; 
+                  background-position: center center;">
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
+                </div>
+                <div class="flag-text">
+                  <div class="flag-text-content">
+                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
+                      <a href="/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/">
+                        408 计组公式与缩写
+                      </a>
+                    </div>
+                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">计组公式与缩写
+名词缩写
+MAR：地址寄存器(Memory Address Register)
+MDR：数据寄存器(Memory Data Register)
+ALU：算数逻辑单元(Arithmetic Logic Unit)
+CPU：中央</div>
+                  </div>
+                  <div class="bottom-one-btn ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">Read More</a></div>
+                </div>
+              </div>
+            </div>
+
+          </swiper-slide>
         
       
         
@@ -522,9 +551,9 @@
         
         
       
-    <div class="swiper-pagination" slot="pagination" style="display: none;"></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="display: none;"></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style="display: none;"></div>
+    <div class="swiper-pagination" slot="pagination" style=""></div>
+    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style=""></div>
+    <div class="swiper-button-next swiper-button-white" slot="button-next" style=""></div>
     
   </swiper>
   
@@ -746,13 +775,6 @@
 }
 /* 当头部导航设置为背景透明的时候 */
 
-  .swiper-slide {
-    height: 400px;
-  }
-  .flag-text {
-    top: 80px;
-  }
-
 
 @media (min-width: 992px) {
   .swiper-button-prev {
@@ -853,18 +875,6 @@
 }
 /* 当头部导航设置为背景透明的时候 */
 
-  @media (max-width: 992px) {
-    .flag-text {
-      top: 60px;
-      height: 80%;
-    }
-  }
-  @media (max-width: 551px) {
-    .swiper-slide {
-      height: 310px;
-    }
-  }
-
 
 /* 文字或者按钮居中显示 */
 
@@ -922,8 +932,6 @@
   }
   .swiper-slide {
     height: calc(100vh - 60px);
-    
-      height: 100vh;
     
   }
   .flag-text {
