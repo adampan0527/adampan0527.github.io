@@ -61,6 +61,29 @@
     <!-- 预加载动画 -->
     <!-- 页面预加载动画 -->
 
+<div id='loader'>
+  <link rel="stylesheet" href="/js/loaded/index.css" >
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="configure-border-1">
+      <div class="configure-core"></div>
+    </div>
+    <div class="configure-border-2">
+      <div class="configure-core"></div>
+    </div>
+    <div class="loading-word">loading...</div>
+  </div>
+</div>
+
+<script>
+  var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load',endLoading);
+</script>
+
     
     <!-- 判断是否为暗黑风格 -->
     <!-- 判断是否为黑夜模式 -->
@@ -761,7 +784,7 @@
       <h3 class="motto-title">座右铭</h3>
       <div class="motto-content">
         <p>
-          沉淀后我愿意做个温暖的人，有自己的喜好，有自己的原则，有自己的信仰，不急功近利，不浮夸轻薄。宠辱不惊，淡定安逸，心静如水，不忘初心，方得始终。——凌茜  
+          喜欢喜欢喜欢  
         </p> 
       </div>
   </div>
@@ -1626,10 +1649,6 @@ SolveThe very first thing we should know is we are using Manhattan di
 
 <!-- 花瓣和雪花飘落 -->
 <!-- 雪花和花瓣特效 -->
-
-  
-    <script src="/js/falling/sakura.js"></script>
-  
 
 
 
