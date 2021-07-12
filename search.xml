@@ -192,6 +192,35 @@ t_{cpu}=N_c·T</script>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/16/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>bamboo instruction</title>
     <url>/2021/03/08/bamboo-instruction/</url>
     <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
@@ -236,35 +265,6 @@ tab内容
       <tags>
         <tag>instructions</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/02/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>my first blog</title>
@@ -348,6 +348,23 @@ for(auto it: Request[i])&#123;
         <tag>基础</tag>
         <tag>公式</tag>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计组笔记</title>
+    <url>/2021/05/04/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 class="bamboo-h " id="计组笔记">计组笔记</h1><br/>
+<h2 class="bamboo-h red" id="细碎知识点">细碎知识点</h2><br/>
+<ol>
+<li>主存（与Cache）是CPU唯一可以直接访问的存储器</li>
+</ol>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -452,53 +469,6 @@ for(auto it: Request[i])&#123;
       </categories>
       <tags>
         <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性代数杂项</title>
-    <url>/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="杂项" style="color:!important">杂项</h1><div></div>
-<p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
-<h2 class="bamboo-h-b" id="矩阵的秩" style="color:red!important">矩阵的秩</h2><div></div>
-<p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
-<script type="math/tex; mode=display">
-\large r(A+B)\le r(A)+r(B)\\[2ex]
-\large r(AB)\le min(r(A), r(B))\\[2ex]
-\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\[2ex]
-\large r(A^TA)=r(A)\quad (A(m\times n))\\[2ex]
-\large r(A_{m\times n})=n\implies r(AB)=r(B)\\[2ex]
-\large r(B_{n\times s})=n\implies r(AB)=r(A)\\[2ex]
-\large r(A_*)=
-\begin{cases}
-    n,\quad r(A)=n\\
-    1,\quad r(A)=n-1\\
-    0,\quad r(A)<n-1
-\end{cases}</script><h2 class="bamboo-h-b" id="矩阵与向量组等价" style="color:red!important">矩阵与向量组等价</h2><div></div>
-<p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
-<p>向量组等价：两个向量组表示相同维度的空间</p>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计组笔记</title>
-    <url>/2021/05/04/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 class="bamboo-h " id="计组笔记">计组笔记</h1><br/>
-<h2 class="bamboo-h red" id="细碎知识点">细碎知识点</h2><br/>
-<ol>
-<li>主存（与Cache）是CPU唯一可以直接访问的存储器</li>
-</ol>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -689,6 +659,36 @@ for(auto it: Request[i])&#123;
       </categories>
       <tags>
         <tag>高等数学公式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数杂项</title>
+    <url>/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="杂项" style="color:!important">杂项</h1><div></div>
+<p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
+<h2 class="bamboo-h-b" id="矩阵的秩" style="color:red!important">矩阵的秩</h2><div></div>
+<p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
+<script type="math/tex; mode=display">
+\large r(A+B)\le r(A)+r(B)\\[2ex]
+\large r(AB)\le min(r(A), r(B))\\[2ex]
+\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\[2ex]
+\large r(A^TA)=r(A)\quad (A(m\times n))\\[2ex]
+\large r(A_{m\times n})=n\implies r(AB)=r(B)\\[2ex]
+\large r(B_{n\times s})=n\implies r(AB)=r(A)\\[2ex]
+\large r(A_*)=
+\begin{cases}
+    n,\quad r(A)=n\\
+    1,\quad r(A)=n-1\\
+    0,\quad r(A)<n-1
+\end{cases}</script><h2 class="bamboo-h-b" id="矩阵与向量组等价" style="color:red!important">矩阵与向量组等价</h2><div></div>
+<p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
+<p>向量组等价：两个向量组表示相同维度的空间</p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
       </tags>
   </entry>
 </search>
