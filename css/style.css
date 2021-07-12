@@ -1249,7 +1249,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   color: #42b983;
 }
 .bg-light-floor-categories {
-  background: ;
+  background: rgba(255,255,255,0);
   background-size: cover;
   background-position: center center;
 }
@@ -1361,6 +1361,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
 #categories .card .card-content .category-title {
   font-size: 1.6em;
   color: #273849;
+  color: rgba(255,255,255,0);
   text-align: center;
   padding: 15px 0;
 }
@@ -1583,7 +1584,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   box-sizing: border-box;
   transition: all 0.3s;
   position: relative;
-  background: url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png");
+  background: url("/medias/t1.png");
 }
 .motto .motto-title {
   text-align: center;
@@ -2080,7 +2081,7 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   border-radius: 10px;
 }
 .bg-light-floor-categoryDetail {
-  background: ;
+  background: rgba(255,255,255,0);
   background-size: cover;
   background-position: center center;
 }

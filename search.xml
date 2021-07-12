@@ -192,21 +192,6 @@ t_{cpu}=N_c·T</script>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>Tips for interactive problem</title>
-    <url>/2021/02/22/Tips-for-interactive-problem/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
-<p>While solving interactive problems, we should</p>
-<ol>
-<li>Let “ask” function do the query</li>
-<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CF</category>
-        <category>tips</category>
-      </categories>
-  </entry>
-  <entry>
     <title>bamboo instruction</title>
     <url>/2021/03/08/bamboo-instruction/</url>
     <content><![CDATA[<h1 class="bamboo-h " id="hexo bamboo特效介绍">hexo bamboo特效介绍</h1><br/>
@@ -251,6 +236,21 @@ tab内容
       <tags>
         <tag>instructions</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Tips for interactive problem</title>
+    <url>/2021/02/22/Tips-for-interactive-problem/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="Little tips" style="color:!important">Little tips</h1><div></div>
+<p>While solving interactive problems, we should</p>
+<ol>
+<li>Let “ask” function do the query</li>
+<li>Never forget <span class='p blue'>cout.flush()</span>, even you have used endl</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CF</category>
+        <category>tips</category>
+      </categories>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -351,36 +351,6 @@ for(auto it: Request[i])&#123;
       </tags>
   </entry>
   <entry>
-    <title>线性代数杂项</title>
-    <url>/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="杂项" style="color:!important">杂项</h1><div></div>
-<p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
-<h2 class="bamboo-h-b" id="矩阵的秩" style="color:red!important">矩阵的秩</h2><div></div>
-<p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
-<script type="math/tex; mode=display">
-\large r(A+B)\le r(A)+r(B)\\[2ex]
-\large r(AB)\le min(r(A), r(B))\\[2ex]
-\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\[2ex]
-\large r(A^TA)=r(A)\quad (A(m\times n))\\[2ex]
-\large r(A_{m\times n})=n\implies r(AB)=r(B)\\[2ex]
-\large r(B_{n\times s})=n\implies r(AB)=r(A)\\[2ex]
-\large r(A_*)=
-\begin{cases}
-    n,\quad r(A)=n\\
-    1,\quad r(A)=n-1\\
-    0,\quad r(A)<n-1
-\end{cases}</script><h2 class="bamboo-h-b" id="矩阵与向量组等价" style="color:red!important">矩阵与向量组等价</h2><div></div>
-<p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
-<p>向量组等价：两个向量组表示相同维度的空间</p>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>线性代数中的特殊矩阵与二次型</title>
     <url>/2021/04/27/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B8%8E%E4%BA%8C%E6%AC%A1%E5%9E%8B/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="特殊矩阵与二次型" style="color:!important">特殊矩阵与二次型</h1><div></div>
@@ -476,6 +446,36 @@ for(auto it: Request[i])&#123;
 <li>A的特征值都大于0</li>
 <li>A的各顺序主子式都大于0</li>
 </ol>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数杂项</title>
+    <url>/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="杂项" style="color:!important">杂项</h1><div></div>
+<p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
+<h2 class="bamboo-h-b" id="矩阵的秩" style="color:red!important">矩阵的秩</h2><div></div>
+<p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
+<script type="math/tex; mode=display">
+\large r(A+B)\le r(A)+r(B)\\[2ex]
+\large r(AB)\le min(r(A), r(B))\\[2ex]
+\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\[2ex]
+\large r(A^TA)=r(A)\quad (A(m\times n))\\[2ex]
+\large r(A_{m\times n})=n\implies r(AB)=r(B)\\[2ex]
+\large r(B_{n\times s})=n\implies r(AB)=r(A)\\[2ex]
+\large r(A_*)=
+\begin{cases}
+    n,\quad r(A)=n\\
+    1,\quad r(A)=n-1\\
+    0,\quad r(A)<n-1
+\end{cases}</script><h2 class="bamboo-h-b" id="矩阵与向量组等价" style="color:red!important">矩阵与向量组等价</h2><div></div>
+<p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
+<p>向量组等价：两个向量组表示相同维度的空间</p>
 ]]></content>
       <categories>
         <category>考研</category>
