@@ -4,8 +4,8 @@
     <title>1486B Eastern Exhibition</title>
     <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/contest/1486/problem/B"><h1 class="bamboo-h-b" id="Eastern Exhibition" style="color:!important">Eastern Exhibition</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" alt="CF 1486B Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" alt="CF 1486B S.png"></p>
+<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img "" class="lazyload placeholder" data-original="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="CF 1486B Q.png"></p>
+<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img "" class="lazyload placeholder" data-original="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="CF 1486B S.png"></p>
 <h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p>
 <pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">for(int i&#x3D;0; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];
 sort(x.begin(), x.end());
@@ -77,8 +77,8 @@ int main() &#123;
     <title>1490F Equalize the Array</title>
     <url>/2021/02/19/1490F-Equalize-the-Array/</url>
     <content><![CDATA[<p><a href="https://codeforces.com/problemset/problem/1490/F"><h1 class="bamboo-h-b" id="Equalize the Array" style="color:!important">Equalize the Array</h1><div></div></a></p>
-<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img src="https://img13.360buyimg.com/ddimg/jfs/t1/155245/36/17707/109508/602eae8dE7453c7e9/4bd6b888f152de36.png" alt="CF 1490F Q.png"></p>
-<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img src="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png" alt="CF 1490F S.png"></p>
+<h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img "" class="lazyload placeholder" data-original="https://img13.360buyimg.com/ddimg/jfs/t1/155245/36/17707/109508/602eae8dE7453c7e9/4bd6b888f152de36.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="CF 1490F Q.png"></p>
+<h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img "" class="lazyload placeholder" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="CF 1490F S.png"></p>
 <h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array <span class='p red'>beautiful</span>, which means every number in the array appears same times</p>
 <h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p>
 <pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">ll a[maxn];
@@ -351,6 +351,157 @@ for(auto it: Request[i])&#123;
       </tags>
   </entry>
   <entry>
+    <title>线性代数杂项</title>
+    <url>/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="杂项" style="color:!important">杂项</h1><div></div>
+<p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
+<h2 class="bamboo-h-b" id="矩阵的秩" style="color:red!important">矩阵的秩</h2><div></div>
+<p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
+<script type="math/tex; mode=display">
+\large r(A+B)\le r(A)+r(B)\\[2ex]
+\large r(AB)\le min(r(A), r(B))\\[2ex]
+\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\[2ex]
+\large r(A^TA)=r(A)\quad (A(m\times n))\\[2ex]
+\large r(A_{m\times n})=n\implies r(AB)=r(B)\\[2ex]
+\large r(B_{n\times s})=n\implies r(AB)=r(A)\\[2ex]
+\large r(A_*)=
+\begin{cases}
+    n,\quad r(A)=n\\
+    1,\quad r(A)=n-1\\
+    0,\quad r(A)<n-1
+\end{cases}</script><h2 class="bamboo-h-b" id="矩阵与向量组等价" style="color:red!important">矩阵与向量组等价</h2><div></div>
+<p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
+<p>向量组等价：两个向量组表示相同维度的空间</p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数中的特殊矩阵与二次型</title>
+    <url>/2021/04/27/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B8%8E%E4%BA%8C%E6%AC%A1%E5%9E%8B/</url>
+    <content><![CDATA[<h1 class="bamboo-h-b" id="特殊矩阵与二次型" style="color:!important">特殊矩阵与二次型</h1><div></div>
+<p>在线性代数中有各种奇奇怪怪的特殊矩阵，比如实对称矩阵、逆矩阵等等，这些矩阵都有一些特殊的性质，在后续的特征值、特征向量、二次型中都有相应的联系，所以在线性代数中一定要首先把握好矩阵的基本性质，再考虑如何去使用。</p>
+<h2 class="bamboo-h-b" id="实对称矩阵" style="color:red!important">实对称矩阵</h2><div></div>
+<p>实对称矩阵的<strong>定义</strong>非常简单，一个矩阵的转置和这个矩阵本身相等（相等和转置不知道的可以放弃考研了）</p>
+<p>实对称矩阵的用途在后续的模块中会有提到，在这里就不特别列出来了。</p>
+<h2 class="bamboo-h-b" id="逆矩阵" style="color:red!important">逆矩阵</h2><div></div>
+<p>逆矩阵是一个非常特殊的矩阵，一个矩阵的逆矩阵与该矩阵做乘法运算会得到单位矩阵，也就是$A^{-1}*A=E$</p>
+<p>这里讲一些特殊的概念（此概念与线性代数无关，与考研无关，有兴趣的兄弟们可以看看）：</p>
+<h3 class="bamboo-h-b" id="单位元" style="color:blue!important">单位元</h3><div></div>
+<p>单位元是某一运算中特殊的对象，如在加法运算中，单位元就是0，因为任何数加上0都是这个数本身，同理，在乘法运算中，单位元就是1。</p>
+<p>对上面这句话稍作理解，相信对单位元已经有了一个大概的认识，某个操作的单位元就是任意一个符合进行此操作的前置要求的元素与单位元进行这个运算，结果依旧是该元素。</p>
+<p>在矩阵乘法的运算中，单位元就是对应阶数的单位矩阵E，因为E和任意矩阵做矩阵乘法运算，得出来的结果都会是这个矩阵本身。</p>
+<h3 class="bamboo-h-b" id="逆元" style="color:blue!important">逆元</h3><div></div>
+<p>了解逆元需要首先知道单位元的概念。</p>
+<p>一个对象与该对象的逆元做特定运算，得到的结果是这个运算的单位元。</p>
+<p>你可以把求逆元的过程看作是单位元对某一对象做该运算的逆运算。</p>
+<p>这么说可能有些复杂，下面我给出一些例子：</p>
+<ol>
+<li>加法运算中的单位元是0，一个数的逆元是这个数的相反数（加法的逆运算是减法）</li>
+<li>乘法运算中的单位元是1，一个数的逆元是这个数的倒数（乘法的逆运算是除法）</li>
+<li>矩阵乘法中的单位元是E，一个矩阵的逆元就是这个矩阵的逆矩阵</li>
+</ol>
+<p>为什么我在之前的描述中都用了“对象”这个词，而不是“数”，因为某些运算的对象并不是一个数，如矩阵乘法，求逆等等。</p>
+<h3 class="bamboo-h-b" id="逆矩阵与逆元的关系" style="color:blue!important">逆矩阵与逆元的关系</h3><div></div>
+<p>逆矩阵就是在矩阵乘法这个运算中，某一矩阵的逆元就是这个矩阵的逆矩阵。</p>
+<p>众所周知，不是所有矩阵都可逆，也就是说，不是所有矩阵都有逆元，这一点也很好理解，因为在乘法运算中，0就没有逆元（$\frac{1}{0}$无意义）</p>
+<h2 class="bamboo-h-b" id="特征值与特征向量" style="color:red!important">特征值与特征向量</h2><div></div>
+<p>特征值与特征向量是相互绑定的一对概念，对于某个矩阵来说，求出它的特征值，就能得到相应的特征向量（可能不止一个）</p>
+<p>定义：一个方阵A</p>
+<script type="math/tex; mode=display">
+\large A\alpha=\lambda\alpha</script><p>则$\lambda$为A的特征值，$\alpha$为A对应于$\lambda$的特征向量</p>
+<h3 class="bamboo-h-b" id="特征值的含义" style="color:blue!important">特征值的含义</h3><div></div>
+<p>首先看等式的左边，对一个向量左乘一个矩阵代表对这个向量进行线性变换，也就是说，左边代表的是$\alpha$进行矩阵A的线性变换后的新向量</p>
+<p>再来看等式的右边，右边就非常好理解了，是将$\alpha$变为原本的$\lambda$倍</p>
+<p>两个向量相等，也就是说向量$\lambda$在进行矩阵A的线性变换后的变化等同于对其长度的改变，长度的改变值就是特征值</p>
+<h3 class="bamboo-h-b" id="如何求特征值" style="color:blue!important">如何求特征值</h3><div></div>
+<p>我们对上述的式子进行移项并提取公因式，可以得出只要令$|A-\lambda E|=0$即可，即$(A-\lambda E)x=0$这个多元一次方程组有非零解</p>
+<h2 class="bamboo-h-b" id="向量" style="color:red!important">向量</h2><div></div>
+<p>可能看到这里会有点好奇为什么把向量放在这里，其实向量本质上就是一个一维矩阵，或者说，n*m的矩阵本质上就是n个m维向量并列组成的</p>
+<h3 class="bamboo-h-b" id="正交矩阵" style="color:blue!important">正交矩阵</h3><div></div>
+<p>正交矩阵就是每一对向量都互相正交（也就是垂直），特别需要注意的是，正交矩阵中的向量必须是单位向量</p>
+<h3 class="bamboo-h-b" id="施密特正交法" style="color:blue!important">施密特正交法</h3><div></div>
+<p>对于$\alpha_1, \alpha_2, \alpha_3$，取</p>
+<script type="math/tex; mode=display">
+\begin{align}
+\large \beta_1 & =\alpha_1\\
+\large \beta_2 & =\alpha_2-\frac{(\alpha_2, \beta_1)}{||\beta_1||}\beta_1\\
+\large \beta_3 & =\alpha_3-\frac{(\alpha_3, \beta_1)}{||\beta_1||}\beta_1-\frac{(\alpha_3, \beta_2)}{||\beta_2||}\beta_2
+\end{align}</script><p>此处的$\beta_1, \beta_2, \beta_3$三个向量是互相正交的，接下来只需要将这三个向量分别单位化即可</p>
+<h2 class="bamboo-h-b" id="实对称矩阵的相似对角化" style="color:red!important">实对称矩阵的相似对角化</h2><div></div>
+<ol>
+<li>求出矩阵A的所有特征值</li>
+<li>求出矩阵A的所有特征向量</li>
+<li>对相同特征值的特征向量正交化</li>
+<li>对所有特征向量单位化</li>
+<li>得到正交矩阵Q，且$Q^TAQ=diag(\lambda_1……\lambda_n)$（对角矩阵）</li>
+</ol>
+<h2 class="bamboo-h-b" id="二次型" style="color:red!important">二次型</h2><div></div>
+<p>首先了解二次型的定义：</p>
+<script type="math/tex; mode=display">
+\large f=x^TAx\quad(A^T=A)\\</script><p>即f为每一项都含有x~i~与x~j~相乘的多项式（i与j可以相等）</p>
+<h3 class="bamboo-h-b" id="标准型" style="color:blue!important">标准型</h3><div></div>
+<p>标准型是一种特殊的二次型，标准型中只含有平方项，有两种方法可以将二次型化为标准型：</p>
+<ol>
+<li><p>正交变换法</p>
+<p>求得正交矩阵Q使得x=Qy，即可得到$\large f=y^T\Lambda y$</p>
+<p>其中$\Lambda$由A的特征值构成，Q中的向量为对应列的特征值的特征向量（需要将向量正交化）</p>
+</li>
+<li><p>配方法</p>
+</li>
+</ol>
+<p>规范型又是一种特殊的标准型，规范型中不仅只有平方项，平方项前的系数只有-1, 0, 1</p>
+<h3 class="bamboo-h-b" id="矩阵合同" style="color:blue!important">矩阵合同</h3><div></div>
+<p>若矩阵A，B为对称矩阵，C为可逆矩阵</p>
+<p>且$B=C^TAC$，则矩阵A与B合同</p>
+<p>充要条件：</p>
+<ol>
+<li>A与B的正负惯性指数个数相同</li>
+<li>A与B的正负特征值个数相同</li>
+</ol>
+<p>性质：</p>
+<ol>
+<li>矩阵合同是一种特殊的等价变换</li>
+<li>A与B具有相同的秩，且合同不改变矩阵的对称性</li>
+</ol>
+<h3 class="bamboo-h-b" id="正定二次型与正定矩阵" style="color:blue!important">正定二次型与正定矩阵</h3><div></div>
+<p>定义：若对于任意的$\alpha\ne0$都有$f=\alpha^TA\alpha&gt;0$</p>
+<p>则f为正定二次型，A为正定矩阵</p>
+<p>判别法：</p>
+<ol>
+<li>A的特征值都大于0</li>
+<li>A的各顺序主子式都大于0</li>
+</ol>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计组笔记</title>
+    <url>/2021/05/04/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 class="bamboo-h " id="计组笔记">计组笔记</h1><br/>
+<h2 class="bamboo-h red" id="细碎知识点">细碎知识点</h2><br/>
+<ol>
+<li>主存（与Cache）是CPU唯一可以直接访问的存储器</li>
+</ol>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>计组</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>高数公式合集</title>
     <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
     <content><![CDATA[<h1 class="bamboo-h-b" id="考研高数公式合集" style="color:!important">考研高数公式合集</h1><div></div>
@@ -538,157 +689,6 @@ for(auto it: Request[i])&#123;
       </categories>
       <tags>
         <tag>高等数学公式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性代数中的特殊矩阵与二次型</title>
-    <url>/2021/04/27/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B8%8E%E4%BA%8C%E6%AC%A1%E5%9E%8B/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="特殊矩阵与二次型" style="color:!important">特殊矩阵与二次型</h1><div></div>
-<p>在线性代数中有各种奇奇怪怪的特殊矩阵，比如实对称矩阵、逆矩阵等等，这些矩阵都有一些特殊的性质，在后续的特征值、特征向量、二次型中都有相应的联系，所以在线性代数中一定要首先把握好矩阵的基本性质，再考虑如何去使用。</p>
-<h2 class="bamboo-h-b" id="实对称矩阵" style="color:red!important">实对称矩阵</h2><div></div>
-<p>实对称矩阵的<strong>定义</strong>非常简单，一个矩阵的转置和这个矩阵本身相等（相等和转置不知道的可以放弃考研了）</p>
-<p>实对称矩阵的用途在后续的模块中会有提到，在这里就不特别列出来了。</p>
-<h2 class="bamboo-h-b" id="逆矩阵" style="color:red!important">逆矩阵</h2><div></div>
-<p>逆矩阵是一个非常特殊的矩阵，一个矩阵的逆矩阵与该矩阵做乘法运算会得到单位矩阵，也就是$A^{-1}*A=E$</p>
-<p>这里讲一些特殊的概念（此概念与线性代数无关，与考研无关，有兴趣的兄弟们可以看看）：</p>
-<h3 class="bamboo-h-b" id="单位元" style="color:blue!important">单位元</h3><div></div>
-<p>单位元是某一运算中特殊的对象，如在加法运算中，单位元就是0，因为任何数加上0都是这个数本身，同理，在乘法运算中，单位元就是1。</p>
-<p>对上面这句话稍作理解，相信对单位元已经有了一个大概的认识，某个操作的单位元就是任意一个符合进行此操作的前置要求的元素与单位元进行这个运算，结果依旧是该元素。</p>
-<p>在矩阵乘法的运算中，单位元就是对应阶数的单位矩阵E，因为E和任意矩阵做矩阵乘法运算，得出来的结果都会是这个矩阵本身。</p>
-<h3 class="bamboo-h-b" id="逆元" style="color:blue!important">逆元</h3><div></div>
-<p>了解逆元需要首先知道单位元的概念。</p>
-<p>一个对象与该对象的逆元做特定运算，得到的结果是这个运算的单位元。</p>
-<p>你可以把求逆元的过程看作是单位元对某一对象做该运算的逆运算。</p>
-<p>这么说可能有些复杂，下面我给出一些例子：</p>
-<ol>
-<li>加法运算中的单位元是0，一个数的逆元是这个数的相反数（加法的逆运算是减法）</li>
-<li>乘法运算中的单位元是1，一个数的逆元是这个数的倒数（乘法的逆运算是除法）</li>
-<li>矩阵乘法中的单位元是E，一个矩阵的逆元就是这个矩阵的逆矩阵</li>
-</ol>
-<p>为什么我在之前的描述中都用了“对象”这个词，而不是“数”，因为某些运算的对象并不是一个数，如矩阵乘法，求逆等等。</p>
-<h3 class="bamboo-h-b" id="逆矩阵与逆元的关系" style="color:blue!important">逆矩阵与逆元的关系</h3><div></div>
-<p>逆矩阵就是在矩阵乘法这个运算中，某一矩阵的逆元就是这个矩阵的逆矩阵。</p>
-<p>众所周知，不是所有矩阵都可逆，也就是说，不是所有矩阵都有逆元，这一点也很好理解，因为在乘法运算中，0就没有逆元（$\frac{1}{0}$无意义）</p>
-<h2 class="bamboo-h-b" id="特征值与特征向量" style="color:red!important">特征值与特征向量</h2><div></div>
-<p>特征值与特征向量是相互绑定的一对概念，对于某个矩阵来说，求出它的特征值，就能得到相应的特征向量（可能不止一个）</p>
-<p>定义：一个方阵A</p>
-<script type="math/tex; mode=display">
-\large A\alpha=\lambda\alpha</script><p>则$\lambda$为A的特征值，$\alpha$为A对应于$\lambda$的特征向量</p>
-<h3 class="bamboo-h-b" id="特征值的含义" style="color:blue!important">特征值的含义</h3><div></div>
-<p>首先看等式的左边，对一个向量左乘一个矩阵代表对这个向量进行线性变换，也就是说，左边代表的是$\alpha$进行矩阵A的线性变换后的新向量</p>
-<p>再来看等式的右边，右边就非常好理解了，是将$\alpha$变为原本的$\lambda$倍</p>
-<p>两个向量相等，也就是说向量$\lambda$在进行矩阵A的线性变换后的变化等同于对其长度的改变，长度的改变值就是特征值</p>
-<h3 class="bamboo-h-b" id="如何求特征值" style="color:blue!important">如何求特征值</h3><div></div>
-<p>我们对上述的式子进行移项并提取公因式，可以得出只要令$|A-\lambda E|=0$即可，即$(A-\lambda E)x=0$这个多元一次方程组有非零解</p>
-<h2 class="bamboo-h-b" id="向量" style="color:red!important">向量</h2><div></div>
-<p>可能看到这里会有点好奇为什么把向量放在这里，其实向量本质上就是一个一维矩阵，或者说，n*m的矩阵本质上就是n个m维向量并列组成的</p>
-<h3 class="bamboo-h-b" id="正交矩阵" style="color:blue!important">正交矩阵</h3><div></div>
-<p>正交矩阵就是每一对向量都互相正交（也就是垂直），特别需要注意的是，正交矩阵中的向量必须是单位向量</p>
-<h3 class="bamboo-h-b" id="施密特正交法" style="color:blue!important">施密特正交法</h3><div></div>
-<p>对于$\alpha_1, \alpha_2, \alpha_3$，取</p>
-<script type="math/tex; mode=display">
-\begin{align}
-\large \beta_1 & =\alpha_1\\
-\large \beta_2 & =\alpha_2-\frac{(\alpha_2, \beta_1)}{||\beta_1||}\beta_1\\
-\large \beta_3 & =\alpha_3-\frac{(\alpha_3, \beta_1)}{||\beta_1||}\beta_1-\frac{(\alpha_3, \beta_2)}{||\beta_2||}\beta_2
-\end{align}</script><p>此处的$\beta_1, \beta_2, \beta_3$三个向量是互相正交的，接下来只需要将这三个向量分别单位化即可</p>
-<h2 class="bamboo-h-b" id="实对称矩阵的相似对角化" style="color:red!important">实对称矩阵的相似对角化</h2><div></div>
-<ol>
-<li>求出矩阵A的所有特征值</li>
-<li>求出矩阵A的所有特征向量</li>
-<li>对相同特征值的特征向量正交化</li>
-<li>对所有特征向量单位化</li>
-<li>得到正交矩阵Q，且$Q^TAQ=diag(\lambda_1……\lambda_n)$（对角矩阵）</li>
-</ol>
-<h2 class="bamboo-h-b" id="二次型" style="color:red!important">二次型</h2><div></div>
-<p>首先了解二次型的定义：</p>
-<script type="math/tex; mode=display">
-\large f=x^TAx\quad(A^T=A)\\</script><p>即f为每一项都含有x~i~与x~j~相乘的多项式（i与j可以相等）</p>
-<h3 class="bamboo-h-b" id="标准型" style="color:blue!important">标准型</h3><div></div>
-<p>标准型是一种特殊的二次型，标准型中只含有平方项，有两种方法可以将二次型化为标准型：</p>
-<ol>
-<li><p>正交变换法</p>
-<p>求得正交矩阵Q使得x=Qy，即可得到$\large f=y^T\Lambda y$</p>
-<p>其中$\Lambda$由A的特征值构成，Q中的向量为对应列的特征值的特征向量（需要将向量正交化）</p>
-</li>
-<li><p>配方法</p>
-</li>
-</ol>
-<p>规范型又是一种特殊的标准型，规范型中不仅只有平方项，平方项前的系数只有-1, 0, 1</p>
-<h3 class="bamboo-h-b" id="矩阵合同" style="color:blue!important">矩阵合同</h3><div></div>
-<p>若矩阵A，B为对称矩阵，C为可逆矩阵</p>
-<p>且$B=C^TAC$，则矩阵A与B合同</p>
-<p>充要条件：</p>
-<ol>
-<li>A与B的正负惯性指数个数相同</li>
-<li>A与B的正负特征值个数相同</li>
-</ol>
-<p>性质：</p>
-<ol>
-<li>矩阵合同是一种特殊的等价变换</li>
-<li>A与B具有相同的秩，且合同不改变矩阵的对称性</li>
-</ol>
-<h3 class="bamboo-h-b" id="正定二次型与正定矩阵" style="color:blue!important">正定二次型与正定矩阵</h3><div></div>
-<p>定义：若对于任意的$\alpha\ne0$都有$f=\alpha^TA\alpha&gt;0$</p>
-<p>则f为正定二次型，A为正定矩阵</p>
-<p>判别法：</p>
-<ol>
-<li>A的特征值都大于0</li>
-<li>A的各顺序主子式都大于0</li>
-</ol>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计组笔记</title>
-    <url>/2021/05/04/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 class="bamboo-h " id="计组笔记">计组笔记</h1><br/>
-<h2 class="bamboo-h red" id="细碎知识点">细碎知识点</h2><br/>
-<ol>
-<li>主存（与Cache）是CPU唯一可以直接访问的存储器</li>
-</ol>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>计组</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性代数杂项</title>
-    <url>/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/</url>
-    <content><![CDATA[<h1 class="bamboo-h-b" id="杂项" style="color:!important">杂项</h1><div></div>
-<p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
-<h2 class="bamboo-h-b" id="矩阵的秩" style="color:red!important">矩阵的秩</h2><div></div>
-<p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
-<script type="math/tex; mode=display">
-\large r(A+B)\le r(A)+r(B)\\[2ex]
-\large r(AB)\le min(r(A), r(B))\\[2ex]
-\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\[2ex]
-\large r(A^TA)=r(A)\quad (A(m\times n))\\[2ex]
-\large r(A_{m\times n})=n\implies r(AB)=r(B)\\[2ex]
-\large r(B_{n\times s})=n\implies r(AB)=r(A)\\[2ex]
-\large r(A_*)=
-\begin{cases}
-    n,\quad r(A)=n\\
-    1,\quad r(A)=n-1\\
-    0,\quad r(A)<n-1
-\end{cases}</script><h2 class="bamboo-h-b" id="矩阵与向量组等价" style="color:red!important">矩阵与向量组等价</h2><div></div>
-<p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
-<p>向量组等价：两个向量组表示相同维度的空间</p>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>线性代数</tag>
       </tags>
   </entry>
 </search>
