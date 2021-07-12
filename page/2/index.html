@@ -440,120 +440,54 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 
 
+  <link href="/js/vue-typed-js/index.css" rel="stylesheet">
 
 
 
 
 
-<div class="swiper-length" style="display: none;">2</div>
+
+<div class="swiper-length" style="display: none;">0</div>
 <div id="appSwiper"
-  class=""
+  class="swiper-no-swiping"
   @mouseenter="stopAutoPlay()" 
   @mouseleave="startAutoPlay()"
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     
-      
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-          
-          <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/t2.jpg" style=" background-size: 90000px; 
-            background-position: left center;" style="position: relative;">
-            <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
-              <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/t2.jpg" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
-                </div>
-                <div class="flag-text">
-                  <div class="flag-text-content">
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
-                      <a href="/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/">
-                        408 计组公式与缩写
-                      </a>
+      <swiper-slide>
+        <div class="item swiper-lazy" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="background-size: 90000px; 
+          background-position: left center;" style="position: relative;">
+          <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
+            <div class="flag">
+              
+              <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png" style="height: 100%; background-size: cover; 
+                background-position: center center;">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
+              </div>
+              <div class="flag-text">
+                <div class="flag-text-content">
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">青墨书晚风</div>
+                  
+                    <div class="ani animated default-excerpt" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
+                      <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :typeSpeed="1000">
+                        <h1 class="typing"></h1>
+                      </vue-typed-js>
                     </div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">计组公式与缩写
-名词缩写
-MAR：地址寄存器(Memory Address Register)
-MDR：数据寄存器(Memory Data Register)
-ALU：算数逻辑单元(Arithmetic Logic Unit)
-CPU：中央</div>
-                  </div>
-                  <div class="bottom-one-btn ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">Read More</a></div>
+                    
+                </div>
+                <div style="display: flex;" class="flag-text-btns">
+                  
+                    <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">阅读文档</a></div>
+                  
+                  
+                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a target="_blank" rel="noopener" href="https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip" class="read-more border-color swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;">下载主题</a></div>
+                  
                 </div>
               </div>
             </div>
-
-          </swiper-slide>
-        
-      
-        
-        
-          
-          <swiper-slide>
-            <div class="item swiper-lazy" data-background="/medias/t3.jpg" style=" background-size: 90000px; 
-            background-position: left center;" style="position: relative;">
-            <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
-              <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="/medias/t3.jpg" style="height: 100%; background-size: cover; 
-                  background-position: center center;">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
-                </div>
-                <div class="flag-text">
-                  <div class="flag-text-content">
-                    <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">
-                      <a href="/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/">
-                        高数公式合集
-                      </a>
-                    </div>
-                    <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s">超级高数</div>
-                  </div>
-                  <div class="bottom-one-btn ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;">Read More</a></div>
-                </div>
-              </div>
-            </div>
-
-          </swiper-slide>
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-        
-        
-      
-    <div class="swiper-pagination" slot="pagination" style=""></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style=""></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style=""></div>
+          </div>
+      </swiper-slide>
     
   </swiper>
   
@@ -573,16 +507,18 @@ CPU：中央</div>
 </script>
 
 
+  <script src="/js/vue-typed-js/index.js"></script>
+
 
 <script>
   let autoplay = JSON.parse('false');
   let delay = '5000';
-  let loop = JSON.parse('') ? false : JSON.parse('true');
+  let loop = JSON.parse('true') ? false : JSON.parse('true');
   let effect = 'slide';
   let swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
-  let defaultDesc = '';
+  let defaultDesc = '煮酒洗净尘嚣，论知交,万般付之一笑，共偕老';
   defaultDesc = defaultDesc.split(',');
-  let defaultDescTypedLoop = JSON.parse('');
+  let defaultDescTypedLoop = JSON.parse('true');
   var vm = new Vue({
     el: '#appSwiper',
     data: {
@@ -1560,20 +1496,5 @@ Simplify the questionWe’re supposed to delete minimum number of eleme
     
     <script src="/js/app.js"></script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>
