@@ -7,7 +7,7 @@
     
     <link rel='stylesheet' href="/./css/dracula.css">
 
-        <title>my first blog</title>
+        <title>梯度校验</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 <link rel="stylesheet" href="/css/style.css">
@@ -103,16 +103,16 @@
             <article class="al_article">
                 <header>
                     <h1 class="al_page_title">
-                        my first blog
+                        梯度校验
                     </h1>
                     <div class="al_page_info dis_flex">
                         <div class="al_page_content_info">
-                            Wed February 17, 2021 08:53 PM
+                            Tue May 17, 2022 04:46 PM
                         </div>
 
                         
                             <div class="al_page_content_info">
-                                106 words
+                                280 words
                             </div>
                         
 
@@ -126,19 +126,18 @@
                 </header>
 
                 
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C"><span class="toc-text">梯度校验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%A2%AF%E5%BA%A6"><span class="toc-text">如何计算梯度</span></a></li></ol></li></ol>
+                    </div>
+                
 
                 
                 <section id="post-body">
-                    <p>Welcome to Adam’s blog</p>
-<p>我会在这个博客不停更新各种<del>奇奇怪怪的</del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
-</ol>
-<p>希望大家都能在这里找到自己想要的东西！</p>
-<p>如果有想看的东西可以给我留言嗷</p>
+                    <h1 id="梯度校验"><a href="#梯度校验" class="headerlink" title="梯度校验"></a>梯度校验</h1><p>梯度校验是一种判断梯度（导数）是否出错的方法，通常我们会通过反向传播的方法来计算梯度，并通过梯度校验的方式来判断最终的梯度是否正确。</p>
+<h2 id="如何计算梯度"><a href="#如何计算梯度" class="headerlink" title="如何计算梯度"></a>如何计算梯度</h2><p>除了神经网络的反向传播之外，我们可以通过类似于极限的方式来取近似的梯度，在数学中对于$x$在$x_0$处的梯度有如下定义<br>$$<br>\large f’(x_0)&#x3D;\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}<br>$$<br>在梯度校验中我们取<br>$$<br>\large f’(x)&#x3D;\lim_{\epsilon\to 0}\frac{f(x+\epsilon)-f(x-\epsilon)}{2\epsilon}<br>$$</p>
+<p>$$<br>\large \frac {\partial}{\partial\theta_1}J(\theta)&#x3D;\frac{J(\theta_1+\epsilon,\theta_2…\theta_n)-J(\theta_1-\epsilon,\theta_2…\theta_n)}{2\epsilon}<br>$$</p>
+<p>对每一个$\theta$都进行一次该操作，就能得出最终的梯度向量，与通过反向传播求出来的梯度向量（由梯度矩阵展开而来）比较，如果差不多，就说明反向传播写的没问题。</p>
+<p>TIPS：不要把梯度校验作为计算梯度的方式用于训练，因为它极其费时。 </p>
 
                 </section>
 
@@ -153,7 +152,7 @@
             repo: "hexocomment",
             owner: "adampan0527",
             admin: "adampan0527",
-            id: "my first blog",
+            id: "梯度校验",
         });
         gitalk.render("al_gitalk_cnt")
     </script>
@@ -165,15 +164,15 @@
 
             
             <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2021/02/19/1490F-Equalize-the-Array/">
-                    
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
-                        </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc">1490F Equalize the Array</span>
+                <a class="al_post_nav_item dis_flex_acenter" href="/">
                     
                 </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2022/05/08/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">神经网络的反向传播</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
                     
                 </a>
             </nav>

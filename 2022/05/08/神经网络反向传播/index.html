@@ -7,7 +7,7 @@
     
     <link rel='stylesheet' href="/./css/dracula.css">
 
-        <title>my first blog</title>
+        <title>神经网络的反向传播</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 <link rel="stylesheet" href="/css/style.css">
@@ -103,16 +103,16 @@
             <article class="al_article">
                 <header>
                     <h1 class="al_page_title">
-                        my first blog
+                        神经网络的反向传播
                     </h1>
                     <div class="al_page_info dis_flex">
                         <div class="al_page_content_info">
-                            Wed February 17, 2021 08:53 PM
+                            Sun May 8, 2022 09:53 PM
                         </div>
 
                         
                             <div class="al_page_content_info">
-                                106 words
+                                180 words
                             </div>
                         
 
@@ -126,19 +126,17 @@
                 </header>
 
                 
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-text">神经网络的反向传播</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%A0%E6%92%AD"><span class="toc-text">如何传播</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%9C%80%E8%A6%81%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-text">为何需要反向传播</span></a></li></ol></li></ol>
+                    </div>
+                
 
                 
                 <section id="post-body">
-                    <p>Welcome to Adam’s blog</p>
-<p>我会在这个博客不停更新各种<del>奇奇怪怪的</del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
-</ol>
-<p>希望大家都能在这里找到自己想要的东西！</p>
-<p>如果有想看的东西可以给我留言嗷</p>
+                    <h1 id="神经网络的反向传播"><a href="#神经网络的反向传播" class="headerlink" title="神经网络的反向传播"></a>神经网络的反向传播</h1><h2 id="如何传播"><a href="#如何传播" class="headerlink" title="如何传播"></a>如何传播</h2><p>反向传播的公式如下<br>$$<br>\begin{gather}<br>\delta^{(L)}&#x3D;a^{(L)}-y \\<br>\delta^{(n)}&#x3D;(\Theta^{(n)})^T\delta^{(n+1)}.<em>g’(z^{(n)}) \\<br>g’(z^{(n)})&#x3D;a^{(n)}.</em>(1-a^{(n)})<br>\end{gather}<br>$$<br>其中$\delta$、$a$和$y$都是向量，$\delta$表示的是偏差值，$a$表示的是激活单元，y则是训练集中的实际值，$.*$表示点乘，用于矩阵间的运算</p>
+<h2 id="为何需要反向传播"><a href="#为何需要反向传播" class="headerlink" title="为何需要反向传播"></a>为何需要反向传播</h2><p>现在我们已经计算出了$\delta$，那么他有什么用呢？</p>
+<p>在忽略正则化项$\lambda$的时候，我们可以得到<br>$$<br>\begin{gather}<br>\frac{\partial J(\Theta)}{\partial \Theta_{ij}^{(l)}}&#x3D;a_j^{(l)}\delta_i^{(l)}<br>\end{gather}<br>$$<br><img src="C:\Users\Adam_Pan\AppData\Roaming\Typora\typora-user-images\image-20220508224245098.png" alt="image-20220508224245098"></p>
+<p>反向传播是用于快速计算导数的方法</p>
 
                 </section>
 
@@ -153,7 +151,7 @@
             repo: "hexocomment",
             owner: "adampan0527",
             admin: "adampan0527",
-            id: "my first blog",
+            id: "神经网络的反向传播",
         });
         gitalk.render("al_gitalk_cnt")
     </script>
@@ -165,15 +163,20 @@
 
             
             <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2021/02/19/1490F-Equalize-the-Array/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/">
                     
                         <svg class="al_arrow">
                             <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
                         </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc">1490F Equalize the Array</span>
+                        <span class="al_text_ellipsis al_post_nav_desc">梯度校验</span>
                     
                 </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">梯度下降法</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
                     
                 </a>
             </nav>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+        <title>磁盘I/O</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Adam's blog</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Adam's blog</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>Adam Pan</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p></p>
+            </div>
+
+            
+                <div class="al_sidebar_contact_info">
+                    <h4>GET IN TOUCH</h4>
+                    <p>Contact Info description</p>
+
+                    <div class="dis_flex al_sidebar_social_widget">
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                            <div class="al_social_icon_cnt" data_link="https://www.github.com/adampan0527">
+                                <svg class="al_social_icon" id="github">
+                                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#icon_github"></use>
+                                </svg>
+                            </div>
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        磁盘I/O
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            Sun August 15, 2021 09:25 PM
+                        </div>
+
+                        
+                            <div class="al_page_content_info">
+                                977 words
+                            </div>
+                        
+
+                        
+                            <div class="al_page_content_info">
+                                3 minutes read
+                            </div>
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A3%81%E7%9B%98I-x2F-O"><span class="toc-text">磁盘I&#x2F;O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-x2F-O%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E5%8F%8A%E5%8A%9F%E8%83%BD"><span class="toc-text">I&#x2F;O系统层次及功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%B1%82%E8%BD%AF%E4%BB%B6"><span class="toc-text">用户层软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E7%8B%AC%E7%AB%8B%E6%80%A7%E8%BD%AF%E4%BB%B6"><span class="toc-text">设备独立性软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F"><span class="toc-text">设备驱动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E5%B1%82"><span class="toc-text">中断处理层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-x2F-O%E7%BC%93%E5%86%B2"><span class="toc-text">I&#x2F;O缓冲</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="toc-text">缓冲区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SPOOLing"><span class="toc-text">SPOOLing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SPOOLing%E6%8A%80%E6%9C%AF%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-text">SPOOLing技术的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPOOLing%E6%8A%80%E6%9C%AF%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">SPOOLing技术的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E9%A2%98"><span class="toc-text">错题</span></a></li></ol></li></ol>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <h1 id="磁盘I-x2F-O"><a href="#磁盘I-x2F-O" class="headerlink" title="磁盘I&#x2F;O"></a>磁盘I&#x2F;O</h1><h2 id="I-x2F-O系统层次及功能"><a href="#I-x2F-O系统层次及功能" class="headerlink" title="I&#x2F;O系统层次及功能"></a>I&#x2F;O系统层次及功能</h2><h3 id="用户层软件"><a href="#用户层软件" class="headerlink" title="用户层软件"></a>用户层软件</h3><p>用户层软件实现的是与用户进行交互的接口，用户可以通过调用用户层软件提供的I&#x2F;O库函数对设备进行操作</p>
+<p>用户软件必须通过一组系统调用来获取操作系统服务</p>
+<h3 id="设备独立性软件"><a href="#设备独立性软件" class="headerlink" title="设备独立性软件"></a>设备独立性软件</h3><p>什么是设备独立性？</p>
+<p>​	设备独立性指的是应用程序独立于具体使用的物理设备，从而引入了“逻辑设备”的概念</p>
+<p>设备独立性能够带来什么好处？</p>
+<ol>
+<li>设备分配时的灵活性</li>
+<li>易于实现I&#x2F;O的重定向</li>
+</ol>
+<p>设备独立性软件都有什么功能？</p>
+<ol>
+<li>执行公共设备的共有操作<ol>
+<li>对独立设备的分配与回收</li>
+<li>将逻辑设备名映射为物理设备名</li>
+<li>对设备进行保护</li>
+<li>缓冲管理</li>
+</ol>
+</li>
+<li>向用户层软件提供统一接口</li>
+</ol>
+<h3 id="设备驱动程序"><a href="#设备驱动程序" class="headerlink" title="设备驱动程序"></a>设备驱动程序</h3><p>通常也称“设备处理程序”，它是I&#x2F;O进程与设备控制器之间的通信程序， 又由于经常以进程的形式存在，所以称之为设备驱动程序。</p>
+<p>任务：</p>
+<ol>
+<li>接收上层软件发来的抽象I&#x2F;O请求，并将其转为具体要求发送给设备控制器，然后启动设备去执行请求</li>
+<li>将设备控制器发来的信号发送给上层软件</li>
+</ol>
+<p>功能：</p>
+<ol>
+<li>接收由设备独立性软件发来的命令和参数</li>
+<li>检查用户I&#x2F;O请求的合法性</li>
+<li>发出I&#x2F;O命令（向设备控制器）</li>
+<li>及时相应由控制器或者通道发来的中断请求，并根据中断的类型调用相应的中断处理程序</li>
+<li>若OS设有通道，驱动程序还能根据用户的I&#x2F;O请求自动构建通道程序</li>
+</ol>
+<p>设备处理方式</p>
+<ol>
+<li>为每一类设备设置一个进程</li>
+<li>整个系统设置一个进程</li>
+<li>不设置专门的处理程序，但为各类设备设置相应的设备处理程序</li>
+</ol>
+<h3 id="中断处理层"><a href="#中断处理层" class="headerlink" title="中断处理层"></a>中断处理层</h3><p>中断处理层软件的主要工作是进行进程上下文的切换，对处理中断信号源进行测试，读取设备状态和修改进程状态。</p>
+<p>处理过程：</p>
+<ol>
+<li>唤醒被阻塞的驱动进程</li>
+<li>保护被中断进程的CPU环境</li>
+<li>载入相应的设备处理程序</li>
+<li>中断处理</li>
+<li>恢复被中断进程的现场</li>
+</ol>
+<h2 id="I-x2F-O缓冲"><a href="#I-x2F-O缓冲" class="headerlink" title="I&#x2F;O缓冲"></a>I&#x2F;O缓冲</h2><p>设置缓冲区的目的是什么？</p>
+<ol>
+<li>可以缓和CPU（快）和I&#x2F;O设备（慢）之间速度不匹配的矛盾</li>
+<li>减少对CPU的中断频率，放宽对CPU中断响应时间的限制</li>
+<li>提高CPU和IO设备之间的并行性</li>
+</ol>
+<h3 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h3><ol>
+<li><p>单缓冲</p>
+<p>数据从I&#x2F;O设备到缓冲区和从缓冲区到工作区不能同时进行</p>
+</li>
+<li><p>双缓冲</p>
+<p>数据从I&#x2F;O设备到缓冲区和从缓冲区到工作区可以同时进行</p>
+</li>
+</ol>
+<h2 id="SPOOLing"><a href="#SPOOLing" class="headerlink" title="SPOOLing"></a>SPOOLing</h2><p>SPOOLing技术又称假脱机技术，其含义是在联机的情况下实现外围操作，这样就不会导致CPU近乎闲置</p>
+<h3 id="SPOOLing技术的组成"><a href="#SPOOLing技术的组成" class="headerlink" title="SPOOLing技术的组成"></a>SPOOLing技术的组成</h3><ol>
+<li>输入井和输出井（位置：磁盘）</li>
+<li>输入缓冲区和输出缓冲区（位置：内存）</li>
+<li>输入进程和输出进程（由OS提供）</li>
+<li>井管理程序</li>
+</ol>
+<h3 id="SPOOLing技术的特点"><a href="#SPOOLing技术的特点" class="headerlink" title="SPOOLing技术的特点"></a>SPOOLing技术的特点</h3><ol>
+<li>提高了I&#x2F;O速度</li>
+<li>将独占设备改造为共享设备（后来的进程可以将需要输出的数据存放在缓冲区）</li>
+<li>实现了虚拟设备的功能</li>
+</ol>
+<h2 id="错题"><a href="#错题" class="headerlink" title="错题"></a>错题</h2><ol>
+<li><p>用户程序发出磁盘I&#x2F;O请求后，系统的正确处理流程是</p>
+<p>用户程序–&gt;系统调用处理程序–&gt;设备驱动程序–&gt;中断处理程序</p>
+</li>
+</ol>
+
+                </section>
+
+                
+                
+    <div id="al_gitalk_cnt" />
+    <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            clientID: "f75842370a28d6e8f668",
+            clientSecret: "7be6aa27993aa485691737d058cafb9c0152b7ef",
+            repo: "hexocomment",
+            owner: "adampan0527",
+            admin: "adampan0527",
+            id: "磁盘I/O",
+        });
+        gitalk.render("al_gitalk_cnt")
+    </script>
+
+
+                
+
+            </article>
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2022/03/20/%E5%BF%AB%E9%80%9F%E5%B9%82/">
+                    
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
+                        </svg>
+                        <span class="al_text_ellipsis al_post_nav_desc">快速幂</span>
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">线性代数杂项</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        Adam Pan
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+        
+
+    </body>
+</html>

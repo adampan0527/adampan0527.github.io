@@ -7,7 +7,7 @@
     
     <link rel='stylesheet' href="/./css/dracula.css">
 
-        <title>my first blog</title>
+        <title>rabbitmq双活</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 <link rel="stylesheet" href="/css/style.css">
@@ -103,16 +103,16 @@
             <article class="al_article">
                 <header>
                     <h1 class="al_page_title">
-                        my first blog
+                        rabbitmq双活
                     </h1>
                     <div class="al_page_info dis_flex">
                         <div class="al_page_content_info">
-                            Wed February 17, 2021 08:53 PM
+                            Fri April 29, 2022 11:38 PM
                         </div>
 
                         
                             <div class="al_page_content_info">
-                                106 words
+                                363 words
                             </div>
                         
 
@@ -126,19 +126,17 @@
                 </header>
 
                 
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rabbitmq%E5%8F%8C%E6%B4%BB"><span class="toc-text">rabbitmq双活</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E5%87%86%E5%A4%87"><span class="toc-text">前置准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEFederation"><span class="toc-text">配置Federation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-text">测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%B4%BB-%E9%95%9C%E5%83%8F"><span class="toc-text">双活+镜像</span></a></li></ol></li></ol>
+                    </div>
+                
 
                 
                 <section id="post-body">
-                    <p>Welcome to Adam’s blog</p>
-<p>我会在这个博客不停更新各种<del>奇奇怪怪的</del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
-</ol>
-<p>希望大家都能在这里找到自己想要的东西！</p>
-<p>如果有想看的东西可以给我留言嗷</p>
+                    <h1 id="rabbitmq双活"><a href="#rabbitmq双活" class="headerlink" title="rabbitmq双活"></a>rabbitmq双活</h1><h2 id="前置准备"><a href="#前置准备" class="headerlink" title="前置准备"></a>前置准备</h2><p>rabbitmq的双活是通过federation插件来实现的，因此需要激活rabbitmq_federation和rabbitmq_federation_management插件，可以在命令行直接用<code>rabbitmq-plugins enable rabbitmq_federation</code>和<code>rabbitmq-plugins enable rabbitmq_federation_management</code>来激活，如果提示rabbitmq_plugins是只读文件，则可以通过修改config来激活这两个插件<br>最终激活后进入manage页面，在admin可以看到这个<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/f3059ec2a6f754c3.png" alt="image.png"></p>
+<h2 id="配置Federation"><a href="#配置Federation" class="headerlink" title="配置Federation"></a>配置Federation</h2><p>进入Federation Upstreams，新建一个upstream，输入name和URI即可，URI中以amqp协议为例，IP是目标集群的clusterIP。<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/00916a93aaa64e57.png" alt="image.png"><br>随后配置policy，在definition中添加federation-upstream-set &#x3D; all，用正则表达式匹配想要匹配的队列作为接收upstream消息的队列。<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/515d3250cf7af6b5.png" alt="image.png"><br>这时候检查一下exchange和queue的policy应用情况<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/463474b2c418d491.png" alt="image.png"><br><img src="https://s3.bmp.ovh/imgs/2022/05/04/e7729e71eed1cbb6.png" alt="image.png"><br>再检查一下federation status<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/7033951947db91ce.png" alt="image.png"><br>都在running了，至此已经配置成功</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>检查upstream的exchange和queue<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/8b7021f27fdd812f.png" alt="image.png"><br><img src="https://s3.bmp.ovh/imgs/2022/04/29/baef92f9f824921b.png" alt="image.png"><br>向downstream-queue队列发送消息<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/27d8de539c450ef9.png" alt="image.png"><br>再去downstream看看<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/2188dc7ab85a8800.png" alt="image.png"><br>至此federation插件测试成功</p>
+<h2 id="双活-镜像"><a href="#双活-镜像" class="headerlink" title="双活+镜像"></a>双活+镜像</h2><p>双活是通过federation插件实现的，而镜像是通过policy实现的，因此虽然exchange和queue都只能应用一个policy，但我们可以把policy中的definition合并<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/52add0ebd398c95d.png" alt="image.png"><br>此时应用upmirror这个policy的队列既可以从upstream接受消息，也可以将消息镜像同步到本集群的所有节点。<br>PS：尽管federation实现了跨集群的消息传输，但federation是单向的，因此如果想要实现消息的双向同步，需要将两个集群中都配置为downstream，并各自作为对方的upstream。</p>
 
                 </section>
 
@@ -153,7 +151,7 @@
             repo: "hexocomment",
             owner: "adampan0527",
             admin: "adampan0527",
-            id: "my first blog",
+            id: "rabbitmq双活",
         });
         gitalk.render("al_gitalk_cnt")
     </script>
@@ -165,15 +163,20 @@
 
             
             <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2021/02/19/1490F-Equalize-the-Array/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/">
                     
                         <svg class="al_arrow">
                             <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
                         </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc">1490F Equalize the Array</span>
+                        <span class="al_text_ellipsis al_post_nav_desc">代价函数</span>
                     
                 </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">rabbitmq简介</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
                     
                 </a>
             </nav>

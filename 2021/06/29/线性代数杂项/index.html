@@ -7,7 +7,7 @@
     
     <link rel='stylesheet' href="/./css/dracula.css">
 
-        <title>my first blog</title>
+        <title>线性代数杂项</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 <link rel="stylesheet" href="/css/style.css">
@@ -103,22 +103,22 @@
             <article class="al_article">
                 <header>
                     <h1 class="al_page_title">
-                        my first blog
+                        线性代数杂项
                     </h1>
                     <div class="al_page_info dis_flex">
                         <div class="al_page_content_info">
-                            Wed February 17, 2021 08:53 PM
+                            Tue June 29, 2021 12:37 AM
                         </div>
 
                         
                             <div class="al_page_content_info">
-                                106 words
+                                592 words
                             </div>
                         
 
                         
                             <div class="al_page_content_info">
-                                1 minutes read
+                                2 minutes read
                             </div>
                         
                         <span class="tags"></span>
@@ -126,19 +126,40 @@
                 </header>
 
                 
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-text">杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="toc-text">矩阵的秩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%90%91%E9%87%8F%E7%BB%84%E7%AD%89%E4%BB%B7"><span class="toc-text">矩阵与向量组等价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">矩阵间的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7"><span class="toc-text">等价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%90%8C"><span class="toc-text">合同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC"><span class="toc-text">相似</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                
 
                 
                 <section id="post-body">
-                    <p>Welcome to Adam’s blog</p>
-<p>我会在这个博客不停更新各种<del>奇奇怪怪的</del>内容，如果你想找</p>
+                    <h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
+<h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化<br>$$<br>\large r(A+B)\le r(A)+r(B)\[2ex]<br>\large r(AB)\le min(r(A), r(B))\[2ex]<br>\large A_{m\times n}B_{n\times p}&#x3D;0\implies r(A)+r(B)\le n\[2ex]<br>\large r(A^TA)&#x3D;r(A)\quad (A(m\times n))\[2ex]<br>\large r(A_{m\times n})&#x3D;n\implies r(AB)&#x3D;r(B)\[2ex]<br>\large r(B_{n\times s})&#x3D;n\implies r(AB)&#x3D;r(A)\[2ex]<br>\large r(A^*)&#x3D;<br>\begin{cases}<br>    n,\quad r(A)&#x3D;n\<br>    1,\quad r(A)&#x3D;n-1\<br>    0,\quad r(A)&lt;n-1<br>\end{cases}<br>$$</p>
+<h2 id="矩阵与向量组等价"><a href="#矩阵与向量组等价" class="headerlink" title="矩阵与向量组等价"></a>矩阵与向量组等价</h2><p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
+<p>向量组等价：两个向量组表示相同维度的空间</p>
+<h2 id="矩阵间的关系"><a href="#矩阵间的关系" class="headerlink" title="矩阵间的关系"></a>矩阵间的关系</h2><p>矩阵间的关系有：相似、合同、等价。三者的关系可以划分为相似&#x3D;&gt;合同&#x3D;&gt;等价</p>
+<p>当然，要说两个矩阵之间有上述三种关系，首先两个矩阵要满足是同型矩阵（即行数与列数都相同）</p>
+<h3 id="等价"><a href="#等价" class="headerlink" title="等价"></a>等价</h3><p>两个矩阵等价意味着一个矩阵可以通过初等变换变成另一个矩阵的样子。</p>
+<h3 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h3><p>合同的定义是存在矩阵C使得$C^TAC&#x3D;B$。</p>
+<p>单从定义上看似乎没有什么突破口，但矩阵合同必然满足一些性质，如</p>
 <ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
+<li>A与B的正负惯性指数相同</li>
+<li>A与B的顺序主子式的正负个数相同</li>
+<li>A与B的正负特征值个数相同</li>
 </ol>
-<p>希望大家都能在这里找到自己想要的东西！</p>
-<p>如果有想看的东西可以给我留言嗷</p>
+<p>需要注意的是，惯性指数需要</p>
+<h3 id="相似"><a href="#相似" class="headerlink" title="相似"></a>相似</h3><p>定义：存在矩阵P使得$P^{-1}AP&#x3D;B$</p>
+<p>同样的，光是从定义上看无法获得什么信息，但从性质入手，思路就变得清晰了：</p>
+<ol>
+<li>A与B的秩相同</li>
+<li>A与B的特征值相同</li>
+<li>A与B的行列式相同</li>
+<li>A与B的迹相同</li>
+<li>A与B的转置也相似</li>
+<li>A与B的逆矩阵也相似</li>
+<li>A与B的伴随矩阵也相似</li>
+<li>A与B的矩阵多项式也相似（多项式形式相同）</li>
+</ol>
 
                 </section>
 
@@ -153,7 +174,7 @@
             repo: "hexocomment",
             owner: "adampan0527",
             admin: "adampan0527",
-            id: "my first blog",
+            id: "线性代数杂项",
         });
         gitalk.render("al_gitalk_cnt")
     </script>
@@ -165,15 +186,20 @@
 
             
             <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2021/02/19/1490F-Equalize-the-Array/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2021/08/15/%E7%A3%81%E7%9B%98I:O/">
                     
                         <svg class="al_arrow">
                             <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
                         </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc">1490F Equalize the Array</span>
+                        <span class="al_text_ellipsis al_post_nav_desc">磁盘I/O</span>
                     
                 </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">数据结构笔记</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
                     
                 </a>
             </nav>

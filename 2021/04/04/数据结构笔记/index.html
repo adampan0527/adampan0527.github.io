@@ -7,7 +7,7 @@
     
     <link rel='stylesheet' href="/./css/dracula.css">
 
-        <title>my first blog</title>
+        <title>数据结构笔记</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
 <link rel="stylesheet" href="/css/style.css">
@@ -103,16 +103,16 @@
             <article class="al_article">
                 <header>
                     <h1 class="al_page_title">
-                        my first blog
+                        数据结构笔记
                     </h1>
                     <div class="al_page_info dis_flex">
                         <div class="al_page_content_info">
-                            Wed February 17, 2021 08:53 PM
+                            Sun April 4, 2021 05:28 PM
                         </div>
 
                         
                             <div class="al_page_content_info">
-                                106 words
+                                254 words
                             </div>
                         
 
@@ -126,19 +126,23 @@
                 </header>
 
                 
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0"><span class="toc-text">数据结构笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0"><span class="toc-text">卡特兰数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                
 
                 
                 <section id="post-body">
-                    <p>Welcome to Adam’s blog</p>
-<p>我会在这个博客不停更新各种<del>奇奇怪怪的</del>内容，如果你想找</p>
-<ol>
-<li>题解（ACM菜逼一个）</li>
-<li>游戏攻略<del>（？我tm直接竟有此事）</del></li>
-<li>考研知识点（考研党路过~）</li>
-<li><del>奇奇怪怪的</del>软件的安装+配置教程</li>
+                    <h1 id="数据结构笔记"><a href="#数据结构笔记" class="headerlink" title="数据结构笔记"></a>数据结构笔记</h1><h2 id="卡特兰数"><a href="#卡特兰数" class="headerlink" title="卡特兰数"></a>卡特兰数</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
+<li>有2n个人排成一行进入剧场，入场费5元，其中n个人有5元钞票，n个人有10元钞票，剧院无多余钞票。问有多少种方法使得只要有10元人买票，售票处就有5元的钞票找零</li>
+<li>一个边长为n的正方形，从左下角走到右上角，不穿过对角线，问有几种不同的方法</li>
+<li>圆上选择2n个点，问有多少种方法将这些点两两相连，所得到的n条线段两两不相交</li>
+<li>对角线不相交的情况下，将凸n边形分成三角形区域的方法数</li>
+<li>n个元素进栈，问有多少种出栈方法</li>
+<li>n个节点可以构造多少个不同的二叉树</li>
+<li>n个1和n个-1构成2n项序列，问从a<del>1</del>开始，部分和始终大于等于0的序列有多少种</li>
 </ol>
-<p>希望大家都能在这里找到自己想要的东西！</p>
-<p>如果有想看的东西可以给我留言嗷</p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>$$<br>\large f(n)&#x3D;C_n^{2n}-C_{n-1}^{2n}<br>$$</p>
 
                 </section>
 
@@ -153,7 +157,7 @@
             repo: "hexocomment",
             owner: "adampan0527",
             admin: "adampan0527",
-            id: "my first blog",
+            id: "数据结构笔记",
         });
         gitalk.render("al_gitalk_cnt")
     </script>
@@ -165,15 +169,20 @@
 
             
             <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2021/02/19/1490F-Equalize-the-Array/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/">
                     
                         <svg class="al_arrow">
                             <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
                         </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc">1490F Equalize the Array</span>
+                        <span class="al_text_ellipsis al_post_nav_desc">线性代数杂项</span>
                     
                 </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">高数公式合集</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
                     
                 </a>
             </nav>

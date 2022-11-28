@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+    
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    
+    <link rel='stylesheet' href="/./css/dracula.css">
+
+        <title>快速幂</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="manifest" href="/site.webmanifest">
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <header class="al_header al_pos_fixed">
+    <div class="al_header_container dis_flex_jcenter">
+        <div class="al_header_container_left">
+            <div class="al_header_site_title">
+                <a href="/">Adam's blog</a>
+            </div>
+        </div>
+
+        <div class="dis_flex_jcenter">
+            <div class="al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="al_sidebar">
+
+    <div class="al_sidebar_overlay al_full_cover"></div>
+
+    <div class="al_pos_fixed al_sidebar_cnt">
+        <div class="dis_flex_acenter al_sidebar_header">
+            <h3>Adam's blog</h3>
+            <div class="al_sidebar_close al_header_setting">
+                <svg class="al_header_icon">
+                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
+                </svg>
+            </div>
+        </div>
+
+        <div class="al_sidebar_author_cnt">
+
+            <div class="al_sidebar_author_info">
+                <h4>Adam Pan</h4>
+                <img class="al_sidebar_avatar" src="https://yourAvatorURL">
+                <p></p>
+            </div>
+
+            
+                <div class="al_sidebar_contact_info">
+                    <h4>GET IN TOUCH</h4>
+                    <p>Contact Info description</p>
+
+                    <div class="dis_flex al_sidebar_social_widget">
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+
+                        
+                        
+                            <div class="al_social_icon_cnt" data_link="https://www.github.com/adampan0527">
+                                <svg class="al_social_icon" id="github">
+                                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#icon_github"></use>
+                                </svg>
+                            </div>
+                        
+
+                        
+                        
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+        
+    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
+        <img class="al_lightbox_img"/>
+    </div>
+    <div class="al_page_background dis_flex_center al_full_cover"></div>
+    <div class="al_page_container">
+        <div class="al_pos_ab al_fake_background"></div>
+        <div class="al_main_container al_shadow al_main_page_container">
+            <article class="al_article">
+                <header>
+                    <h1 class="al_page_title">
+                        快速幂
+                    </h1>
+                    <div class="al_page_info dis_flex">
+                        <div class="al_page_content_info">
+                            Sun March 20, 2022 02:13 PM
+                        </div>
+
+                        
+                            <div class="al_page_content_info">
+                                644 words
+                            </div>
+                        
+
+                        
+                            <div class="al_page_content_info">
+                                2 minutes read
+                            </div>
+                        
+                        <span class="tags"></span>
+                    </div>
+                </header>
+
+                
+                    <div class="al_page_content_outline">
+                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82"><span class="toc-text">快速幂</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB%EF%BC%9F%E6%9C%89%E5%A4%9A%E5%BF%AB%EF%BC%9F"><span class="toc-text">快速幂为什么快？有多快？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E8%83%BD%E5%90%A6%E6%8B%93%E5%B1%95%EF%BC%9F"><span class="toc-text">快速幂能否拓展？</span></a></li></ol></li></ol>
+                    </div>
+                
+
+                
+                <section id="post-body">
+                    <h1 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h1><p>快速幂在ACM中是非常常用的一种算法，是常在求$a^{n}$但n很大的时候用于加速运算的算法（通常会对某个质数p取模），那快速幂为什么快？有多快？能否拓展到其他运算符中呢？</p>
+<h2 id="快速幂为什么快？有多快？"><a href="#快速幂为什么快？有多快？" class="headerlink" title="快速幂为什么快？有多快？"></a>快速幂为什么快？有多快？</h2><p>要了解快速幂为什么快就要先了解快速幂是怎么实现的，从其思想来看就是将n转换成二进制，并将其看成是多个2^x^（x为整数）相加的结果，将本该进行n次的运算降低到logn次，我们求出最大的2^x^需要进行logn次运算，而将这最多有logn个的结果再进行logn次运算，因此最终的时间复杂度为logn！</p>
+<p>上代码！</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> p = <span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">quick_pow</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> n)</span></span>&#123;	<span class="comment">//求a的n次方对p取模的值</span></span><br><span class="line">    <span class="type">int</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) ans=(ans*a)%p;	<span class="comment">//如果n当前位上的值为1，意味着我们需要乘上这个a</span></span><br><span class="line">        a=a*a%p;	<span class="comment">//位数每往高处走一位，就意味着a做了平方操作</span></span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;		<span class="comment">//用n右移一位的方式来表示当前位数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="快速幂能否拓展？"><a href="#快速幂能否拓展？" class="headerlink" title="快速幂能否拓展？"></a>快速幂能否拓展？</h2><p>答案是：可以！</p>
+<p>假设现在的运算符为op。</p>
+<p>我们将n个a都列出来，于是我们得到了</p>
+<p>a op a op a op a……总共n个a进行op操作</p>
+<p>按照快速幂的思想我们将这n个a进行划分，假设这里一共有6个a</p>
+<p>a op a op a op a op a op a</p>
+<p>很显然6&#x3D;2+4，以二进制的形式表示也就是110，因此我们将这6个a划分为2个一组和4个一组，得到了</p>
+<p>(a op a) op (a op a op a op a)</p>
+<p>因此显然我们能够得到这样一个结论：当运算符满足结合律时，就可以用快速幂的思想对这个运算进行加速。例：加法，幂（可以尝试一下求$2^{2^{2^{2}}}$，连续幂运算是否能够如此加速）</p>
+<p>但显然，如同减法、除法这种不满足结合律的运算就不能够使用快速幂进行加速。</p>
+<p>最终代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> op +</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> element_type int</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> e 0</span></span><br><span class="line"></span><br><span class="line"><span class="function">element_type <span class="title">quick_pow</span><span class="params">(element_type a, <span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    element_type ans=e;		<span class="comment">//e在这里表示运算符op的单位元</span></span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        ans = ans op a;</span><br><span class="line">        a = a op a;</span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>PS：想了解单位元相关知识移步<a target="_blank" rel="noopener" href="https://adampan0527.github.io/2021/04/27/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B8%8E%E4%BA%8C%E6%AC%A1%E5%9E%8B/">线性代数中的特殊矩阵与二次型</a></p>
+
+                </section>
+
+                
+                
+    <div id="al_gitalk_cnt" />
+    <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            clientID: "f75842370a28d6e8f668",
+            clientSecret: "7be6aa27993aa485691737d058cafb9c0152b7ef",
+            repo: "hexocomment",
+            owner: "adampan0527",
+            admin: "adampan0527",
+            id: "快速幂",
+        });
+        gitalk.render("al_gitalk_cnt")
+    </script>
+
+
+                
+
+            </article>
+
+            
+            <nav class="dis_flex al_post_nav">
+                <a class="al_post_nav_item dis_flex_acenter" href="/2022/03/24/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA/">
+                    
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
+                        </svg>
+                        <span class="al_text_ellipsis al_post_nav_desc">零基础浙大复试上机</span>
+                    
+                </a>
+                <a class="al_post_nav_item dis_flex_acenter" href="/2021/08/15/%E7%A3%81%E7%9B%98I:O/">
+                    
+                        <span class="al_text_ellipsis al_post_nav_desc">磁盘I/O</span>
+                        <svg class="al_arrow">
+                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
+                        </svg>
+                    
+                </a>
+            </nav>
+        </div>
+    </div>
+
+
+        <div class="al_index_footer dis_flex_center">
+    <div class="al_index_footer_item al_index_footer_title">
+        Adam Pan
+    </div>
+
+    
+    
+
+    <div class="al_index_footer_item al_index_footer_extra">
+        Created By 
+        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
+         · Power By 
+        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+    </div>
+
+    <div class="al_index_footer_item al_index_footer_extra_right">
+        All Right Reserved
+    </div>
+</div>
+
+        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
+        
+        
+        
+        
+        
+
+    </body>
+</html>
