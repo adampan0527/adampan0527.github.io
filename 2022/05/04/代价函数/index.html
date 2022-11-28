@@ -1,232 +1,438 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        
-    
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    
-    <link rel='stylesheet' href="/./css/dracula.css">
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>代价函数 - Adam&#39;s blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="代价函数模型函数模型函数是用已知的信息去推算想要预测的...">
+  <meta name="author" content="Adam Pan">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
 
-        <title>代价函数</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+  
 <link rel="stylesheet" href="/css/style.css">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="manifest" href="/site.webmanifest">
 
-    <meta name="generator" content="Hexo 6.3.0"></head>
-    <body>
-        <header class="al_header al_pos_fixed">
-    <div class="al_header_container dis_flex_jcenter">
-        <div class="al_header_container_left">
-            <div class="al_header_site_title">
-                <a href="/">Adam's blog</a>
-            </div>
-        </div>
 
-        <div class="dis_flex_jcenter">
-            <div class="al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
-</header>
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
 
-        <div class="al_sidebar">
+  
 
-    <div class="al_sidebar_overlay al_full_cover"></div>
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
-    <div class="al_pos_fixed al_sidebar_cnt">
-        <div class="dis_flex_acenter al_sidebar_header">
-            <h3>Adam's blog</h3>
-            <div class="al_sidebar_close al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
-                </svg>
-            </div>
-        </div>
+  
 
-        <div class="al_sidebar_author_cnt">
-
-            <div class="al_sidebar_author_info">
-                <h4>Adam Pan</h4>
-                <img class="al_sidebar_avatar" src="https://s3.bmp.ovh/imgs/2022/04/28/637e9d78310daaff.jpg">
-                <p></p>
-            </div>
-
-            
-                <div class="al_sidebar_contact_info">
-                    <h4>GET IN TOUCH</h4>
-                    <p>Click to contact me</p>
-
-                    <div class="dis_flex al_sidebar_social_widget">
-                        
-                        
-
-                        
-                        
-
-                        
-                        
-
-                        
-                        
-                            <div class="al_social_icon_cnt" data_link="https://www.github.com/adampan0527">
-                                <svg class="al_social_icon" id="github">
-                                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#icon_github"></use>
-                                </svg>
-                            </div>
-                        
-
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
-    </div>
-</div>
-
+  
+    
+      
         
-    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
-        <img class="al_lightbox_img"/>
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
     </div>
-    <div class="al_page_background dis_flex_center al_full_cover"></div>
-    <div class="al_page_container">
-        <div class="al_pos_ab al_fake_background"></div>
-        <div class="al_main_container al_shadow al_main_page_container">
-            <article class="al_article">
-                <header>
-                    <h1 class="al_page_title">
-                        代价函数
-                    </h1>
-                    <div class="al_page_info dis_flex">
-                        <div class="al_page_content_info">
-                            Wed May 4, 2022 02:37 AM
-                        </div>
+    <div class="center">代价函数</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
 
-                        
-                            <div class="al_page_content_info">
-                                560 words
-                            </div>
-                        
+  
+  
 
-                        
-                            <div class="al_page_content_info">
-                                2 minutes read
-                            </div>
-                        
-                        <span class="tags"></span>
-                    </div>
-                </header>
-
-                
-                    <div class="al_page_content_outline">
-                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="toc-text">代价函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%87%BD%E6%95%B0"><span class="toc-text">模型函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="toc-text">什么是代价函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95"><span class="toc-text">最小二乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E6%B3%95"><span class="toc-text">极大似然估计法</span></a></li></ol></li></ol>
-                    </div>
-                
-
-                
-                <section id="post-body">
-                    <h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><h2 id="模型函数"><a href="#模型函数" class="headerlink" title="模型函数"></a>模型函数</h2><p>模型函数是用已知的信息去推算想要预测的信息的一个函数。</p>
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">代价函数</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>May 04, 2022</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>963</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+          <p><h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><h2 id="模型函数"><a href="#模型函数" class="headerlink" title="模型函数"></a>模型函数</h2><p>模型函数是用已知的信息去推算想要预测的信息的一个函数。</p>
+<p>假设我们想用房子占地面积预测房价，则可以假设$h_\theta(x) &#x3D; \theta_0+\theta_1x$，其中$\theta_0$和$\theta_1$都是参数，也是我们后续想要调整的东西。</p></p>
+        
+        <h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><h2 id="模型函数"><a href="#模型函数" class="headerlink" title="模型函数"></a>模型函数</h2><p>模型函数是用已知的信息去推算想要预测的信息的一个函数。</p>
 <p>假设我们想用房子占地面积预测房价，则可以假设$h_\theta(x) &#x3D; \theta_0+\theta_1x$，其中$\theta_0$和$\theta_1$都是参数，也是我们后续想要调整的东西。</p>
 <h2 id="什么是代价函数"><a href="#什么是代价函数" class="headerlink" title="什么是代价函数"></a>什么是代价函数</h2><p>代价函数，也称为损失函数，是用于调整参数的一个重要指标，假设预测值是100，但收集到的数值是150，则我们的预测有了50的偏差，代价函数就是用于衡量这些偏差的函数，我们可以通过取代价函数的全局最小值来使我们的模型拥有最小的误差。</p>
 <h2 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h2><p>$$<br>\Large J(\theta)&#x3D;\frac{1}{2}\sum_{i&#x3D;0}^m(h_\theta(x_i)-y_i)^2<br>$$</p>
 <p>想要比较两个模型之间的差，很自然的我们会想到把每一个点上的预测值$h_\theta(x)$和实际值$y$之间的差相加，取两者的差有可能出现负数，因此我们有两个方案：取绝对值和平方，由于绝对值函数是不好求导的，因此我们选择平方。</p>
 <p>那为什么要有1&#x2F;2呢？其实本质上没有区别，只是因为加上后求导后会不带常数，看着舒服罢了。</p>
-<h2 id="极大似然估计法"><a href="#极大似然估计法" class="headerlink" title="极大似然估计法"></a>极大似然估计法</h2><p>极大似然估计法是在最小二乘法的基础上进行改进的一种方法，在最小二乘法中，我们定义$h_\theta(x)$是一个多项式函数，但在极大似然估计法中，我们定义<br>$$<br>\Large h_\theta(x)&#x3D;\frac{1}{1+e^{-\theta^Tx}}<br>$$<br>在这个基础上用最小二乘法的公式代入，我们不难发现这个代价函数不是一个凸函数，也就是说这个函数会有许多个局部最小值，如此一来找到全局最小值就是一个相当艰巨的任务，因此我们可以定义<br>$$<br>\begin{gather}<br>\large Cost(h_\theta(x), y)&#x3D;<br>\begin{cases}<br>-log(1-h_\theta(x))\quad y&#x3D;0\<br>-log(h_\theta(x))\quad y&#x3D;1<br>\end{cases}<br>\<br>\large J(\theta)&#x3D;\frac{1}{2}\sum_{i&#x3D;0}^mCost(h_\theta(x_i), y_i)<br>\end{gather}<br>$$</p>
+<h2 id="极大似然估计法"><a href="#极大似然估计法" class="headerlink" title="极大似然估计法"></a>极大似然估计法</h2><p>极大似然估计法是在最小二乘法的基础上进行改进的一种方法，在最小二乘法中，我们定义$h_\theta(x)$是一个多项式函数，但在极大似然估计法中，我们定义<br>$$<br>\Large h_\theta(x)&#x3D;\frac{1}{1+e^{-\theta^Tx}}<br>$$<br>在这个基础上用最小二乘法的公式代入，我们不难发现这个代价函数不是一个凸函数，也就是说这个函数会有许多个局部最小值，如此一来找到全局最小值就是一个相当艰巨的任务，因此我们可以定义<br>$$<br>\begin{gather}<br>\large Cost(h_\theta(x), y)&#x3D;<br>\begin{cases}<br>-log(1-h_\theta(x))\quad y&#x3D;0\<br>-log(h_\theta(x))\quad y&#x3D;1<br>\end{cases}\\<br>\large J(\theta)&#x3D;\frac{1}{2}\sum_{i&#x3D;0}^mCost(h_\theta(x_i), y_i)<br>\end{gather}<br>$$</p>
 
-                </section>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>Adam Pan</li>
+    <li><strong>本文链接：</strong><a href="https://adampan0527.github.io/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/index.html" title="https:&#x2F;&#x2F;adampan0527.github.io&#x2F;2022&#x2F;05&#x2F;04&#x2F;%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0&#x2F;index.html">https:&#x2F;&#x2F;adampan0527.github.io&#x2F;2022&#x2F;05&#x2F;04&#x2F;%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+        
+  <nav class="nav">
+    <a href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/"><i class="iconfont iconleft"></i>梯度下降法</a>
+    <a href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/">rabbitmq双活<i class="iconfont iconright"></i></a>
+  </nav>
 
-                
-                
-    <div id="al_gitalk_cnt" />
-    <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    <script>
-        var gitalk = new Gitalk({
-            clientID: "f75842370a28d6e8f668",
-            clientSecret: "7be6aa27993aa485691737d058cafb9c0152b7ef",
-            repo: "hexocomment",
-            owner: "adampan0527",
-            admin: "adampan0527",
-            id: "代价函数",
-        });
-        gitalk.render("al_gitalk_cnt")
-    </script>
+      </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk" class="gitalk"></div>
+<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  window.onload = function () {
+    var gitalk = new Gitalk({
+      clientID: 'f75842370a28d6e8f668',
+      clientSecret: '7be6aa27993aa485691737d058cafb9c0152b7ef',
+      id: window.location.pathname,
+      repo: 'hexocomment',
+      owner: 'adampan0527',
+      admin: 'adampan0527'
+    });
+    if ( true ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        gitalk.render('gitalk');
+      });
+    } else {
+      gitalk.render('gitalk');
+    }
+  }
+</script>
 
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="toc-text">代价函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%87%BD%E6%95%B0"><span class="toc-text">模型函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="toc-text">什么是代价函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95"><span class="toc-text">最小二乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E6%B3%95"><span class="toc-text">极大似然估计法</span></a></li></ol></li></ol>
+  </aside>
 
-                
-    <div id="disqus_thread" clas="al_disqus">
-    <script>
-        (function(){
-          var dsq = document.createElement('script');
-          dsq.type = 'text/javascript';
-          dsq.async = true;
-          dsq.src = '//your_disqus_short_name.disqus.com/embed.js';
-          (document.head or document.body).appendChild(dsq);
-        }());
-    </script>
-
-
-            </article>
-
-            
-            <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/">
-                    
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
-                        </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc">梯度下降法</span>
-                    
-                </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/">
-                    
-                        <span class="al_text_ellipsis al_post_nav_desc">rabbitmq双活</span>
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
-                        </svg>
-                    
-                </a>
-            </nav>
-        </div>
+        
+      </div>
     </div>
+  </div>
+</main>
+  
 
-
-        <div class="al_index_footer dis_flex_center">
-    <div class="al_index_footer_item al_index_footer_title">
-        Adam Pan
-    </div>
-
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
     
-    
+<script src="/js/color-mode.js"></script>
 
-    <div class="al_index_footer_item al_index_footer_extra">
-        Created By 
-        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
-         · Power By 
-        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
-    </div>
+  
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 
-    <div class="al_index_footer_item al_index_footer_extra_right">
-        All Right Reserved
-    </div>
-</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
-        
-        
-        
-    <script src="//www.googletagmanager.com/gtag/js?id=G-91JDD364PD"></script>
-    <script>window.dataLayer=window.dataLayeror[];function gtag(){dataLayer.push(arguments);};gtag('js', new Date());gtag('config', '${theme.google_analytice.tracking_id}');</script>
 
-        
-        
 
-    </body>
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>

@@ -1,147 +1,224 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        
-    
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    
-    <link rel='stylesheet' href="/./css/dracula.css">
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rabbitmq简介 - Adam&#39;s blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="rabbitmq简介基本流程生产者投递消息-&gt;与...">
+  <meta name="author" content="Adam Pan">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
 
-        <title>rabbitmq简介</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+  
 <link rel="stylesheet" href="/css/style.css">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="manifest" href="/site.webmanifest">
 
-    <meta name="generator" content="Hexo 6.3.0"></head>
-    <body>
-        <header class="al_header al_pos_fixed">
-    <div class="al_header_container dis_flex_jcenter">
-        <div class="al_header_container_left">
-            <div class="al_header_site_title">
-                <a href="/">Adam's blog</a>
-            </div>
-        </div>
 
-        <div class="dis_flex_jcenter">
-            <div class="al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
-</header>
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
 
-        <div class="al_sidebar">
+  
 
-    <div class="al_sidebar_overlay al_full_cover"></div>
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
-    <div class="al_pos_fixed al_sidebar_cnt">
-        <div class="dis_flex_acenter al_sidebar_header">
-            <h3>Adam's blog</h3>
-            <div class="al_sidebar_close al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
-                </svg>
-            </div>
-        </div>
+  
 
-        <div class="al_sidebar_author_cnt">
-
-            <div class="al_sidebar_author_info">
-                <h4>Adam Pan</h4>
-                <img class="al_sidebar_avatar" src="https://s3.bmp.ovh/imgs/2022/04/28/637e9d78310daaff.jpg">
-                <p></p>
-            </div>
-
-            
-                <div class="al_sidebar_contact_info">
-                    <h4>GET IN TOUCH</h4>
-                    <p>Click to contact me</p>
-
-                    <div class="dis_flex al_sidebar_social_widget">
-                        
-                        
-
-                        
-                        
-
-                        
-                        
-
-                        
-                        
-                            <div class="al_social_icon_cnt" data_link="https://www.github.com/adampan0527">
-                                <svg class="al_social_icon" id="github">
-                                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#icon_github"></use>
-                                </svg>
-                            </div>
-                        
-
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
-    </div>
-</div>
-
+  
+    
+      
         
-    <div class="dis_flex_center al_lightbox_cnt al_full_cover">
-        <img class="al_lightbox_img"/>
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
     </div>
-    <div class="al_page_background dis_flex_center al_full_cover"></div>
-    <div class="al_page_container">
-        <div class="al_pos_ab al_fake_background"></div>
-        <div class="al_main_container al_shadow al_main_page_container">
-            <article class="al_article">
-                <header>
-                    <h1 class="al_page_title">
-                        rabbitmq简介
-                    </h1>
-                    <div class="al_page_info dis_flex">
-                        <div class="al_page_content_info">
-                            Fri April 29, 2022 11:38 PM
-                        </div>
+    <div class="center">rabbitmq简介</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
 
-                        
-                            <div class="al_page_content_info">
-                                1.7k words
-                            </div>
-                        
+  
+  
 
-                        
-                            <div class="al_page_content_info">
-                                5 minutes read
-                            </div>
-                        
-                        <span class="tags"></span>
-                    </div>
-                </header>
-
-                
-                    <div class="al_page_content_outline">
-                        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rabbitmq%E7%AE%80%E4%BB%8B"><span class="toc-text">rabbitmq简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">基本流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="toc-text">虚拟主机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="toc-text">新建虚拟主机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-text">新建用户</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AEvhost"><span class="toc-text">访问vhost</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%91"><span class="toc-text">坑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BA%A4%E6%8D%A2%E5%99%A8"><span class="toc-text">常用交换器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#direct"><span class="toc-text">direct</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fanout"><span class="toc-text">fanout</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#topic"><span class="toc-text">topic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#headers"><span class="toc-text">headers</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F"><span class="toc-text">集群模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8F"><span class="toc-text">主从模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F"><span class="toc-text">镜像模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%B4%BB%E6%A8%A1%E5%BC%8F"><span class="toc-text">多活模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96%E4%BB%8B%E7%BB%8D"><span class="toc-text">持久化介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E5%99%A8"><span class="toc-text">交换器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF"><span class="toc-text">消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89rabbitmq"><span class="toc-text">为什么选rabbitmq</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%E6%B6%88%E6%81%AF%E5%A0%86%E7%A7%AF%E5%A4%84%E7%90%86%E4%B8%8D%E5%A5%BD"><span class="toc-text">缺点消息堆积处理不好</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                
-
-                
-                <section id="post-body">
-                    <h1 id="rabbitmq简介"><a href="#rabbitmq简介" class="headerlink" title="rabbitmq简介"></a>rabbitmq简介</h1><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><p>生产者投递消息-&gt;与server建立连接-&gt;开启信道-&gt;声明exchange和queue，通过routingkey绑定-&gt;消息到虚拟主机-&gt;消息到消息队列-&gt;关闭信道和连接</p>
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">rabbitmq简介</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 29, 2022</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2941</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+          <p><h1 id="rabbitmq简介"><a href="#rabbitmq简介" class="headerlink" title="rabbitmq简介"></a>rabbitmq简介</h1><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><p>生产者投递消息-&gt;与server建立连接-&gt;开启信道-&gt;声明exchange和queue，通过routingkey绑定-&gt;消息到虚拟主机-&gt;消息到消息队列-&gt;关闭信道和连接</p>
+<p>消费者建立连接-&gt</p>
+        
+        <h1 id="rabbitmq简介"><a href="#rabbitmq简介" class="headerlink" title="rabbitmq简介"></a>rabbitmq简介</h1><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><p>生产者投递消息-&gt;与server建立连接-&gt;开启信道-&gt;声明exchange和queue，通过routingkey绑定-&gt;消息到虚拟主机-&gt;消息到消息队列-&gt;关闭信道和连接</p>
 <p>消费者建立连接-&gt;消费信息-&gt;关闭信道和连接</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/05/04/fbed09f46163791f.png" alt="rabbitmq整体框架"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/05/04/fbed09f46163791f.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">rabbitmq整体框架</span></p>
 <h3 id="虚拟主机"><a href="#虚拟主机" class="headerlink" title="虚拟主机"></a>虚拟主机</h3><p>全称为virtual host，作用与虚拟机、容器类似，都是一种隔离工具，虚拟主机之间的交换机、队列、消息均不能互通。在manage页面可以新建虚拟主机（通常以&#x2F;开头），并为其配置允许对该虚拟主机进行操作的用户。</p>
 <h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>在业务较为复杂的情况下可以设置多个vhost，给不同的用户操纵不同vhost的权限</p>
 <h4 id="新建虚拟主机"><a href="#新建虚拟主机" class="headerlink" title="新建虚拟主机"></a>新建虚拟主机</h4><p>通常在新建Vhost时，新Vhost的名字命名通常以”&#x2F;“开头</p>
-<p><img src="https://i.bmp.ovh/imgs/2022/04/25/40a17a15f73dc545.png" alt="新建Vhost"></p>
+<p><img    class="lazyload" data-original="https://i.bmp.ovh/imgs/2022/04/25/40a17a15f73dc545.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">新建Vhost</span></p>
 <p>命令行：<code>rabbitmqctl add_vhost name</code></p>
-<h4 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h4><p><img src="https://i.bmp.ovh/imgs/2022/04/25/aa334d17d2899bb8.png" alt="新建用户"></p>
+<h4 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h4><p><img    class="lazyload" data-original="https://i.bmp.ovh/imgs/2022/04/25/aa334d17d2899bb8.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">新建用户</span></p>
 <p>命令行：<code>rabbitmqctl add_user username password</code></p>
 <p>tags为用户的权限</p>
 <ol>
@@ -152,38 +229,38 @@
 </ol>
 <p>命令行：<code>rabbitmqctl set_user_tags username administrator</code></p>
 <p>用户刚创建时是没有对任何虚拟主机进行操作的权限的，点击用户名</p>
-<p><img src="https://i.bmp.ovh/imgs/2022/04/25/52053b65af639f4c.png" alt="为用户增加操作Vhost的权限"></p>
+<p><img    class="lazyload" data-original="https://i.bmp.ovh/imgs/2022/04/25/52053b65af639f4c.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">为用户增加操作Vhost的权限</span></p>
 <p>就可以为用户设置有权限操作的虚拟主机</p>
 <p>命令行：<code>rabbitmqctl set_permissions -p &quot;vhostname&quot; username &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</code></p>
 <h4 id="访问vhost"><a href="#访问vhost" class="headerlink" title="访问vhost"></a>访问vhost</h4><p>连接的uri格式为（以amqp为例）amqp:&#x2F;&#x2F;(username):(password)@IP:port&#x2F;(Vhost)</p>
 <h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>刚发过几条消息，guest用户看到的内容如下</p>
-<p><img src="https://i.bmp.ovh/imgs/2022/04/25/d38f16c626c7c185.png" alt="guest看到的"></p>
+<p><img    class="lazyload" data-original="https://i.bmp.ovh/imgs/2022/04/25/d38f16c626c7c185.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">guest看到的</span></p>
 <p>将用户testuser访问虚拟主机”&#x2F;“的权限删除，并将testuser的权限（tags）改为Policymaker</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/25/d0f4cd2156bc80b8.png" alt="修改testuser的权限"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/25/d0f4cd2156bc80b8.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">修改testuser的权限</span></p>
 <p>这是testuser用户看到的场景</p>
-<p><img src="https://i.bmp.ovh/imgs/2022/04/25/7aca74b12ee8b9f5.png" alt="testuser看到的"></p>
+<p><img    class="lazyload" data-original="https://i.bmp.ovh/imgs/2022/04/25/7aca74b12ee8b9f5.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">testuser看到的</span></p>
 <h4 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h4><p>在admin修改其他用户的信息时，界面如下</p>
-<p><img src="https://i.bmp.ovh/imgs/2022/04/25/67243eb1eeebc39a.png" alt="administrator修改其他用户信息"></p>
+<p><img    class="lazyload" data-original="https://i.bmp.ovh/imgs/2022/04/25/67243eb1eeebc39a.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">administrator修改其他用户信息</span></p>
 <p>这里的password是该用户修改后的密码，而不是验证当前用户的密码。</p>
 <p>如果登录时出现密码错误，则会提示“您与此网站的连接不是私密连接”，而不是“密码错误”。</p>
 <h3 id="常用交换器"><a href="#常用交换器" class="headerlink" title="常用交换器"></a>常用交换器</h3><h4 id="direct"><a href="#direct" class="headerlink" title="direct"></a>direct</h4><p>点对点，通过特定的routing key锁定队列</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/26/6be17ebb17c9747f.png" alt="direct"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/26/6be17ebb17c9747f.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">direct</span></p>
 <p>注：在能够正常访问IP:port但无法通过routingKey获取队列的情况下生产者发送数据不会提示报错</p>
 <h4 id="fanout"><a href="#fanout" class="headerlink" title="fanout"></a>fanout</h4><p>发送到所有与该exchange绑定的队列</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/26/86532bd331a58f30.png" alt="fanout"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/26/86532bd331a58f30.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">fanout</span></p>
 <p>发送时会发送到所有队列，但消费时不会因为一个队列消费了该消息而将相同的消息从其他队列中移除</p>
 <h4 id="topic"><a href="#topic" class="headerlink" title="topic"></a>topic</h4><p>一对n，识别routing key</p>
 <p>*表示匹配一个词，#表示匹配1+个词，topic的格式为XX.XX.XX……</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/26/cf836cf159facdca.png" alt="topic"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/26/cf836cf159facdca.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">topic</span></p>
 <h4 id="headers"><a href="#headers" class="headerlink" title="headers"></a>headers</h4><p>有若干个key与对应的value，设定x-match来表示需要所有的key都匹配（all）或是部分匹配（any）</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/26/12c86c943196ac0f.png" alt="headers"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/26/12c86c943196ac0f.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">headers</span></p>
 <h2 id="集群模式"><a href="#集群模式" class="headerlink" title="集群模式"></a>集群模式</h2><h3 id="主从模式"><a href="#主从模式" class="headerlink" title="主从模式"></a>主从模式</h3><p>生产者和消费者只能对master（中的master queue）进行操作，连接到非master节点会被路由到master。</p>
 <p>主从模式的优点在于部署简单，适用于并发与数据量不高的情况。</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/25/9d0e0ab224a11cfa.png" alt="消费过程"></p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/25/f3c9b41d459d60b7.png" alt="发送过程"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/25/9d0e0ab224a11cfa.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">消费过程</span></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/25/f3c9b41d459d60b7.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">发送过程</span></p>
 <h3 id="镜像模式"><a href="#镜像模式" class="headerlink" title="镜像模式"></a>镜像模式</h3><p>镜像模式的数据存在每一个节点上，所有节点的数据同步，能较好地保证数据的安全性。但由于节点多的时候同步的成本较高，因此无法线性扩展节点。</p>
 <p>在一个集群刚被部署时候，是默认为主从模式的，想要改成镜像模式，可以通过设置policy来实现</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/26/1770a7e3b76363be.png" alt="添加policy"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/26/1770a7e3b76363be.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">添加policy</span></p>
 <p>name：policy的名称</p>
 <p>pattern：队列的匹配模式，正则表达式</p>
 <p>definition：镜像定义</p>
@@ -194,10 +271,10 @@
 <li>ha-promote-on-shutdown：有效值为when-synced和always。when-synced意为只有在非可控的主节点关闭（如断网等）时，才会故障恢复到一个非同步的从节点；always则是在任何情况下只要主节点关闭，就进行故障恢复。</li>
 </ol>
 <p>在pod内部可以通过<code>rabbitmqctl list_policies</code>命令来查看是否为镜像模式，以及镜像模式的各个参数。</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/26/9a33c6135a79767e.png" alt="查看policy"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/26/9a33c6135a79767e.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">查看policy</span></p>
 <p>PS：在主节点服务因未知原因宕机后，会自动将新的节点作为主节点，并不影响正常使用，在原主节点恢复正常后不会将原主节点切换为主节点</p>
 <h3 id="多活模式"><a href="#多活模式" class="headerlink" title="多活模式"></a>多活模式</h3><p>多活要求部署多套rabbitmq集群，通过federation插件达到在节点和集群之间传输消息的效果，并且连接的双方可以是不同的user和vhost，也可以使用不同版本的rabbitmq和erlang。</p>
-<p><img src="https://s3.bmp.ovh/imgs/2022/04/26/382456bf40ed625b.png" alt="多活架构"></p>
+<p><img    class="lazyload" data-original="https://s3.bmp.ovh/imgs/2022/04/26/382456bf40ed625b.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">多活架构</span></p>
 <h2 id="持久化介绍"><a href="#持久化介绍" class="headerlink" title="持久化介绍"></a>持久化介绍</h2><h3 id="交换器"><a href="#交换器" class="headerlink" title="交换器"></a>交换器</h3><p>交换器持久化后能保证在服务重启后交换器的元数据不丢失</p>
 <h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>交换器持久化后能保证在服务重启后队列的元数据不丢失</p>
 <h3 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h3><p>交换器持久化后能保证在服务重启后消息数据不丢失</p>
@@ -217,92 +294,223 @@
 <li>不支持回溯（消费过的消息不会被保留）</li>
 </ol>
 
-                </section>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>Adam Pan</li>
+    <li><strong>本文链接：</strong><a href="https://adampan0527.github.io/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/index.html" title="https:&#x2F;&#x2F;adampan0527.github.io&#x2F;2022&#x2F;04&#x2F;29&#x2F;rabbitmq%E7%AE%80%E4%BB%8B&#x2F;index.html">https:&#x2F;&#x2F;adampan0527.github.io&#x2F;2022&#x2F;04&#x2F;29&#x2F;rabbitmq%E7%AE%80%E4%BB%8B&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/rabbitmq/" rel="tag">rabbitmq</a></li></ul> 
 
-                
-                
-    <div id="al_gitalk_cnt" />
-    <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    <script>
-        var gitalk = new Gitalk({
-            clientID: "f75842370a28d6e8f668",
-            clientSecret: "7be6aa27993aa485691737d058cafb9c0152b7ef",
-            repo: "hexocomment",
-            owner: "adampan0527",
-            admin: "adampan0527",
-            id: "rabbitmq简介",
-        });
-        gitalk.render("al_gitalk_cnt")
-    </script>
+        
+  <nav class="nav">
+    <a href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/"><i class="iconfont iconleft"></i>rabbitmq双活</a>
+    <a href="/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/">浙大历年上机真题<i class="iconfont iconright"></i></a>
+  </nav>
 
+      </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk" class="gitalk"></div>
+<script defer src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+  window.onload = function () {
+    var gitalk = new Gitalk({
+      clientID: 'f75842370a28d6e8f668',
+      clientSecret: '7be6aa27993aa485691737d058cafb9c0152b7ef',
+      id: window.location.pathname,
+      repo: 'hexocomment',
+      owner: 'adampan0527',
+      admin: 'adampan0527'
+    });
+    if ( true ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        gitalk.render('gitalk');
+      });
+    } else {
+      gitalk.render('gitalk');
+    }
+  }
+</script>
 
-                
-    <div id="disqus_thread" clas="al_disqus">
-    <script>
-        (function(){
-          var dsq = document.createElement('script');
-          dsq.type = 'text/javascript';
-          dsq.async = true;
-          dsq.src = '//your_disqus_short_name.disqus.com/embed.js';
-          (document.head or document.body).appendChild(dsq);
-        }());
-    </script>
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rabbitmq%E7%AE%80%E4%BB%8B"><span class="toc-text">rabbitmq简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">基本流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA"><span class="toc-text">虚拟主机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BA%A4%E6%8D%A2%E5%99%A8"><span class="toc-text">常用交换器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F"><span class="toc-text">集群模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8F"><span class="toc-text">主从模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F"><span class="toc-text">镜像模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%B4%BB%E6%A8%A1%E5%BC%8F"><span class="toc-text">多活模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96%E4%BB%8B%E7%BB%8D"><span class="toc-text">持久化介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E5%99%A8"><span class="toc-text">交换器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-text">队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF"><span class="toc-text">消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89rabbitmq"><span class="toc-text">为什么选rabbitmq</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%E6%B6%88%E6%81%AF%E5%A0%86%E7%A7%AF%E5%A4%84%E7%90%86%E4%B8%8D%E5%A5%BD"><span class="toc-text">缺点消息堆积处理不好</span></a></li></ol></li></ol></li></ol>
+  </aside>
 
-
-            </article>
-
-            
-            <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/">
-                    
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-left"></use>
-                        </svg>
-                        <span class="al_text_ellipsis al_post_nav_desc">rabbitmq双活</span>
-                    
-                </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/">
-                    
-                        <span class="al_text_ellipsis al_post_nav_desc">浙大历年上机真题</span>
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
-                        </svg>
-                    
-                </a>
-            </nav>
-        </div>
+        
+      </div>
     </div>
+  </div>
+</main>
+  
 
-
-        <div class="al_index_footer dis_flex_center">
-    <div class="al_index_footer_item al_index_footer_title">
-        Adam Pan
-    </div>
-
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
     
-    
+<script src="/js/color-mode.js"></script>
 
-    <div class="al_index_footer_item al_index_footer_extra">
-        Created By 
-        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
-         · Power By 
-        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
-    </div>
+  
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 
-    <div class="al_index_footer_item al_index_footer_extra_right">
-        All Right Reserved
-    </div>
-</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
-        
-        
-        
-    <script src="//www.googletagmanager.com/gtag/js?id=G-91JDD364PD"></script>
-    <script>window.dataLayer=window.dataLayeror[];function gtag(){dataLayer.push(arguments);};gtag('js', new Date());gtag('config', '${theme.google_analytice.tracking_id}');</script>
 
-        
-        
 
-    </body>
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>

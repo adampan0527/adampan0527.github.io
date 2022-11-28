@@ -1,537 +1,599 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        
-        <title></title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.0">
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Adam&#39;s blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  
+  <meta name="author" content="Adam Pan">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
 <link rel="stylesheet" href="/css/style.css">
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="manifest" href="/site.webmanifest">
 
-    <meta name="generator" content="Hexo 6.3.0"></head>
-    <body>
-        <header class="al_header al_pos_fixed">
-    <div class="al_header_container dis_flex_jcenter">
-        <div class="al_header_container_left">
-            <div class="al_header_site_title">
-                <a href="/">Adam's blog</a>
-            </div>
-        </div>
 
-        <div class="dis_flex_jcenter">
-            <div class="al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-menu"></use>
-                </svg>
-            </div>
-        </div>
-    </div>
-</header>
-
-        <div class="al_sidebar">
-
-    <div class="al_sidebar_overlay al_full_cover"></div>
-
-    <div class="al_pos_fixed al_sidebar_cnt">
-        <div class="dis_flex_acenter al_sidebar_header">
-            <h3>Adam's blog</h3>
-            <div class="al_sidebar_close al_header_setting">
-                <svg class="al_header_icon">
-                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-close"></use>
-                </svg>
-            </div>
-        </div>
-
-        <div class="al_sidebar_author_cnt">
-
-            <div class="al_sidebar_author_info">
-                <h4>Adam Pan</h4>
-                <img class="al_sidebar_avatar" src="https://s3.bmp.ovh/imgs/2022/04/28/637e9d78310daaff.jpg">
-                <p></p>
-            </div>
-
-            
-                <div class="al_sidebar_contact_info">
-                    <h4>GET IN TOUCH</h4>
-                    <p>Click to contact me</p>
-
-                    <div class="dis_flex al_sidebar_social_widget">
-                        
-                        
-
-                        
-                        
-
-                        
-                        
-
-                        
-                        
-                            <div class="al_social_icon_cnt" data_link="https://www.github.com/adampan0527">
-                                <svg class="al_social_icon" id="github">
-                                    <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#icon_github"></use>
-                                </svg>
-                            </div>
-                        
-
-                        
-                        
-                    </div>
-                </div>
-            
-        </div>
-    </div>
-</div>
-
-        
-    <div class="al_index_background dis_flex_center al_full_cover">
-        <div class="al_pos_ab al_letter al_index_background_letter">
-            A
-        </div>
-        <h2 class="al_index_background_bio">
-            A Simple Theme
-        </h2>
-    </div>
-    <div class="al_index_container">
-        <div class="al_pos_ab al_fake_background"></div>
-        <div class="al_main_container al_shadow">
-            <div class="al_section_container dis_flex_jcenter">
-                <div class="section_header">
-                    LATEST PAGES
-                </div>
-            </div>
-            <ul class="al_post_list">
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                梯
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/">
-                                    梯度校验
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-05-17 16:46:45
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        1 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                梯度校验梯度校验是一种判断梯度（导数）是否出错的方法，通常我们会通过反向传播的方法来计算梯度，并通过梯度校验的方式来判断最终的梯度是否正确。 如何计算梯度除了神经网络的反向传播之外，我们可以通过类似于极限的方式来取近似的梯度，在数学中对于$x$在$x_0$处的梯度有如下定义$
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/05/17/梯度校验/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                神
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/05/08/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">
-                                    神经网络的反向传播
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-05-08 21:53:22
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        1 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                神经网络的反向传播如何传播反向传播的公式如下$$\begin{gather}\delta^{(L)}&#x3D;a^{(L)}-y \\\delta^{(n)}&#x3D;(\Theta^{(n)})^T\delta^{(n+1)}.g’(
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/05/08/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/05/08/神经网络反向传播/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                梯
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/">
-                                    梯度下降法
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-05-04 02:37:29
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        2 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                梯度下降法什么是梯度下降法梯度下降法是求凸函数的全局最值的一个常用方法，在梯度下降法中我们通过求导的方式一步步地逼近全局最值。 <h2 id="如何实现梯度下降"
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/05/04/梯度下降法/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                代
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/">
-                                    代价函数
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-05-04 02:37:04
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        2 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                代价函数模型函数模型函数是用已知的信息去推算想要预测的信息的一个函数。 假设我们想用房子占地面积预测房价，则可以假设$h_\theta(x) &#x3D; \theta_0+\theta_1x$，其中$\theta_0$和$\theta_1$都是参数，也是我们后续想要调整的东西。
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/05/04/代价函数/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                R
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/">
-                                    rabbitmq双活
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-04-29 23:38:35
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        1 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                rabbitmq双活前置准备rabbitmq的双活是通过federation插件来实现的，因此需要激活rabbitmq_federation和rabbitmq_federation_management插件，可以在命令行直接用rabbitmq-plugins e
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/04/29/rabbitmq双活/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                R
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/">
-                                    rabbitmq简介
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-04-29 23:38:26
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        5 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                rabbitmq简介基本流程生产者投递消息-&gt;与server建立连接-&gt;开启信道-&gt;声明exchange和queue，通过routingkey绑定-&gt;消息到虚拟主机-&gt;消息到消息队列-&gt;关闭信道和连接 消费者建立连接-&gt
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/04/29/rabbitmq简介/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                浙
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/">
-                                    浙大历年上机真题
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-04-06 10:08:12
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        1 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                浙大历年上机真题2012保研上机题目详情 - 1042 Shuffling Machi
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/04/06/浙大历年上机真题/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                猫
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/03/30/%E7%8C%AB%E8%88%8D%E5%A4%A7%E5%85%A8/">
-                                    猫舍大全
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-03-30 23:20:00
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        1 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                猫舍大全meatball cat libby 猫舍
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/03/30/%E7%8C%AB%E8%88%8D%E5%A4%A7%E5%85%A8/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/03/30/猫舍大全/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                浙
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/03/25/%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E6%8A%80%E5%B7%A7/">
-                                    浙大复试技巧
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-03-25 17:25:55
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        2 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                浙大复试技巧简单介绍一下自己，我22年考研，已经被浙大软院人工智能拟录取，初试343（排名21），机试92（排名未知），复试总分87.68（排名3），希望我的经验能对你有所帮助。 复试流程介绍复试的流程分为两步：自我介绍+导师提问。在线上面试时，自我介绍需要考生准备PPT
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/03/25/%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E6%8A%80%E5%B7%A7/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/03/25/浙大复试技巧/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-                    <li class="al_index_pageList_item al_index_page_seperator">
-                        <div class="al_index_post_title_cnt dis_flex">
-                            <div class="al_pos_ab al_letter al_index_post_title_letter">
-                                零
-                            </div>
-                            <h2 class="al_index_post_title">
-                                <a href="/2022/03/24/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA/">
-                                    零基础浙大复试上机
-                                </a>
-                            </h2>
-                            <div class="al_index_post_extra dis_flex">
-                                <div class="al_index_post_date al_index_post_extra_item">
-                                    2022-03-24 02:06:08
-                                </div>
-                                
-                                    <div class="al_index_post_read_time">
-                                        1 Min Read
-                                    </div>
-                                
-                            </div>
-                        </div>
-                        <div class="al_index_post_excerpt_cnt">
-                            <p class="al_index_post_excerpt">
-                                零基础浙大复试上机先简单介绍一下我自己，本人于大三加入ACM实验室，训练一年获得ICPC铜牌，其他奖项若干，2022年考研，目标浙大软院的人工智能方向。 如果你是跨考或是对自己的机试没有信心，移步零基础浙大复试上机，我将在这一系列视频中从零开始带你一步步增强自己的算法能力
-                            </p>
-                        </div>
-                        <div class="al_index_post_button_cnt dis_flex">
-                            <a class="al_button al_button_theme al_index_post_button" href="/2022/03/24/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA/">
-                                READ ON
-                            </a>
-                            <a
-                                class="al_button al_button_transparent al_index_post_button"
-                                target="_blank" rel="noopener" href="//getpocket.com/edit?url=https://adampan0527.github.io/2022/03/24/零基础浙大复试上机/">
-                                READ LATER
-                            </a>
-                        </div>
-                    </li>
-                
-            </ul>
-            <nav class="dis_flex al_post_nav">
-                <a class="al_post_nav_item dis_flex_acenter" href="/">
-                    
-                </a>
-                <a class="al_post_nav_item dis_flex_acenter" href="/page/2/">
-                    
-                        <span>Older Posts</span>
-                        <svg class="al_arrow">
-                            <use xmlns="http://www.w3.org/2000/svg" xlink:href="/assets/svg_icons.svg#svg-arrow-right"></use>
-                        </svg>
-                    
-                </a>
-            </nav>
-        </div>
-    </div>
-
-        <div class="al_index_footer dis_flex_center">
-    <div class="al_index_footer_item al_index_footer_title">
-        Adam Pan
-    </div>
-
+  
     
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: true,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
     
 
-    <div class="al_index_footer_item al_index_footer_extra">
-        Created By 
-        <a target="_blank" rel="noopener" href="https://github.com/iGuan7u/Acetolog">AcetoLog</a>
-         · Power By 
-        <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
-    </div>
 
-    <div class="al_index_footer_item al_index_footer_extra_right">
-        All Right Reserved
+  <nav class="navbar">
+    <div class="left">
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
     </div>
+    <div class="center"> </div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline active"> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  
+    <div class="preview">
+  <!-- <nav class="navbar j-navbar-menu">
+    <i class="iconfont iconmenu"></i>
+  </nav> -->
+  <div class="preview-image">
+    
+        
+              <div class="preview-overlay">
+                <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                  <defs>
+                    <path id="gentle-wave"
+                      d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                  </defs>
+                  <g class="preview-parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(var(--color-background-rgb),0.7"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(var(--color-background-rgb),0.5)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(var(--color-background-rgb),0.3)"></use>
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--color-background)"></use>
+                  </g>
+                </svg>
+              </div>
+              
+  </div>
+  <div class="preview-motto-wrapper">
+    <h2 class="preview-motto" id="motto">
+      
+    </h2>
+    
+      <span class="preview-cursor">_</span>
+      
+  </div>
+  <div class="preview-scroll">
+    <a href="#container" class="smooth-scroll"><i class="iconfont iconMouse"></i></a>
+  </div>
+</div>
+  
+  <div class="container" id="container">
+    <section class="row post">
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/" title="梯度校验" >梯度校验</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">梯度校验梯度校验是一种判断梯度（导数）是否出错的方法，通常我们会通过反向传播的方法来计算梯度，并通过梯度校验的方式来判断最终的梯度是否正确。
+如何计算梯度除了神经网络的反向传播之外，我们可以通过...</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>May 17, 2022</span>
+        
+      </div>
+    </div>
+  </div>
 </div>
 
-        <script type="text/javascript" async="async" src="/javascripts/acelog.js"></script>
-        
-        
-        
-    <script src="//www.googletagmanager.com/gtag/js?id=G-91JDD364PD"></script>
-    <script>window.dataLayer=window.dataLayeror[];function gtag(){dataLayer.push(arguments);};gtag('js', new Date());gtag('config', '${theme.google_analytice.tracking_id}');</script>
+  
+    
 
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/05/08/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/05/08/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/" title="神经网络的反向传播" >神经网络的反向传播</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">神经网络的反向传播如何传播反向传播的公式如下$$\begin{gather}\delta^{(L)}&#x3D;a^{(L)}-y \\\delta^{(n)}&#x3D;(\Theta^{(n...</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>May 08, 2022</span>
         
-        
+      </div>
+    </div>
+  </div>
+</div>
 
-    </body>
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/" title="梯度下降法" >梯度下降法</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">梯度下降法什么是梯度下降法梯度下降法是求凸函数的全局最值的一个常用方法，在梯度下降法中我们通过求导的方式一步步地逼近全局最值。
+</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>May 04, 2022</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/" title="代价函数" >代价函数</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">代价函数模型函数模型函数是用已知的信息去推算想要预测的信息的一个函数。
+假设我们想用房子占地面积预测房价，则可以假设$h_\theta(x) &#x3D; \theta_0+\theta_1x$...</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>May 04, 2022</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/" title="rabbitmq双活" >rabbitmq双活</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">rabbitmq双活前置准备rabbitmq的双活是通过federation插件来实现的，因此需要激活rabbitmq_federation和rabbitmq_federation_manage...</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 29, 2022</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/" title="rabbitmq简介" >rabbitmq简介</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">rabbitmq简介基本流程生产者投递消息-&gt;与server建立连接-&gt;开启信道-&gt;声明exchange和queue，通过routingkey绑定-&gt;消息到虚拟主机-&g...</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 29, 2022</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/" title="浙大历年上机真题" >浙大历年上机真题</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">浙大历年上机真题2012保研上机题目详情 - 1042 Shuffling Machi</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 06, 2022</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/03/30/%E7%8C%AB%E8%88%8D%E5%A4%A7%E5%85%A8/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/03/30/%E7%8C%AB%E8%88%8D%E5%A4%A7%E5%85%A8/" title="猫舍大全" >猫舍大全</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">猫舍大全meatball cat
+libby 猫舍
+</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>March 30, 2022</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+<div class="col-lg-4 col-md-6 col-sm-12 post-item">
+  <div class="post-wrap">
+    
+    <a href="/2022/03/25/%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E6%8A%80%E5%B7%A7/" class="post-image">
+      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+    </a>
+    <div class="post-content">
+      <div class="post-content-wrap">
+        <h3 class="post-title"><a href="/2022/03/25/%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E6%8A%80%E5%B7%A7/" title="浙大复试技巧" >浙大复试技巧</a></h3>
+        <div class="post-excerpt">
+          <p class="substr-3">浙大复试技巧简单介绍一下自己，我22年考研，已经被浙大软院人工智能拟录取，初试343（排名21），机试92（排名未知），复试总分87.68（排名3），希望我的经验能对你有所帮助。
+复试流程介绍复...</p>
+        </div>
+      </div>
+      <div class="post-info">
+        <span class="post-info-item"><i class="iconfont iconcalendar"></i>March 25, 2022</span>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</section>
+    <section class="paginator">
+  
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
+  
+</section>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
