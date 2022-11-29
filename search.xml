@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>梯度校验</title>
+      <link href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/"/>
+      <url>/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="梯度校验"><a href="#梯度校验" class="headerlink" title="梯度校验"></a>梯度校验</h1><p>梯度校验是一种判断梯度（导数）是否出错的方法，通常我们会通过反向传播的方法来计算梯度，并通过梯度校验的方式来判断最终的梯度是否正确。</p><h2 id="如何计算梯度"><a href="#如何计算梯度" class="headerlink" title="如何计算梯度"></a>如何计算梯度</h2><p>除了神经网络的反向传播之外，我们可以通过类似于极限的方式来取近似的梯度，在数学中对于$x$在$x_0$处的梯度有如下定义<br>$$<br>\large f’(x_0)&#x3D;\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}<br>$$<br>在梯度校验中我们取<br>$$<br>\large f’(x)&#x3D;\lim_{\epsilon\to 0}\frac{f(x+\epsilon)-f(x-\epsilon)}{2\epsilon}<br>$$</p><p>$$<br>\large \frac {\partial}{\partial\theta_1}J(\theta)&#x3D;\frac{J(\theta_1+\epsilon,\theta_2…\theta_n)-J(\theta_1-\epsilon,\theta_2…\theta_n)}{2\epsilon}<br>$$</p><p>对每一个$\theta$都进行一次该操作，就能得出最终的梯度向量，与通过反向传播求出来的梯度向量（由梯度矩阵展开而来）比较，如果差不多，就说明反向传播写的没问题。</p><p>TIPS：不要把梯度校验作为计算梯度的方式用于训练，因为它极其费时。 </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>神经网络的反向传播</title>
+      <link href="/2022/05/08/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/"/>
+      <url>/2022/05/08/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/</url>
+      
+        <content type="html"><![CDATA[<h1 id="神经网络的反向传播"><a href="#神经网络的反向传播" class="headerlink" title="神经网络的反向传播"></a>神经网络的反向传播</h1><h2 id="如何传播"><a href="#如何传播" class="headerlink" title="如何传播"></a>如何传播</h2><p>反向传播的公式如下<br>$$<br>\begin{gather}<br>\delta^{(L)}&#x3D;a^{(L)}-y \\<br>\delta^{(n)}&#x3D;(\Theta^{(n)})^T\delta^{(n+1)}.<em>g’(z^{(n)}) \\<br>g’(z^{(n)})&#x3D;a^{(n)}.</em>(1-a^{(n)})<br>\end{gather}<br>$$<br>其中$\delta$、$a$和$y$都是向量，$\delta$表示的是偏差值，$a$表示的是激活单元，y则是训练集中的实际值，$.*$表示点乘，用于矩阵间的运算</p><h2 id="为何需要反向传播"><a href="#为何需要反向传播" class="headerlink" title="为何需要反向传播"></a>为何需要反向传播</h2><p>现在我们已经计算出了$\delta$，那么他有什么用呢？</p><p>在忽略正则化项$\lambda$的时候，我们可以得到<br>$$<br>\begin{gather}<br>\frac{\partial J(\Theta)}{\partial \Theta_{ij}^{(l)}}&#x3D;a_j^{(l)}\delta_i^{(l)}<br>\end{gather}<br>$$<br><img  src="C:\Users\Adam_Pan\AppData\Roaming\Typora\typora-user-images\image-20220508224245098.png"  ><span class="image-caption">image-20220508224245098</span></p><p>反向传播是用于快速计算导数的方法</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>梯度下降法</title>
+      <link href="/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/"/>
+      <url>/2022/05/04/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h1><h2 id="什么是梯度下降法"><a href="#什么是梯度下降法" class="headerlink" title="什么是梯度下降法"></a>什么是梯度下降法</h2><p>梯度下降法是求凸函数的全局最值的一个常用方法，在梯度下降法中我们通过求导的方式一步步地逼近全局最值。</p><h2 id="如何实现梯度下降"><a href="#如何实现梯度下降" class="headerlink" title="如何实现梯度下降"></a>如何实现梯度下降</h2><p>假设代价函数是$J(\theta)$，对该代价函数进行求导（求偏导）就可以获得某一参数在这一步的梯度下降中该如何变化。求导后我们得到<br>$$<br>\large\theta_j &#x3D; \theta_j-\alpha\frac{\partial}{\partial\theta_j}J(\theta)<br>$$<br>值得注意的是，这里的每一个$\theta_j$都需要同时变化，在我们对任何一个$\theta_j$进行赋值时，都会改变其余$\theta_j$的偏导值，因此我们应先计算偏导，再统一赋值。</p><p>这里的$\alpha$为学习率，用于控制参数在一次迭代中的步幅。</p><p>通过这个式子我们不难看出，在越接近全局最值时，偏导会趋向于0，这也就意味着当我们越靠近最终答案，每一次迭代都会自动地变得越“小心”。</p><h2 id="特征缩放"><a href="#特征缩放" class="headerlink" title="特征缩放"></a>特征缩放</h2><p>特征缩放要做的事很简单，由于变量的取值范围不一，有可能差距非常大，而过大的差距会导致我们需要的迭代次数增大，因此我们希望各个变量的取值范围是比较相近的，因此我们可以通过将每个变量的取值范围锁定在相同大小的范围内来改善这一情况。</p><p>例如对于$0\le x_1\le 200$，$0\le x_2\le 3$，我们就可以取$\large x_1&#x3D;\frac{x_1}{200}$，$\large x_2&#x3D;\frac{x_2}{3}$，以此来保证这两个变量的取值范围都在0~1。</p><h2 id="过拟合与正则化"><a href="#过拟合与正则化" class="headerlink" title="过拟合与正则化"></a>过拟合与正则化</h2><p>参数过多有可能会导致函数产生过拟合，过拟合的意思是这个函数几乎完美符合给出的训练样本，但函数曲线过于曲折，无法应用到实际预测中去。</p><p>我们的初衷是为了使预测更精准而尽可能让曲线更贴合训练样本，而不是为了贴合训练样本而贴合训练样本，否则我们完全可以构造出一条完美穿过所有训练样本的曲线，但这样的曲线显然毫无意义。</p><p>因此我们可以在代价函数中加入正则化项$\lambda\sum_{j&#x3D;1}^{n}\theta_j^2$，加入正则化项的好处在于如此一来就可以减小每一个$\theta_j$的值（这里的减小指的是趋向于0，而不是数值上的减小，这也是为什么需要将$\theta_j$进行平方的原因），从而达到让损失函数长得比较阳间的效果。</p><p>于是最终的损失函数为<br>$$<br>\Large J(\theta)&#x3D;\frac{1}{2}\left(\sum_{i&#x3D;0}^mCost(h_\theta(x_i), y_i)+\lambda\sum_{j&#x3D;0}^n\theta_j^2\right)<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>代价函数</title>
+      <link href="/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/"/>
+      <url>/2022/05/04/%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h1><h2 id="模型函数"><a href="#模型函数" class="headerlink" title="模型函数"></a>模型函数</h2><p>模型函数是用已知的信息去推算想要预测的信息的一个函数。</p><p>假设我们想用房子占地面积预测房价，则可以假设$h_\theta(x) &#x3D; \theta_0+\theta_1x$，其中$\theta_0$和$\theta_1$都是参数，也是我们后续想要调整的东西。</p><h2 id="什么是代价函数"><a href="#什么是代价函数" class="headerlink" title="什么是代价函数"></a>什么是代价函数</h2><p>代价函数，也称为损失函数，是用于调整参数的一个重要指标，假设预测值是100，但收集到的数值是150，则我们的预测有了50的偏差，代价函数就是用于衡量这些偏差的函数，我们可以通过取代价函数的全局最小值来使我们的模型拥有最小的误差。</p><h2 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h2><p>$$<br>\Large J(\theta)&#x3D;\frac{1}{2}\sum_{i&#x3D;0}^m(h_\theta(x_i)-y_i)^2<br>$$</p><p>想要比较两个模型之间的差，很自然的我们会想到把每一个点上的预测值$h_\theta(x)$和实际值$y$之间的差相加，取两者的差有可能出现负数，因此我们有两个方案：取绝对值和平方，由于绝对值函数是不好求导的，因此我们选择平方。</p><p>那为什么要有1&#x2F;2呢？其实本质上没有区别，只是因为加上后求导后会不带常数，看着舒服罢了。</p><h2 id="极大似然估计法"><a href="#极大似然估计法" class="headerlink" title="极大似然估计法"></a>极大似然估计法</h2><p>极大似然估计法是在最小二乘法的基础上进行改进的一种方法，在最小二乘法中，我们定义$h_\theta(x)$是一个多项式函数，但在极大似然估计法中，我们定义<br>$$<br>\Large h_\theta(x)&#x3D;\frac{1}{1+e^{-\theta^Tx}}<br>$$<br>在这个基础上用最小二乘法的公式代入，我们不难发现这个代价函数不是一个凸函数，也就是说这个函数会有许多个局部最小值，如此一来找到全局最小值就是一个相当艰巨的任务，因此我们可以定义<br>$$<br>\begin{gather}<br>\large Cost(h_\theta(x), y)&#x3D;<br>\begin{cases}<br>-log(1-h_\theta(x))\quad y&#x3D;0\<br>-log(h_\theta(x))\quad y&#x3D;1<br>\end{cases}\\<br>\large J(\theta)&#x3D;\frac{1}{2}\sum_{i&#x3D;0}^mCost(h_\theta(x_i), y_i)<br>\end{gather}<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>rabbitmq双活</title>
+      <link href="/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/"/>
+      <url>/2022/04/29/rabbitmq%E5%8F%8C%E6%B4%BB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="rabbitmq双活"><a href="#rabbitmq双活" class="headerlink" title="rabbitmq双活"></a>rabbitmq双活</h1><h2 id="前置准备"><a href="#前置准备" class="headerlink" title="前置准备"></a>前置准备</h2><p>rabbitmq的双活是通过federation插件来实现的，因此需要激活rabbitmq_federation和rabbitmq_federation_management插件，可以在命令行直接用<code>rabbitmq-plugins enable rabbitmq_federation</code>和<code>rabbitmq-plugins enable rabbitmq_federation_management</code>来激活，如果提示rabbitmq_plugins是只读文件，则可以通过修改config来激活这两个插件<br>最终激活后进入manage页面，在admin可以看到这个<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/f3059ec2a6f754c3.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/05/04/f3059ec2a6f754c3.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"></p><h2 id="配置Federation"><a href="#配置Federation" class="headerlink" title="配置Federation"></a>配置Federation</h2><p>进入Federation Upstreams，新建一个upstream，输入name和URI即可，URI中以amqp协议为例，IP是目标集群的clusterIP。<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/00916a93aaa64e57.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/05/04/00916a93aaa64e57.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>随后配置policy，在definition中添加federation-upstream-set &#x3D; all，用正则表达式匹配想要匹配的队列作为接收upstream消息的队列。<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/515d3250cf7af6b5.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/05/04/515d3250cf7af6b5.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>这时候检查一下exchange和queue的policy应用情况<br><img src="https://s3.bmp.ovh/imgs/2022/05/04/463474b2c418d491.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/05/04/463474b2c418d491.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br><img src="https://s3.bmp.ovh/imgs/2022/05/04/e7729e71eed1cbb6.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/05/04/e7729e71eed1cbb6.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>再检查一下federation status<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/7033951947db91ce.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/29/7033951947db91ce.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>都在running了，至此已经配置成功</p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>检查upstream的exchange和queue<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/8b7021f27fdd812f.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/29/8b7021f27fdd812f.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br><img src="https://s3.bmp.ovh/imgs/2022/04/29/baef92f9f824921b.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/29/baef92f9f824921b.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>向downstream-queue队列发送消息<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/27d8de539c450ef9.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/29/27d8de539c450ef9.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>再去downstream看看<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/2188dc7ab85a8800.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/29/2188dc7ab85a8800.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>至此federation插件测试成功</p><h2 id="双活-镜像"><a href="#双活-镜像" class="headerlink" title="双活+镜像"></a>双活+镜像</h2><p>双活是通过federation插件实现的，而镜像是通过policy实现的，因此虽然exchange和queue都只能应用一个policy，但我们可以把policy中的definition合并<br><img src="https://s3.bmp.ovh/imgs/2022/04/29/52add0ebd398c95d.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/29/52add0ebd398c95d.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="image.png"><br>此时应用upmirror这个policy的队列既可以从upstream接受消息，也可以将消息镜像同步到本集群的所有节点。<br>PS：尽管federation实现了跨集群的消息传输，但federation是单向的，因此如果想要实现消息的双向同步，需要将两个集群中都配置为downstream，并各自作为对方的upstream。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rabbitmq </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>rabbitmq简介</title>
+      <link href="/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/"/>
+      <url>/2022/04/29/rabbitmq%E7%AE%80%E4%BB%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="rabbitmq简介"><a href="#rabbitmq简介" class="headerlink" title="rabbitmq简介"></a>rabbitmq简介</h1><h2 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h2><p>生产者投递消息-&gt;与server建立连接-&gt;开启信道-&gt;声明exchange和queue，通过routingkey绑定-&gt;消息到虚拟主机-&gt;消息到消息队列-&gt;关闭信道和连接</p><p>消费者建立连接-&gt;消费信息-&gt;关闭信道和连接</p><p><img src="https://s3.bmp.ovh/imgs/2022/05/04/fbed09f46163791f.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/05/04/fbed09f46163791f.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="rabbitmq整体框架"></p><h3 id="虚拟主机"><a href="#虚拟主机" class="headerlink" title="虚拟主机"></a>虚拟主机</h3><p>全称为virtual host，作用与虚拟机、容器类似，都是一种隔离工具，虚拟主机之间的交换机、队列、消息均不能互通。在manage页面可以新建虚拟主机（通常以&#x2F;开头），并为其配置允许对该虚拟主机进行操作的用户。</p><h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>在业务较为复杂的情况下可以设置多个vhost，给不同的用户操纵不同vhost的权限</p><h4 id="新建虚拟主机"><a href="#新建虚拟主机" class="headerlink" title="新建虚拟主机"></a>新建虚拟主机</h4><p>通常在新建Vhost时，新Vhost的名字命名通常以”&#x2F;“开头</p><p><img src="https://i.bmp.ovh/imgs/2022/04/25/40a17a15f73dc545.png" class="lazyload placeholder" data-srcset="https://i.bmp.ovh/imgs/2022/04/25/40a17a15f73dc545.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="新建Vhost"></p><p>命令行：<code>rabbitmqctl add_vhost name</code></p><h4 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h4><p><img src="https://i.bmp.ovh/imgs/2022/04/25/aa334d17d2899bb8.png" class="lazyload placeholder" data-srcset="https://i.bmp.ovh/imgs/2022/04/25/aa334d17d2899bb8.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="新建用户"></p><p>命令行：<code>rabbitmqctl add_user username password</code></p><p>tags为用户的权限</p><ol><li>administrator：管理员，有所有权限</li><li>monitoring：可以访问管理网页，修改所有连接和channel，以及所有与节点相关的信息</li><li>policymaker：可以访问管理网页，只能修改自己有权限的vhost</li><li>management：可以访问管理网页</li></ol><p>命令行：<code>rabbitmqctl set_user_tags username administrator</code></p><p>用户刚创建时是没有对任何虚拟主机进行操作的权限的，点击用户名</p><p><img src="https://i.bmp.ovh/imgs/2022/04/25/52053b65af639f4c.png" class="lazyload placeholder" data-srcset="https://i.bmp.ovh/imgs/2022/04/25/52053b65af639f4c.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="为用户增加操作Vhost的权限"></p><p>就可以为用户设置有权限操作的虚拟主机</p><p>命令行：<code>rabbitmqctl set_permissions -p &quot;vhostname&quot; username &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</code></p><h4 id="访问vhost"><a href="#访问vhost" class="headerlink" title="访问vhost"></a>访问vhost</h4><p>连接的uri格式为（以amqp为例）amqp:&#x2F;&#x2F;(username):(password)@IP:port&#x2F;(Vhost)</p><h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><p>刚发过几条消息，guest用户看到的内容如下</p><p><img src="https://i.bmp.ovh/imgs/2022/04/25/d38f16c626c7c185.png" class="lazyload placeholder" data-srcset="https://i.bmp.ovh/imgs/2022/04/25/d38f16c626c7c185.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="guest看到的"></p><p>将用户testuser访问虚拟主机”&#x2F;“的权限删除，并将testuser的权限（tags）改为Policymaker</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/25/d0f4cd2156bc80b8.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/25/d0f4cd2156bc80b8.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="修改testuser的权限"></p><p>这是testuser用户看到的场景</p><p><img src="https://i.bmp.ovh/imgs/2022/04/25/7aca74b12ee8b9f5.png" class="lazyload placeholder" data-srcset="https://i.bmp.ovh/imgs/2022/04/25/7aca74b12ee8b9f5.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="testuser看到的"></p><h4 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h4><p>在admin修改其他用户的信息时，界面如下</p><p><img src="https://i.bmp.ovh/imgs/2022/04/25/67243eb1eeebc39a.png" class="lazyload placeholder" data-srcset="https://i.bmp.ovh/imgs/2022/04/25/67243eb1eeebc39a.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="administrator修改其他用户信息"></p><p>这里的password是该用户修改后的密码，而不是验证当前用户的密码。</p><p>如果登录时出现密码错误，则会提示“您与此网站的连接不是私密连接”，而不是“密码错误”。</p><h3 id="常用交换器"><a href="#常用交换器" class="headerlink" title="常用交换器"></a>常用交换器</h3><h4 id="direct"><a href="#direct" class="headerlink" title="direct"></a>direct</h4><p>点对点，通过特定的routing key锁定队列</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/26/6be17ebb17c9747f.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/26/6be17ebb17c9747f.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="direct"></p><p>注：在能够正常访问IP:port但无法通过routingKey获取队列的情况下生产者发送数据不会提示报错</p><h4 id="fanout"><a href="#fanout" class="headerlink" title="fanout"></a>fanout</h4><p>发送到所有与该exchange绑定的队列</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/26/86532bd331a58f30.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/26/86532bd331a58f30.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="fanout"></p><p>发送时会发送到所有队列，但消费时不会因为一个队列消费了该消息而将相同的消息从其他队列中移除</p><h4 id="topic"><a href="#topic" class="headerlink" title="topic"></a>topic</h4><p>一对n，识别routing key</p><p>*表示匹配一个词，#表示匹配1+个词，topic的格式为XX.XX.XX……</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/26/cf836cf159facdca.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/26/cf836cf159facdca.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="topic"></p><h4 id="headers"><a href="#headers" class="headerlink" title="headers"></a>headers</h4><p>有若干个key与对应的value，设定x-match来表示需要所有的key都匹配（all）或是部分匹配（any）</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/26/12c86c943196ac0f.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/26/12c86c943196ac0f.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="headers"></p><h2 id="集群模式"><a href="#集群模式" class="headerlink" title="集群模式"></a>集群模式</h2><h3 id="主从模式"><a href="#主从模式" class="headerlink" title="主从模式"></a>主从模式</h3><p>生产者和消费者只能对master（中的master queue）进行操作，连接到非master节点会被路由到master。</p><p>主从模式的优点在于部署简单，适用于并发与数据量不高的情况。</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/25/9d0e0ab224a11cfa.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/25/9d0e0ab224a11cfa.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="消费过程"></p><p><img src="https://s3.bmp.ovh/imgs/2022/04/25/f3c9b41d459d60b7.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/25/f3c9b41d459d60b7.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="发送过程"></p><h3 id="镜像模式"><a href="#镜像模式" class="headerlink" title="镜像模式"></a>镜像模式</h3><p>镜像模式的数据存在每一个节点上，所有节点的数据同步，能较好地保证数据的安全性。但由于节点多的时候同步的成本较高，因此无法线性扩展节点。</p><p>在一个集群刚被部署时候，是默认为主从模式的，想要改成镜像模式，可以通过设置policy来实现</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/26/1770a7e3b76363be.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/26/1770a7e3b76363be.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="添加policy"></p><p>name：policy的名称</p><p>pattern：队列的匹配模式，正则表达式</p><p>definition：镜像定义</p><ol><li>ha-mode：指明镜像的队列，有效值为all、exactly、nodes。all为在所有节点上都进行镜像（默认）；exactly表示在指定个数的节点上进行镜像，节点个数由ha-params指定；nodes表示在指定节点上进行镜像，节点名称通过ha-params指定</li><li>ha-params：ha-mode需要用到的参数</li><li>ha-sync-mode：消息同步的方式，有效值为automatic和manual。manual意为当一个从节点加入或重新加入时，需要命令行手动进行同步，命令为<code>rabbitmqctl sync_queue name</code>，取消同步命令为<code>rabbitmqctl cancel_sync_queue name</code>；automatic意为当一个从节点加入或重新加入时，rabbitmq将自动进行同步，但在同步完成前所有操作都会被阻塞</li><li>ha-promote-on-shutdown：有效值为when-synced和always。when-synced意为只有在非可控的主节点关闭（如断网等）时，才会故障恢复到一个非同步的从节点；always则是在任何情况下只要主节点关闭，就进行故障恢复。</li></ol><p>在pod内部可以通过<code>rabbitmqctl list_policies</code>命令来查看是否为镜像模式，以及镜像模式的各个参数。</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/26/9a33c6135a79767e.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/26/9a33c6135a79767e.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="查看policy"></p><p>PS：在主节点服务因未知原因宕机后，会自动将新的节点作为主节点，并不影响正常使用，在原主节点恢复正常后不会将原主节点切换为主节点</p><h3 id="多活模式"><a href="#多活模式" class="headerlink" title="多活模式"></a>多活模式</h3><p>多活要求部署多套rabbitmq集群，通过federation插件达到在节点和集群之间传输消息的效果，并且连接的双方可以是不同的user和vhost，也可以使用不同版本的rabbitmq和erlang。</p><p><img src="https://s3.bmp.ovh/imgs/2022/04/26/382456bf40ed625b.png" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/26/382456bf40ed625b.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="多活架构"></p><h2 id="持久化介绍"><a href="#持久化介绍" class="headerlink" title="持久化介绍"></a>持久化介绍</h2><h3 id="交换器"><a href="#交换器" class="headerlink" title="交换器"></a>交换器</h3><p>交换器持久化后能保证在服务重启后交换器的元数据不丢失</p><h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>交换器持久化后能保证在服务重启后队列的元数据不丢失</p><h3 id="消息"><a href="#消息" class="headerlink" title="消息"></a>消息</h3><p>交换器持久化后能保证在服务重启后消息数据不丢失</p><h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>消息持久化是通过将消息写入磁盘来保证的，但由于磁盘的读写速度比内存读写要慢很多，因此在非必要的情况下不采用持久化的处理</p><p>即使是采用的镜像模式，在节点出故障后未被持久化的消息也会被删除</p><h2 id="为什么选rabbitmq"><a href="#为什么选rabbitmq" class="headerlink" title="为什么选rabbitmq"></a>为什么选rabbitmq</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol><li>相对轻量，容易部署和使用</li><li>允许消息的发布确认</li><li>除AMQP还支持STOMP、MQTT等多种协议</li><li>较好的容错处理（通过交付重试和死信交换器）</li><li>可定时消费（（TTL+死信交换器）&#x2F;延迟队列）</li></ol><h3 id="缺点消息堆积处理不好"><a href="#缺点消息堆积处理不好" class="headerlink" title="缺点消息堆积处理不好"></a>缺点消息堆积处理不好</h3><ol><li>性能上有瓶颈，不适合性能要求非常高的场景（TransactionPerSecond在几万到十几万）</li><li>二次开发成本较高</li><li>不保证消息有序（发送失败后会重新回到队列）</li><li>不支持回溯（消费过的消息不会被保留）</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rabbitmq </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浙大历年上机真题</title>
+      <link href="/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/"/>
+      <url>/2022/04/06/%E6%B5%99%E5%A4%A7%E5%8E%86%E5%B9%B4%E4%B8%8A%E6%9C%BA%E7%9C%9F%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="浙大历年上机真题"><a href="#浙大历年上机真题" class="headerlink" title="浙大历年上机真题"></a>浙大历年上机真题</h1><h2 id="2012保研上机"><a href="#2012保研上机" class="headerlink" title="2012保研上机"></a>2012保研上机</h2><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805442671132672">题目详情 - 1042 Shuffling Machine (20 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805440976633856">题目详情 - 1043 Is It a Binary Search Tree (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805439202443264">题目详情 - 1044 Shopping in Mars (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805437411475456">题目详情 - 1045 Favorite Color Stripe (30 分) (pintia.cn)</a></p><h2 id="2012考研上机"><a href="#2012考研上机" class="headerlink" title="2012考研上机"></a>2012考研上机</h2><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805462535356416">题目详情 - 1031 Hello World for U (20 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805460652113920">题目详情 - 1032 Sharing (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805458722734080">题目详情 - 1033 To Fill or Not to Fill (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805456881434624">题目详情 - 1034 Head of a Gang (30 分) (pintia.cn)</a></p><h2 id="2013考研上机"><a href="#2013考研上机" class="headerlink" title="2013考研上机"></a>2013考研上机</h2><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805422639136768">题目详情 - 1054 The Dominant Color (20 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805421066272768">题目详情 - 1055 The World’s Richest (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805419468242944">题目详情 - 1056 Mice and Rice (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805417945710592">题目详情 - 1057 Stack (30 分) (pintia.cn)</a></p><h2 id="2014考研上机"><a href="#2014考研上机" class="headerlink" title="2014考研上机"></a>2014考研上机</h2><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805390896644096">题目详情 - 1077 Kuchiguse (20 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805389634158592">题目详情 - 1078 Hashing (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805388447170560">题目详情 - 1079 Total Sales of Supply Chain (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805387268571136">题目详情 - 1080 Graduate Admission (30 分) (pintia.cn)</a></p><h2 id="2015考研上机"><a href="#2015考研上机" class="headerlink" title="2015考研上机"></a>2015考研上机</h2><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805370650738688">题目详情 - 1096 Consecutive Factors (20 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805369774129152">题目详情 - 1097 Deduplication on a Linked List (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805368847187968">题目详情 - 1098 Insertion or Heap Sort (25 分) (pintia.cn)</a></p><p><a href="https://pintia.cn/problem-sets/994805342720868352/problems/994805367987355648">题目详情 - 1099 Build A Binary Search Tree (30 分) (pintia.cn)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>猫舍大全</title>
+      <link href="/2022/03/30/%E7%8C%AB%E8%88%8D%E5%A4%A7%E5%85%A8/"/>
+      <url>/2022/03/30/%E7%8C%AB%E8%88%8D%E5%A4%A7%E5%85%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="猫舍大全"><a href="#猫舍大全" class="headerlink" title="猫舍大全"></a>猫舍大全</h1><p>meatball cat</p><p>libby 猫舍</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 宠物 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浙大复试技巧</title>
+      <link href="/2022/03/25/%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E6%8A%80%E5%B7%A7/"/>
+      <url>/2022/03/25/%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="浙大复试技巧"><a href="#浙大复试技巧" class="headerlink" title="浙大复试技巧"></a>浙大复试技巧</h1><p>简单介绍一下自己，我22年考研，已经被浙大软院人工智能拟录取，初试343（排名21），机试92（排名未知），复试总分87.68（排名3），希望我的经验能对你有所帮助。</p><h2 id="复试流程介绍"><a href="#复试流程介绍" class="headerlink" title="复试流程介绍"></a>复试流程介绍</h2><p>复试的流程分为两步：自我介绍+导师提问。在线上面试时，自我介绍需要考生准备PPT，而且线上面试时复试在总分中的占比不会很高（至少一定是比该院校线下面试低的）</p><h2 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h2><p>自我介绍是面试过程中你唯一的可控部分，因此一定要将自己的长处表现出来，例如：竞赛、论文、项目等等。</p><p>拿我做例子，我擅长的就是竞赛，因此在PPT中有单独的一个模块来介绍我获得的奖项以及获奖证书。</p><p>另外，导师通常会比较喜欢对研究生方向有所涉猎的学生，例如我报考的是人工智能，因此我有一点人工智能的基础的话，老师会更加喜欢。我本科有自己看视频，了解线性代数的本质（矩阵、特征值、特征向量、行列式的几何意义等），因此我就会把这部分在自我介绍中讲出来，尽可能展示自己。</p><h2 id="导师提问"><a href="#导师提问" class="headerlink" title="导师提问"></a>导师提问</h2><p>一般来说，导师提问环节是不可控的，但是我希望学弟学妹们能明白一件事，导师只能通过你的简历和自我介绍认识你，那么问的问题除了专业课+综合性问题，只能是从你的简历和自我介绍下手。</p><p>所以！！你完全可以在自我介绍的时候说一半！！！好处有两点：</p><ol><li>一旦你讲一半，导师就有可能对你剩下的一半感兴趣，从而针对剩下的一半进行提问，而你恰好知道他会问且有心理准备，通常来讲可以回答的非常好</li><li>自我介绍的时间是有限制的，例如浙大软院是给了8min，我可以把重要的内容省略不说，一旦老师问剩下的一半，就相当于你将本该占用自我介绍时间的内容转移到了导师提问环节！</li></ol><h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><p>（自我介绍时）</p><p>我：我在本科的时候受同学推荐去看了线性代数的本质这系列视频，并对线性代数的本质有一定的理解（内心OS：理解是啥呢？我就等你问）</p><p>（导师提问时）</p><p>导师：你刚刚提到你看了线性代数的本质，那你能讲讲矩阵的意义吗？（这不就落网了？）</p><p>我：巴拉巴拉……</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 复试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>零基础浙大复试上机</title>
+      <link href="/2022/03/24/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA/"/>
+      <url>/2022/03/24/%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%B5%99%E5%A4%A7%E5%A4%8D%E8%AF%95%E4%B8%8A%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="零基础浙大复试上机"><a href="#零基础浙大复试上机" class="headerlink" title="零基础浙大复试上机"></a>零基础浙大复试上机</h1><p>先简单介绍一下我自己，本人于大三加入ACM实验室，训练一年获得ICPC铜牌，其他奖项若干，2022年考研，目标浙大软院的人工智能方向。</p><p>如果你是跨考或是对自己的机试没有信心，移步<a href="https://space.bilibili.com/335829447/channel/series">零基础浙大复试上机</a>，我将在这一系列视频中从零开始带你一步步增强自己的算法能力。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+          <category> 复试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>快速幂</title>
+      <link href="/2022/03/20/%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <url>/2022/03/20/%E5%BF%AB%E9%80%9F%E5%B9%82/</url>
+      
+        <content type="html"><![CDATA[<h1 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a>快速幂</h1><p>快速幂在ACM中是非常常用的一种算法，是常在求$a^{n}$但n很大的时候用于加速运算的算法（通常会对某个质数p取模），那快速幂为什么快？有多快？能否拓展到其他运算符中呢？</p><h2 id="快速幂为什么快？有多快？"><a href="#快速幂为什么快？有多快？" class="headerlink" title="快速幂为什么快？有多快？"></a>快速幂为什么快？有多快？</h2><p>要了解快速幂为什么快就要先了解快速幂是怎么实现的，从其思想来看就是将n转换成二进制，并将其看成是多个2^x^（x为整数）相加的结果，将本该进行n次的运算降低到logn次，我们求出最大的2^x^需要进行logn次运算，而将这最多有logn个的结果再进行logn次运算，因此最终的时间复杂度为logn！</p><p>上代码！</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">const</span> <span class="hljs-type">int</span> p = <span class="hljs-number">1e9</span>+<span class="hljs-number">7</span>;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">quick_pow</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> n)</span></span>&#123;<span class="hljs-comment">//求a的n次方对p取模的值</span><br>    <span class="hljs-type">int</span> ans=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(n)&#123;<br>        <span class="hljs-keyword">if</span>(n&amp;<span class="hljs-number">1</span>) ans=(ans*a)%p;<span class="hljs-comment">//如果n当前位上的值为1，意味着我们需要乘上这个a</span><br>        a=a*a%p;<span class="hljs-comment">//位数每往高处走一位，就意味着a做了平方操作</span><br>        n&gt;&gt;=<span class="hljs-number">1</span>;<span class="hljs-comment">//用n右移一位的方式来表示当前位数</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> ans%p;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="快速幂能否拓展？"><a href="#快速幂能否拓展？" class="headerlink" title="快速幂能否拓展？"></a>快速幂能否拓展？</h2><p>答案是：可以！</p><p>假设现在的运算符为op。</p><p>我们将n个a都列出来，于是我们得到了</p><p>a op a op a op a……总共n个a进行op操作</p><p>按照快速幂的思想我们将这n个a进行划分，假设这里一共有6个a</p><p>a op a op a op a op a op a</p><p>很显然6&#x3D;2+4，以二进制的形式表示也就是110，因此我们将这6个a划分为2个一组和4个一组，得到了</p><p>(a op a) op (a op a op a op a)</p><p>因此显然我们能够得到这样一个结论：当运算符满足结合律时，就可以用快速幂的思想对这个运算进行加速。例：加法，幂（可以尝试一下求$2^{2^{2^{2}}}$，连续幂运算是否能够如此加速）</p><p>但显然，如同减法、除法这种不满足结合律的运算就不能够使用快速幂进行加速。</p><p>最终代码：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">define</span> op +</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> element_type int</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> e 0</span><br><br><span class="hljs-function">element_type <span class="hljs-title">quick_pow</span><span class="hljs-params">(element_type a, <span class="hljs-type">int</span> n)</span></span>&#123;<br>    element_type ans=e;<span class="hljs-comment">//e在这里表示运算符op的单位元</span><br>    <span class="hljs-keyword">while</span>(n)&#123;<br>        ans = ans op a;<br>        a = a op a;<br>        n&gt;&gt;=<span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure><p>PS：想了解单位元相关知识移步<a href="https://adampan0527.github.io/2021/04/27/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E4%B8%AD%E7%9A%84%E7%89%B9%E6%AE%8A%E7%9F%A9%E9%98%B5%E4%B8%8E%E4%BA%8C%E6%AC%A1%E5%9E%8B/">线性代数中的特殊矩阵与二次型</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithms </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> algorithms </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>磁盘I/O</title>
+      <link href="/2021/08/15/%E7%A3%81%E7%9B%98I:O/"/>
+      <url>/2021/08/15/%E7%A3%81%E7%9B%98I:O/</url>
+      
+        <content type="html"><![CDATA[<h1 id="磁盘I-x2F-O"><a href="#磁盘I-x2F-O" class="headerlink" title="磁盘I&#x2F;O"></a>磁盘I&#x2F;O</h1><h2 id="I-x2F-O系统层次及功能"><a href="#I-x2F-O系统层次及功能" class="headerlink" title="I&#x2F;O系统层次及功能"></a>I&#x2F;O系统层次及功能</h2><h3 id="用户层软件"><a href="#用户层软件" class="headerlink" title="用户层软件"></a>用户层软件</h3><p>用户层软件实现的是与用户进行交互的接口，用户可以通过调用用户层软件提供的I&#x2F;O库函数对设备进行操作</p><p>用户软件必须通过一组系统调用来获取操作系统服务</p><h3 id="设备独立性软件"><a href="#设备独立性软件" class="headerlink" title="设备独立性软件"></a>设备独立性软件</h3><p>什么是设备独立性？</p><p>​设备独立性指的是应用程序独立于具体使用的物理设备，从而引入了“逻辑设备”的概念</p><p>设备独立性能够带来什么好处？</p><ol><li>设备分配时的灵活性</li><li>易于实现I&#x2F;O的重定向</li></ol><p>设备独立性软件都有什么功能？</p><ol><li>执行公共设备的共有操作<ol><li>对独立设备的分配与回收</li><li>将逻辑设备名映射为物理设备名</li><li>对设备进行保护</li><li>缓冲管理</li></ol></li><li>向用户层软件提供统一接口</li></ol><h3 id="设备驱动程序"><a href="#设备驱动程序" class="headerlink" title="设备驱动程序"></a>设备驱动程序</h3><p>通常也称“设备处理程序”，它是I&#x2F;O进程与设备控制器之间的通信程序， 又由于经常以进程的形式存在，所以称之为设备驱动程序。</p><p>任务：</p><ol><li>接收上层软件发来的抽象I&#x2F;O请求，并将其转为具体要求发送给设备控制器，然后启动设备去执行请求</li><li>将设备控制器发来的信号发送给上层软件</li></ol><p>功能：</p><ol><li>接收由设备独立性软件发来的命令和参数</li><li>检查用户I&#x2F;O请求的合法性</li><li>发出I&#x2F;O命令（向设备控制器）</li><li>及时相应由控制器或者通道发来的中断请求，并根据中断的类型调用相应的中断处理程序</li><li>若OS设有通道，驱动程序还能根据用户的I&#x2F;O请求自动构建通道程序</li></ol><p>设备处理方式</p><ol><li>为每一类设备设置一个进程</li><li>整个系统设置一个进程</li><li>不设置专门的处理程序，但为各类设备设置相应的设备处理程序</li></ol><h3 id="中断处理层"><a href="#中断处理层" class="headerlink" title="中断处理层"></a>中断处理层</h3><p>中断处理层软件的主要工作是进行进程上下文的切换，对处理中断信号源进行测试，读取设备状态和修改进程状态。</p><p>处理过程：</p><ol><li>唤醒被阻塞的驱动进程</li><li>保护被中断进程的CPU环境</li><li>载入相应的设备处理程序</li><li>中断处理</li><li>恢复被中断进程的现场</li></ol><h2 id="I-x2F-O缓冲"><a href="#I-x2F-O缓冲" class="headerlink" title="I&#x2F;O缓冲"></a>I&#x2F;O缓冲</h2><p>设置缓冲区的目的是什么？</p><ol><li>可以缓和CPU（快）和I&#x2F;O设备（慢）之间速度不匹配的矛盾</li><li>减少对CPU的中断频率，放宽对CPU中断响应时间的限制</li><li>提高CPU和IO设备之间的并行性</li></ol><h3 id="缓冲区"><a href="#缓冲区" class="headerlink" title="缓冲区"></a>缓冲区</h3><ol><li><p>单缓冲</p><p>数据从I&#x2F;O设备到缓冲区和从缓冲区到工作区不能同时进行</p></li><li><p>双缓冲</p><p>数据从I&#x2F;O设备到缓冲区和从缓冲区到工作区可以同时进行</p></li></ol><h2 id="SPOOLing"><a href="#SPOOLing" class="headerlink" title="SPOOLing"></a>SPOOLing</h2><p>SPOOLing技术又称假脱机技术，其含义是在联机的情况下实现外围操作，这样就不会导致CPU近乎闲置</p><h3 id="SPOOLing技术的组成"><a href="#SPOOLing技术的组成" class="headerlink" title="SPOOLing技术的组成"></a>SPOOLing技术的组成</h3><ol><li>输入井和输出井（位置：磁盘）</li><li>输入缓冲区和输出缓冲区（位置：内存）</li><li>输入进程和输出进程（由OS提供）</li><li>井管理程序</li></ol><h3 id="SPOOLing技术的特点"><a href="#SPOOLing技术的特点" class="headerlink" title="SPOOLing技术的特点"></a>SPOOLing技术的特点</h3><ol><li>提高了I&#x2F;O速度</li><li>将独占设备改造为共享设备（后来的进程可以将需要输出的数据存放在缓冲区）</li><li>实现了虚拟设备的功能</li></ol><h2 id="错题"><a href="#错题" class="headerlink" title="错题"></a>错题</h2><ol><li><p>用户程序发出磁盘I&#x2F;O请求后，系统的正确处理流程是</p><p>用户程序–&gt;系统调用处理程序–&gt;设备驱动程序–&gt;中断处理程序</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 408 </category>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 磁盘 </tag>
+            
+            <tag> OS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>线性代数杂项</title>
+      <link href="/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/"/>
+      <url>/2021/06/29/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9D%82%E9%A1%B9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化<br>$$<br>\large r(A+B)\le r(A)+r(B)\[2ex]<br>\large r(AB)\le min(r(A), r(B))\[2ex]<br>\large A_{m\times n}B_{n\times p}&#x3D;0\implies r(A)+r(B)\le n\[2ex]<br>\large r(A^TA)&#x3D;r(A)\quad (A(m\times n))\[2ex]<br>\large r(A_{m\times n})&#x3D;n\implies r(AB)&#x3D;r(B)\[2ex]<br>\large r(B_{n\times s})&#x3D;n\implies r(AB)&#x3D;r(A)\[2ex]<br>\large r(A^*)&#x3D;<br>\begin{cases}<br>    n,\quad r(A)&#x3D;n\<br>    1,\quad r(A)&#x3D;n-1\<br>    0,\quad r(A)&lt;n-1<br>\end{cases}<br>$$</p><h2 id="矩阵与向量组等价"><a href="#矩阵与向量组等价" class="headerlink" title="矩阵与向量组等价"></a>矩阵与向量组等价</h2><p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p><p>向量组等价：两个向量组表示相同维度的空间</p><h2 id="矩阵间的关系"><a href="#矩阵间的关系" class="headerlink" title="矩阵间的关系"></a>矩阵间的关系</h2><p>矩阵间的关系有：相似、合同、等价。三者的关系可以划分为相似&#x3D;&gt;合同&#x3D;&gt;等价</p><p>当然，要说两个矩阵之间有上述三种关系，首先两个矩阵要满足是同型矩阵（即行数与列数都相同）</p><h3 id="等价"><a href="#等价" class="headerlink" title="等价"></a>等价</h3><p>两个矩阵等价意味着一个矩阵可以通过初等变换变成另一个矩阵的样子。</p><h3 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h3><p>合同的定义是存在矩阵C使得$C^TAC&#x3D;B$。</p><p>单从定义上看似乎没有什么突破口，但矩阵合同必然满足一些性质，如</p><ol><li>A与B的正负惯性指数相同</li><li>A与B的顺序主子式的正负个数相同</li><li>A与B的正负特征值个数相同</li></ol><p>需要注意的是，惯性指数需要</p><h3 id="相似"><a href="#相似" class="headerlink" title="相似"></a>相似</h3><p>定义：存在矩阵P使得$P^{-1}AP&#x3D;B$</p><p>同样的，光是从定义上看无法获得什么信息，但从性质入手，思路就变得清晰了：</p><ol><li>A与B的秩相同</li><li>A与B的特征值相同</li><li>A与B的行列式相同</li><li>A与B的迹相同</li><li>A与B的转置也相似</li><li>A与B的逆矩阵也相似</li><li>A与B的伴随矩阵也相似</li><li>A与B的矩阵多项式也相似（多项式形式相同）</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 线性代数 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据结构笔记</title>
+      <link href="/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/"/>
+      <url>/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数据结构笔记"><a href="#数据结构笔记" class="headerlink" title="数据结构笔记"></a>数据结构笔记</h1><h2 id="卡特兰数"><a href="#卡特兰数" class="headerlink" title="卡特兰数"></a>卡特兰数</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol><li>有2n个人排成一行进入剧场，入场费5元，其中n个人有5元钞票，n个人有10元钞票，剧院无多余钞票。问有多少种方法使得只要有10元人买票，售票处就有5元的钞票找零</li><li>一个边长为n的正方形，从左下角走到右上角，不穿过对角线，问有几种不同的方法</li><li>圆上选择2n个点，问有多少种方法将这些点两两相连，所得到的n条线段两两不相交</li><li>对角线不相交的情况下，将凸n边形分成三角形区域的方法数</li><li>n个元素进栈，问有多少种出栈方法</li><li>n个节点可以构造多少个不同的二叉树</li><li>n个1和n个-1构成2n项序列，问从a<del>1</del>开始，部分和始终大于等于0的序列有多少种</li></ol><h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>$$<br>\large f(n)&#x3D;C_n^{2n}-C_{n-1}^{2n}<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础 </tag>
+            
+            <tag> 公式 </tag>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>408 计组公式与缩写</title>
+      <link href="/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/"/>
+      <url>/2021/03/28/408-%E8%AE%A1%E7%BB%84%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%BC%A9%E5%86%99/</url>
+      
+        <content type="html"><![CDATA[<h1 id="计组公式与缩写"><a href="#计组公式与缩写" class="headerlink" title="计组公式与缩写"></a>计组公式与缩写</h1><h2 id="名词缩写"><a href="#名词缩写" class="headerlink" title="名词缩写"></a>名词缩写</h2><p>MAR：地址寄存器(Memory Address Register)</p><p>MDR：数据寄存器(Memory Data Register)</p><p>ALU：算数逻辑单元(Arithmetic Logic Unit)</p><p>CPU：中央处理器(Central Processing Unit)</p><p>PC：程序计数器(Program Counter)</p><p>IR：指令寄存器(Instruction Register)</p><p>CU：控制单元(Control Unit)</p><p>MIPS：每秒执行百万条指令数(Million Instruction Per Second)</p><p>ACC：累加器(Accumulator)</p><p>MQ：乘商寄存器(Multiplier-Quotient Register)</p><p>CF：进位标志(Carry Flag)</p><h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><h3 id="计算MIPS"><a href="#计算MIPS" class="headerlink" title="计算MIPS"></a>计算MIPS</h3><p>$$<br>MIPS&#x3D;\frac{I_n}{t_{cpu}\times 10^6}&#x3D;\frac {f}{CPI \times 10^6}\<br>t_{cpu}&#x3D;N_c·T<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机组成原理 </tag>
+            
+            <tag> 基础 </tag>
+            
+            <tag> 公式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>高数公式合集</title>
+      <link href="/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/"/>
+      <url>/2021/03/18/%E9%AB%98%E6%95%B0%E5%85%AC%E5%BC%8F%E5%90%88%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="考研高数公式合集"><a href="#考研高数公式合集" class="headerlink" title="考研高数公式合集"></a>考研高数公式合集</h1><p>考研的过程中数学公式往往是最难记忆的，特别是当不能通过简单的推理得到答案的时候，所以这里我列出了一些比较难记&#x2F;重要的公式，方便查看。</p><h2 id="重要不定积分"><a href="#重要不定积分" class="headerlink" title="重要不定积分"></a>重要不定积分</h2><p>$$<br>\begin{gather}<br>\LARGE \int_{-\infty}^\infty{e^{-x^2}dx}&#x3D;\sqrt{\pi}\\<br>\LARGE \int_0^\frac{\pi}2f(sinx)&#x3D;\int_0^\frac{\pi}2f(cosx)\\<br>\LARGE \int_0^\frac{\pi}2\frac{sin^px}{sin^px+cos^px}&#x3D;\frac{\pi}4<br>\end{gather}<br>$$</p><h2 id="参数方程表示的函数求导"><a href="#参数方程表示的函数求导" class="headerlink" title="参数方程表示的函数求导"></a>参数方程表示的函数求导</h2><p>对于<br>$$<br>\begin{cases}<br>\LARGE x&#x3D;x(t)\\<br>\LARGE y&#x3D;y(t)<br>\end{cases}<br>$$<br> 则：</p><p>$$<br>\begin{gather}<br>\Huge \frac{dy}{dx}&#x3D;\Huge\frac{\frac{dy}{dt}}{\frac{dx}{dt}}\\<br>\Huge \frac{d^2y}{dx^2}&#x3D;\Huge\frac{\frac{d^2y}{dt^2}\frac{dx}{dt}-\frac{d^2x}{dt^2}\frac{dy}{dt}}{(\frac{dx}{dt})^3}<br>\end{gather}<br>$$</p><h2 id="泰勒展开"><a href="#泰勒展开" class="headerlink" title="泰勒展开"></a>泰勒展开</h2><p>基本公式<br>$$<br>\Large f(x)&#x3D;f(x_0)+f^{‘}(x_0)(x-x_0)+…+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{R_n(x)}{o(x^n)}<br>$$</p><h3 id="重要公式"><a href="#重要公式" class="headerlink" title="重要公式"></a>重要公式</h3><p>$$<br>\begin{gather}<br>\LARGE e^x&#x3D;1+x+\frac{x^2}{2!}+…+\frac{x^n}{n!}\\<br>\LARGE ln(1+x)&#x3D;x-\frac{x^2}{2}+\frac{x^3}{3}+…+\frac{(-1)^{n-1}}{n}x^n\\<br>\LARGE sinx&#x3D;x-\frac{x^3}{3!}+\frac{x^5}{5!}+…+\frac{(-1)^{n-1}}{(2n-1)!}x^{2n+1}\\<br>\LARGE cosx&#x3D;1-\frac{x^2}{2!}+\frac{x^4}{4!}+…+\frac{(-1)^{n-1}}{2n-2}x^{2n-2}\\<br>\LARGE tanx&#x3D;x+\frac{x^3}{3}+\frac{x^5}{5}+…+\frac{x^{2n-1}}{2n-1}\\<br>\LARGE arctanx&#x3D;x-\frac{x^3}{3}+\frac{x^5}{5}+…+\frac{(-1)^{n-1}}{2n-1}x^{2n-1}\\<br>\Large (1+x)^a&#x3D;1+ax+\frac{a(a-1)}{2!}x^2+…+\frac{a(a-1)…(a-n+1)}{n!}x^n<br>\end{gather}<br>$$<br>在所有的公式中$R_n(x)$为拉格朗日余项，多用于证明题<br>$$<br>\begin{gather}<br>\LARGE R_n(x)&#x3D;\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}\\<br>\LARGE \xi&#x3D;\theta x<br>\end{gather}<br>$$</p><h2 id="曲率公式"><a href="#曲率公式" class="headerlink" title="曲率公式"></a>曲率公式</h2><p>前提：<font size=5>$y&#x3D;f(x)$</font>是光滑的曲线，参数方程表示为：<br>$$<br>\begin{cases}<br>\LARGE x&#x3D;x(t)\\<br>\LARGE y&#x3D;y(t)<br>\end{cases}<br>$$</p><h3 id="弧微分"><a href="#弧微分" class="headerlink" title="弧微分"></a>弧微分</h3><p>$$<br>\begin{gather}<br>\Large ds&#x3D;\sqrt{1+(y’)^2}\\<br>\Large ds&#x3D;\sqrt{(x’)^2+(y’)^2}<br>\end{gather}<br>$$</p><h3 id="曲率"><a href="#曲率" class="headerlink" title="曲率"></a>曲率</h3><p>$$<br>\begin{gather}<br>\LARGE k&#x3D;\frac{|y’’|}{(1+(y’)^2)^{\frac{3}{2}}}\\<br>\LARGE k&#x3D;\frac{|x’y’’-x’’y’|}{((x’)^2+(y’)^2)^{\frac{3}{2}}}<br>\end{gather}<br>$$</p><h3 id="曲率半径"><a href="#曲率半径" class="headerlink" title="曲率半径"></a>曲率半径</h3><p>$$<br>\Large R&#x3D;\frac{1}{k}<br>$$</p><h3 id="曲率圆"><a href="#曲率圆" class="headerlink" title="{曲率圆"></a>{曲率圆</h3><p>法线凹向取一点D，使得$|MD|&#x3D;R$</p><h2 id="向量代数与空间解析几何"><a href="#向量代数与空间解析几何" class="headerlink" title="向量代数与空间解析几何"></a>向量代数与空间解析几何</h2><p>向量代数和空间解析几何在高中已经有所接触，所以基础知识会非常简单，而且这个章节的重点是各种定理的运用，只需要记好公式即可。若是能力较强则可以在理解的基础上帮助记忆，以免考试的时候忘记。</p><h3 id="角度"><a href="#角度" class="headerlink" title="角度"></a>角度</h3><p>$$<br>\begin{gather}<br>\Large \vec{OM}&#x3D;(x, y, z)\\<br>\Large cos\alpha&#x3D;\frac{x}{\sqrt{x^2+y^2+z^2}}\\<br>\Large cos\beta&#x3D;\frac{y}{\sqrt{x^2+y^2+z^2}}\\<br>\Large cos\gamma&#x3D;\frac{z}{\sqrt{x^2+y^2+z^2}}\\<br>\Large cos^2\alpha+cos^2\beta+cos^2\gamma&#x3D;1<br>\end{gather}<br>$$</p><h3 id="向量积"><a href="#向量积" class="headerlink" title="向量积"></a>向量积</h3><p>这里仅需注意在做叉乘的时候$\vec{j}$前面是正号（除非系数是负数）</p><h3 id="平面方程与法向量"><a href="#平面方程与法向量" class="headerlink" title="平面方程与法向量"></a>平面方程与法向量</h3><p>$$<br>\begin{gather}<br>\Large A(x-x_0)+B(y-y_0)+C(z-z_0)&#x3D;0\<br>\Large \vec{s}&#x3D;(A,B,C)<br>\end{gather}<br>$$</p><h3 id="点到直线的距离"><a href="#点到直线的距离" class="headerlink" title="点到直线的距离"></a>点到直线的距离</h3><p>$$<br>\Large d&#x3D;\frac{|(x-x_0,y-y_0,z-z_0)\times(l,m,n)|}{\sqrt{l^2+m^2+n^2}}<br>$$</p><h3 id="空间曲面"><a href="#空间曲面" class="headerlink" title="空间曲面"></a>空间曲面</h3><p>空间曲面的基本方程是$F(x,y,z)&#x3D;0$<br></p><h3 id="旋转曲面"><a href="#旋转曲面" class="headerlink" title="旋转曲面"></a>旋转曲面</h3><p>由一条直线绕轴旋转一周形成的曲面</p><ol><li><p>若有$f(y,z)$绕z轴旋转，则曲面方程为$f(\pm\sqrt{x^2+y^2},z)&#x3D;0$<br></p></li><li><p>$$<br>\large L:<br>    \begin{cases}<br>        x&amp;&#x3D;&amp;x(t)\\<br>        y&amp;&#x3D;&amp;y(t)\\<br>        z&amp;&#x3D;&amp;z(t)<br>    \end{cases}<br>    \implies<br>    \begin{cases}<br>        x^2+y^2&#x3D;x^2(t)+y^2(t)\\<br>        z&#x3D;z(t)<br>    \end{cases}<br>    \implies<br>    \text{消去t}<br>$$</p></li></ol><h3 id="常见二次曲面"><a href="#常见二次曲面" class="headerlink" title="常见二次曲面"></a>常见二次曲面</h3><p>$$<br>\Large\begin{align}<br>&amp;\text{椭球面}&amp;\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}&amp;&#x3D;1\\<br>&amp;\text{旋转抛物面}&amp;\frac{x^2}{2p}+\frac{y^2}{2p}&amp;&#x3D;z\\<br>&amp;\text{椭圆抛物面}&amp;\frac{x^2}{2p}+\frac{y^2}{2q}&amp;&#x3D;z\quad\text{(pq&gt;0)}\\<br>&amp;\text{双曲抛物面}&amp;-\frac{x^2}{2p}+\frac{y^2}{2q}&amp;&#x3D;z\quad\text{(pq&gt;0)}\\<br>&amp;\text{单叶双曲面}&amp;\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}&amp;&#x3D;1\\<br>&amp;\text{双叶双曲面}&amp;\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}&amp;&#x3D;-1\\<br>&amp;\text{二次锥面}&amp;\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}&amp;&#x3D;0\\<br>&amp;\text{椭圆柱面}&amp;\frac{x^2}{a^2}+\frac{y^2}{b^2}&amp;&#x3D;1\\<br>&amp;\text{双曲柱面}&amp;\frac{x^2}{a^2}-\frac{y^2}{b^2}&amp;&#x3D;1\\<br>&amp;\text{抛物柱面}&amp;\frac{x^2}{2p}&amp;&#x3D;y\quad\text{(p&gt;0)}<br>\end{align}<br>$$</p><h2 id="曲线曲面积分"><a href="#曲线曲面积分" class="headerlink" title="曲线曲面积分"></a>曲线曲面积分</h2><h3 id="第一类曲线积分"><a href="#第一类曲线积分" class="headerlink" title="第一类曲线积分"></a>第一类曲线积分</h3><p>第一类曲线积分是对弧长积分，可以表示为$\int_cf(x, y)ds$，特别的，当$f(x,y)&#x3D;1$时，$\int_cds&#x3D;s$（s为曲线c的弧长）</p><h4 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h4><ol><li><p>$\large\begin{cases}x&#x3D;x(t)\\y&#x3D;y(t)\end{cases}\qquad(\alpha\le t\le\beta)\qquad((x’(t))^2+(y’(t))^2\ne0)$<br>$$<br>\large \int_cf(x,y)ds&#x3D;\int_\alpha^\beta f(x(t),y(t))\sqrt{(x’(t))^2+(y’(t))^2}dt<br>$$</p></li><li><p>$\large y&#x3D;y(x)\qquad(a\le x\le b)$<br>$$<br>\large \int_cf(x,y)ds&#x3D;\int_\alpha^\beta f(x,y(x))\sqrt{1+(y’)^2}dt<br>$$</p></li><li><p>$\large r&#x3D;r(\theta)\qquad (\alpha\le\theta\le\beta)$<br>$$<br>\large \int_cf(x,y)ds&#x3D;\int_\alpha^\beta f(r(\theta)cos\theta,r(\theta)sin\theta)\sqrt{(r(\theta))^2+(r’(\theta))^2}d\theta<br>$$</p></li></ol><h2 id="微分方程"><a href="#微分方程" class="headerlink" title="微分方程"></a>微分方程</h2><h3 id="一阶线性微分方程"><a href="#一阶线性微分方程" class="headerlink" title="一阶线性微分方程"></a>一阶线性微分方程</h3><p>形式：<br>$$<br>\Large y’+p(x)y&#x3D;q(x)<br>$$<br>通解：<br>$$<br>\Large y&#x3D;e^{-\int p(x)dx}(\int q(x)e^{\int p(x)dx}dx+c)<br>$$</p><h3 id="可降阶微分方程"><a href="#可降阶微分方程" class="headerlink" title="可降阶微分方程"></a>可降阶微分方程</h3><ol><li><p>$$<br>\Large y^{(n)}&#x3D;f(x)\<br>\Large y&#x3D;\int \int…\int f(x)dx…dxdx+\sum C_ix^{n-i}<br>$$</p></li><li><p>$$<br>\Large y^n&#x3D;f(x, y’)\<br>\Large p&#x3D;y’\Rightarrow y’’&#x3D;p’\<br>\Large p’&#x3D;f(x, p)<br>$$</p></li><li><p>$$<br>\Large y’’&#x3D;f(y, y’)\<br>\Large p&#x3D;y’\Rightarrow y’’&#x3D;p\frac{dp}{dy}<br>$$</p></li></ol><h3 id="二阶常系数齐次线性微分方程"><a href="#二阶常系数齐次线性微分方程" class="headerlink" title="二阶常系数齐次线性微分方程"></a>二阶常系数齐次线性微分方程</h3><p>形式：$\large y’’+py’+qy&#x3D;0$</p><p>通解：</p><table><thead><tr><th>特征方程的根</th><th>通解</th></tr></thead><tbody><tr><td>$\large r1\ne r2$</td><td>$\Large y&#x3D;C_1e^{r_1x}+C_2e^{r_2x}$</td></tr><tr><td>$\large r1&#x3D;r2&#x3D;r$</td><td>$\Large y&#x3D;(C_1+C_2x)e^{rx}$</td></tr><tr><td>$\large r&#x3D;\alpha \pm\beta i$</td><td>$\Large y&#x3D;e^{\alpha x}(C_1cos\beta x+C_2sin\beta x)$</td></tr></tbody></table><h3 id="二阶常系数非齐次线性微分方程"><a href="#二阶常系数非齐次线性微分方程" class="headerlink" title="二阶常系数非齐次线性微分方程"></a>二阶常系数非齐次线性微分方程</h3><p>形式：$\large y’’+py’+qy&#x3D;f(x)$</p><p>特解：</p><ol><li><p>若$\large f(x)&#x3D;e^{\lambda x}P_n(x)$<br>$$<br>\begin{gather}<br>\large y^*&#x3D;x^ke^{\lambda x}Q_n(x)\\[3ex]\\<br>\large k&#x3D;<br>\begin{cases}<br>0&amp;\lambda\ne r1\quad and\quad\lambda\ne r2\\[2ex]<br>1&amp;\lambda&#x3D;r1\quad or\quad\lambda&#x3D;r2\\[2ex]<br>2&amp;\lambda&#x3D;r1&#x3D;r2<br>\end{cases}<br>\end{gather}<br>$$</p></li><li><p>若$\large f(x)&#x3D;e^{\alpha x}(P_n(x)cos\beta x+Q_n(x)sin\beta x)$<br>$$<br>\begin{gather}<br>\large y^*&#x3D;x^ke^{\alpha x}(R_l(x)cos\beta x+S_l(x)sin\beta x)\quad(l&#x3D;min(n,m))\\[3ex]<br>\large k&#x3D;<br>\begin{cases}<br>0&amp;\alpha\pm\beta i\ne r1\quad and\quad\alpha\pm\beta i\ne r2\\[2ex]<br>1&amp;\alpha\pm\beta i&#x3D;r1\quad or\quad\alpha\pm\beta i&#x3D;r2<br>\end{cases}<br>\end{gather}<br>$$</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 考研 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 高等数学公式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tips for interactive problem</title>
+      <link href="/2021/02/22/Tips-for-interactive-problem/"/>
+      <url>/2021/02/22/Tips-for-interactive-problem/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Little-tips"><a href="#Little-tips" class="headerlink" title="Little tips"></a>Little tips</h1><p>While solving interactive problems, we should</p><ol><li>Let “ask” function do the query</li><li>Never forget <code>cout.flush()</code>, even you have used <code>endl</code></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> CF </category>
+          
+          <category> tips </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1486B Eastern Exhibition</title>
+      <link href="/2021/02/19/1486B-Eastern-Exhibition/"/>
+      <url>/2021/02/19/1486B-Eastern-Exhibition/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Eastern-Exhibition"><a href="#Eastern-Exhibition" class="headerlink" title="Eastern Exhibition"></a><a href="https://codeforces.com/contest/1486/problem/B">Eastern Exhibition</a></h1><h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img  src="https://img11.360buyimg.com/ddimg/jfs/t1/164596/37/6800/92526/602f98d3E903dff60/57e58e20623b0a89.png"  ><span class="image-caption">CF 1486B Q.png</span></p><h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img  src="https://img10.360buyimg.com/ddimg/jfs/t1/159000/30/7802/24029/602f98d3E326d5608/d0c20bd25b47ed11.png"  ><span class="image-caption">CF 1486B S.png</span></p><h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>The very first thing we should know is we are using Manhattan distance to represent the distance of to points, which means we can handle Xs and Ys separately.</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];<br><span class="hljs-built_in">sort</span>(x.<span class="hljs-built_in">begin</span>(), x.<span class="hljs-built_in">end</span>());<br><span class="hljs-built_in">sort</span>(y.<span class="hljs-built_in">begin</span>(), y.<span class="hljs-built_in">end</span>());<br></code></pre></td></tr></table></figure><p>If the number of points is odd, there will be only 1 point to make sum of absolute difference of Xs minimum, so does Ys.</p><p>Otherwise, any X between two mid Xs has the same sum, so does Ys.</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c++">ll cx, cy;<br><span class="hljs-keyword">if</span>(x.<span class="hljs-built_in">size</span>()&amp;<span class="hljs-number">1</span>) cx=<span class="hljs-number">1</span>;<br><span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-type">int</span> mid=x.<span class="hljs-built_in">size</span>()&gt;&gt;<span class="hljs-number">1</span>;<br>    cx=x[mid]-x[mid<span class="hljs-number">-1</span>]+<span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-keyword">if</span>(y.<span class="hljs-built_in">size</span>()&amp;<span class="hljs-number">1</span>) cy=<span class="hljs-number">1</span>;<br><span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-type">int</span> mid=y.<span class="hljs-built_in">size</span>()&gt;&gt;<span class="hljs-number">1</span>;<br>    cy=y[mid]-y[mid<span class="hljs-number">-1</span>]+<span class="hljs-number">1</span>;<br>&#125;<br>cout&lt;&lt;cx*cy&lt;&lt;endl;<br></code></pre></td></tr></table></figure><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn = <span class="hljs-number">2e5</span> + <span class="hljs-number">5</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> inf = INT_MAX;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br>vector&lt;<span class="hljs-type">int</span>&gt; x, y;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    <span class="hljs-type">int</span> t;<br>    cin&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)&#123;<br>        <span class="hljs-type">int</span> n;<br>        cin&gt;&gt;n;<br>        x.<span class="hljs-built_in">resize</span>(n);<br>        y.<span class="hljs-built_in">resize</span>(n);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;n; i++) cin&gt;&gt;x[i]&gt;&gt;y[i];<br>        <span class="hljs-built_in">sort</span>(x.<span class="hljs-built_in">begin</span>(), x.<span class="hljs-built_in">end</span>());<br>        <span class="hljs-built_in">sort</span>(y.<span class="hljs-built_in">begin</span>(), y.<span class="hljs-built_in">end</span>());<br>        ll cx, cy;<br>        <span class="hljs-keyword">if</span>(x.<span class="hljs-built_in">size</span>()&amp;<span class="hljs-number">1</span>) cx=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-type">int</span> mid=x.<span class="hljs-built_in">size</span>()&gt;&gt;<span class="hljs-number">1</span>;<br>            cx=x[mid]-x[mid<span class="hljs-number">-1</span>]+<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(y.<span class="hljs-built_in">size</span>()&amp;<span class="hljs-number">1</span>) cy=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-type">int</span> mid=y.<span class="hljs-built_in">size</span>()&gt;&gt;<span class="hljs-number">1</span>;<br>            cy=y[mid]-y[mid<span class="hljs-number">-1</span>]+<span class="hljs-number">1</span>;<br>        &#125;<br>        cout&lt;&lt;cx*cy&lt;&lt;endl;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> CF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> geometry </tag>
+            
+            <tag> sorting </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1490F Equalize the Array</title>
+      <link href="/2021/02/19/1490F-Equalize-the-Array/"/>
+      <url>/2021/02/19/1490F-Equalize-the-Array/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Equalize-the-Array"><a href="#Equalize-the-Array" class="headerlink" title="Equalize the Array"></a><a href="https://codeforces.com/problemset/problem/1490/F">Equalize the Array</a></h1><h2 id="The-question"><a href="#The-question" class="headerlink" title="The question"></a>The question</h2><p><img  src="https://img13.360buyimg.com/ddimg/jfs/t1/155245/36/17707/109508/602eae8dE7453c7e9/4bd6b888f152de36.png"  ><span class="image-caption">CF 1490F Q.png</span></p><h2 id="Input-amp-Output"><a href="#Input-amp-Output" class="headerlink" title="Input &amp; Output"></a>Input &amp; Output</h2><p><img  src="https://img12.360buyimg.com/ddimg/jfs/t1/162267/29/6845/14495/602eae8dE4520c723/bab2c3e7c89c185b.png"  ><span class="image-caption">CF 1490F S.png</span></p><h2 id="Simplify-the-question"><a href="#Simplify-the-question" class="headerlink" title="Simplify the question"></a>Simplify the question</h2><p>We’re supposed to delete minimum number of elements to make the given array beautiful, which means every number in the array appears same times</p><h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>First, we will save the array to a map. Since we will do a sort, which can’t be done with map, I created a vector of pair</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C++">ll a[maxn];<br>map&lt;ll, <span class="hljs-type">int</span>&gt; mp;<br>vector&lt;pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt;&gt; b;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; x, pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; y)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> x.second &gt; y.second;<br>&#125;<br><br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>    cin &gt;&gt; a[i];<br>    mp[a[i]]++;<br>&#125;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it:mp) &#123;<br>    b.<span class="hljs-built_in">emplace_back</span>(it.first, it.second);<br>&#125;<br><span class="hljs-built_in">sort</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">end</span>(), cmp);<br></code></pre></td></tr></table></figure><p>The next step is the key. We sorted the vector with the number of elements in decreasing order.</p><p>$b[i].second*(i+1)$ means the number of elements will be left, so $n-b[i].second*(i+1)$ will be the number of elements we will delete(for this one).</p><p>Then we just find the minimum one and output</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-type">int</span> ans = inf;<br><span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; b.<span class="hljs-built_in">size</span>(); i++) &#123;<br>    ans = <span class="hljs-built_in">min</span>(ans, n - b[i].second * (i + <span class="hljs-number">1</span>));<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> maxn = <span class="hljs-number">2e5</span> + <span class="hljs-number">5</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> inf = INT_MAX;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br>ll a[maxn];<br>map&lt;ll, <span class="hljs-type">int</span>&gt; mp;<br>vector&lt;pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt;&gt; b;<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; x, pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; y)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> x.second &gt; y.second;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br>    b.<span class="hljs-built_in">clear</span>();<br>    mp.<span class="hljs-built_in">clear</span>();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        cin &gt;&gt; a[i];<br>        mp[a[i]]++;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it:mp) &#123;<br>        b.<span class="hljs-built_in">emplace_back</span>(it.first, it.second);<br>    &#125;<br>    <span class="hljs-built_in">sort</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">end</span>(), cmp);<br>    <span class="hljs-type">int</span> ans = inf;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; b.<span class="hljs-built_in">size</span>(); i++) &#123;<br>        ans = <span class="hljs-built_in">min</span>(ans, n - b[i].second * (i + <span class="hljs-number">1</span>));<br>    &#125;<br>    cout &lt;&lt; ans &lt;&lt; endl;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-literal">false</span>);<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t--) &#123;<br>        <span class="hljs-built_in">solve</span>();<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> CF </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sorting </tag>
+            
+            <tag> math </tag>
+            
+            <tag> 1500 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>my first blog</title>
+      <link href="/2021/02/17/my-first-blog/"/>
+      <url>/2021/02/17/my-first-blog/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to Adam’s blog</p><p>我会在这个博客不停更新各种<del>奇奇怪怪的</del>内容，如果你想找</p><ol><li>题解（ACM菜逼一个）</li><li>游戏攻略<del>（？我tm直接竟有此事）</del></li><li>考研知识点（考研党路过~）</li><li><del>奇奇怪怪的</del>软件的安装+配置教程</li></ol><p>希望大家都能在这里找到自己想要的东西！</p><p>如果有想看的东西可以给我留言嗷</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
