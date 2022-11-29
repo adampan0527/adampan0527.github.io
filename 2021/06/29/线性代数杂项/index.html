@@ -595,27 +595,13 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
-<h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化</p>
-<script type="math/tex; mode=display">
-\begin{gather}
-\large r(A+B)\le r(A)+r(B) \\\\[2ex]
-\large r(AB)\le min(r(A), r(B))\\\\[2ex]
-\large A_{m\times n}B_{n\times p}=0\implies r(A)+r(B)\le n\\\\[2ex]
-\large r(A^TA)=r(A)\quad (A(m\times n))\\\\[2ex]
-\large r(A_{m\times n})=n\implies r(AB)=r(B)\\\\[2ex]
-\large r(B_{n\times s})=n\implies r(AB)=r(A)\\\\[2ex]
-\large r(A^*)=
-\begin{cases}
-    n,\quad r(A)=n\\\\
-    1,\quad r(A)=n-1\\\\
-    0,\quad r(A)<n-1
-\end{cases}
-\end{gather}</script><h2 id="矩阵与向量组等价"><a href="#矩阵与向量组等价" class="headerlink" title="矩阵与向量组等价"></a>矩阵与向量组等价</h2><p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
+<h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化<br>$$<br>\begin{gather}<br>\large r(A+B)\le r(A)+r(B) \\[2ex]<br>\large r(AB)\le min(r(A), r(B))\\[2ex]<br>\large A_{m\times n}B_{n\times p}&#x3D;0\implies r(A)+r(B)\le n\\[2ex]<br>\large r(A^TA)&#x3D;r(A)\quad (A(m\times n))\\[2ex]<br>\large r(A_{m\times n})&#x3D;n\implies r(AB)&#x3D;r(B)\\[2ex]<br>\large r(B_{n\times s})&#x3D;n\implies r(AB)&#x3D;r(A)\\[2ex]<br>\large r(A^*)&#x3D;<br>\begin{cases}<br>    n,\quad r(A)&#x3D;n\\<br>    1,\quad r(A)&#x3D;n-1\\<br>    0,\quad r(A)&lt;n-1<br>\end{cases}<br>\end{gather}<br>$$</p>
+<h2 id="矩阵与向量组等价"><a href="#矩阵与向量组等价" class="headerlink" title="矩阵与向量组等价"></a>矩阵与向量组等价</h2><p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
 <p>向量组等价：两个向量组表示相同维度的空间</p>
-<h2 id="矩阵间的关系"><a href="#矩阵间的关系" class="headerlink" title="矩阵间的关系"></a>矩阵间的关系</h2><p>矩阵间的关系有：相似、合同、等价。三者的关系可以划分为相似=&gt;合同=&gt;等价</p>
+<h2 id="矩阵间的关系"><a href="#矩阵间的关系" class="headerlink" title="矩阵间的关系"></a>矩阵间的关系</h2><p>矩阵间的关系有：相似、合同、等价。三者的关系可以划分为相似&#x3D;&gt;合同&#x3D;&gt;等价</p>
 <p>当然，要说两个矩阵之间有上述三种关系，首先两个矩阵要满足是同型矩阵（即行数与列数都相同）</p>
 <h3 id="等价"><a href="#等价" class="headerlink" title="等价"></a>等价</h3><p>两个矩阵等价意味着一个矩阵可以通过初等变换变成另一个矩阵的样子。</p>
-<h3 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h3><p>合同的定义是存在矩阵C使得$C^TAC=B$。</p>
+<h3 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h3><p>合同的定义是存在矩阵C使得$C^TAC&#x3D;B$。</p>
 <p>单从定义上看似乎没有什么突破口，但矩阵合同必然满足一些性质，如</p>
 <ol>
 <li>A与B的正负惯性指数相同</li>
@@ -623,7 +609,7 @@
 <li>A与B的正负特征值个数相同</li>
 </ol>
 <p>需要注意的是，惯性指数需要</p>
-<h3 id="相似"><a href="#相似" class="headerlink" title="相似"></a>相似</h3><p>定义：存在矩阵P使得$P^{-1}AP=B$</p>
+<h3 id="相似"><a href="#相似" class="headerlink" title="相似"></a>相似</h3><p>定义：存在矩阵P使得$P^{-1}AP&#x3D;B$</p>
 <p>同样的，光是从定义上看无法获得什么信息，但从性质入手，思路就变得清晰了：</p>
 <ol>
 <li>A与B的秩相同</li>
