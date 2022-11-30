@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>pytorch中的log_softmax</title>
+      <link href="/2022/11/29/pytorch%E4%B8%AD%E7%9A%84log-softmax/"/>
+      <url>/2022/11/29/pytorch%E4%B8%AD%E7%9A%84log-softmax/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pytorch中的log-softmax"><a href="#pytorch中的log-softmax" class="headerlink" title="pytorch中的log_softmax"></a>pytorch中的log_softmax</h1><h2 id="softmax"><a href="#softmax" class="headerlink" title="softmax"></a>softmax</h2><p>softmax是用于归一化的函数，其作用是让所有的值都限制在范围0～1内。</p><p>其公式为<br>$$<br>\begin{gather}<br>\Large x_i’&#x3D;\frac{e^{x_i}}{\sum_{j&#x3D;1}^ne^{x_j}}<br>\end{gather}<br>$$</p><h2 id="log-softmax"><a href="#log-softmax" class="headerlink" title="log_softmax"></a>log_softmax</h2><h3 id="为什么用log-softmax"><a href="#为什么用log-softmax" class="headerlink" title="为什么用log_softmax"></a>为什么用log_softmax</h3><p>在虽然softmax可以完成归一化的目的，但当x中存在一个特别大的值时，或每个x都特别小时，会出现上溢（下溢）的情况，因此，为了解决这种特殊情况带来的问题，我们可以用log_softmax来解决。</p><h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>log_softmax的公式如下<br>$$<br>\begin{gather}<br>\Large x_i’&#x3D;\ln{\frac{e^{x_i-x_{max}}}{\sum_{j&#x3D;1}^ne^{x_j-x_{max}}}}\\<br>\Large &#x3D;e^{x_i-x_{max}}-\ln{\sum_{j&#x3D;1}^ne^{x_j-x_{max}}}<br>\end{gather}<br>$$<br>经过简单的计算后可得出一个显然的结论：log_softmax和softmax的值最终并无差别。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 人工智能 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>梯度校验</title>
       <link href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/"/>
       <url>/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/</url>

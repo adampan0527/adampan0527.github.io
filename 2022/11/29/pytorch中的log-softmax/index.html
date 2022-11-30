@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>线性代数杂项 | Adam&#39;s blog</title>
+  <title>pytorch中的log_softmax | Adam&#39;s blog</title>
 
   <link rel="icon" type="image/jpeg" href="/medias/icon.jpg">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -547,21 +547,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://s3.bmp.ovh/imgs/2022/04/28/3f81b42c618aaa1a.jpg')">
+  background-position: center center;position: relative;background-image:url('https://s3.bmp.ovh/imgs/2022/04/28/c244b6a34f7d6fac.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        线性代数杂项
+        pytorch中的log_softmax
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2021-06-29 |
+          <i class="fas fa-calendar"></i> Published in：2022-11-29 |
         </span>
       
 
@@ -569,8 +569,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> category：
           
-            <a href="/categories/%E8%80%83%E7%A0%94/" class="post-detail-header_category">
-              考研
+            <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" class="post-detail-header_category">
+              人工智能
             </a>
           
         </span>
@@ -594,44 +594,13 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><p>此博客用于记录各种奇奇怪怪的线性代数中的知识点</p>
-<h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><p>矩阵的秩代表着这个矩阵实际能表示的空间维度，代表多元一次方程组常数项时也可以理解为有效方程的个数，矩阵相乘或者相加时，矩阵的秩也会有相应的变化<br>$$<br>\begin{gather}<br>\large r(A+B)\le r(A)+r(B) \\[2ex]<br>\large r(AB)\le min(r(A), r(B))\\[2ex]<br>\large A_{m\times n}B_{n\times p}&#x3D;0\implies r(A)+r(B)\le n\\[2ex]<br>\large r(A^TA)&#x3D;r(A)\quad (A(m\times n))\\[2ex]<br>\large r(A_{m\times n})&#x3D;n\implies r(AB)&#x3D;r(B)\\[2ex]<br>\large r(B_{n\times s})&#x3D;n\implies r(AB)&#x3D;r(A)\\[2ex]<br>\large r(A^*)&#x3D;<br>\begin{cases}<br>    n,\quad r(A)&#x3D;n\\<br>    1,\quad r(A)&#x3D;n-1\\<br>    0,\quad r(A)&lt;n-1<br>\end{cases}<br>\end{gather}<br>$$</p>
-<h2 id="矩阵与向量组等价"><a href="#矩阵与向量组等价" class="headerlink" title="矩阵与向量组等价"></a>矩阵与向量组等价</h2><p>矩阵的等价：一个矩阵可以通过有限次初等变换变成另一个矩阵</p>
-<p>向量组等价：两个向量组表示相同维度的空间</p>
-<h2 id="矩阵间的关系"><a href="#矩阵间的关系" class="headerlink" title="矩阵间的关系"></a>矩阵间的关系</h2><p>矩阵间的关系有：相似、合同、等价。三者的关系可以划分为相似&#x3D;&gt;合同&#x3D;&gt;等价</p>
-<p>当然，要说两个矩阵之间有上述三种关系，首先两个矩阵要满足是同型矩阵（即行数与列数都相同）</p>
-<h3 id="等价"><a href="#等价" class="headerlink" title="等价"></a>等价</h3><p>两个矩阵等价意味着一个矩阵可以通过初等变换变成另一个矩阵的样子。</p>
-<h3 id="合同"><a href="#合同" class="headerlink" title="合同"></a>合同</h3><p>合同的定义是存在矩阵C使得$C^TAC&#x3D;B$。</p>
-<p>单从定义上看似乎没有什么突破口，但矩阵合同必然满足一些性质，如</p>
-<ol>
-<li>A与B的正负惯性指数相同</li>
-<li>A与B的顺序主子式的正负个数相同</li>
-<li>A与B的正负特征值个数相同</li>
-</ol>
-<p>需要注意的是，惯性指数需要</p>
-<h3 id="相似"><a href="#相似" class="headerlink" title="相似"></a>相似</h3><p>定义：存在矩阵P使得$P^{-1}AP&#x3D;B$</p>
-<p>同样的，光是从定义上看无法获得什么信息，但从性质入手，思路就变得清晰了：</p>
-<ol>
-<li>A与B的秩相同</li>
-<li>A与B的特征值相同</li>
-<li>A与B的行列式相同</li>
-<li>A与B的迹相同</li>
-<li>A与B的转置也相似</li>
-<li>A与B的逆矩阵也相似</li>
-<li>A与B的伴随矩阵也相似</li>
-<li>A与B的矩阵多项式也相似（多项式形式相同）</li>
-</ol>
+        <h1 id="pytorch中的log-softmax"><a href="#pytorch中的log-softmax" class="headerlink" title="pytorch中的log_softmax"></a>pytorch中的log_softmax</h1><h2 id="softmax"><a href="#softmax" class="headerlink" title="softmax"></a>softmax</h2><p>softmax是用于归一化的函数，其作用是让所有的值都限制在范围0～1内。</p>
+<p>其公式为<br>$$<br>\begin{gather}<br>\Large x_i’&#x3D;\frac{e^{x_i}}{\sum_{j&#x3D;1}^ne^{x_j}}<br>\end{gather}<br>$$</p>
+<h2 id="log-softmax"><a href="#log-softmax" class="headerlink" title="log_softmax"></a>log_softmax</h2><h3 id="为什么用log-softmax"><a href="#为什么用log-softmax" class="headerlink" title="为什么用log_softmax"></a>为什么用log_softmax</h3><p>在虽然softmax可以完成归一化的目的，但当x中存在一个特别大的值时，或每个x都特别小时，会出现上溢（下溢）的情况，因此，为了解决这种特殊情况带来的问题，我们可以用log_softmax来解决。</p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>log_softmax的公式如下<br>$$<br>\begin{gather}<br>\Large x_i’&#x3D;\ln{\frac{e^{x_i-x_{max}}}{\sum_{j&#x3D;1}^ne^{x_j-x_{max}}}}\\<br>\Large &#x3D;e^{x_i-x_{max}}-\ln{\sum_{j&#x3D;1}^ne^{x_j-x_{max}}}<br>\end{gather}<br>$$<br>经过简单的计算后可得出一个显然的结论：log_softmax和softmax的值最终并无差别。</p>
 
       </div>
       <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="">
-              线性代数
-            </a>
-          
-        </div>
         
       </div>
       
@@ -642,7 +611,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/06/29/线性代数杂项/" target="_blank" title="线性代数杂项">https://adampan0527.github.io/2021/06/29/线性代数杂项/</a>
+    <a href="/2022/11/29/pytorch中的log-softmax/" target="_blank" title="pytorch中的log_softmax">https://adampan0527.github.io/2022/11/29/pytorch中的log-softmax/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -660,40 +629,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://s3.bmp.ovh/imgs/2022/04/28/c55a3227d4432606.jpg" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/28/c55a3227d4432606.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2021/08/15/%E7%A3%81%E7%9B%98I:O/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">磁盘I/O</div>
-      </div>
-      
-      <!-- <div class="content">
-        磁盘I&#x2F;OI&#x2F;O系统层次及功能用户层软件用户层软件实现的是与用户进行交互的接口，用户可以通过调用用户
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://s3.bmp.ovh/imgs/2022/04/28/7b34df1141edf938.jpg" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/28/7b34df1141edf938.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://s3.bmp.ovh/imgs/2022/04/28/c55a3227d4432606.jpg" class="lazyload placeholder" data-srcset="https://s3.bmp.ovh/imgs/2022/04/28/c55a3227d4432606.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2021/04/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" class="post-nav-link">
+    <a href="/2022/05/17/%E6%A2%AF%E5%BA%A6%E6%A0%A1%E9%AA%8C/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">数据结构笔记</div>
+        <div class="title-text">梯度校验</div>
       </div>
       <!-- <div class="content">
-        数据结构笔记卡特兰数应用场景
-有2n个人排成一行进入剧场，入场费5元，其中n个人有5元钞票，n个人有10元钞票，剧院无多
+        梯度校验梯度校验是一种判断梯度（导数）是否出错的方法，通常我们会通过反向传播的方法来计算梯度，并通过梯度校验的方式来判断
       </div> -->
     </a>
   </div>
@@ -927,7 +877,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-text">杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="toc-text">矩阵的秩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%90%91%E9%87%8F%E7%BB%84%E7%AD%89%E4%BB%B7"><span class="toc-text">矩阵与向量组等价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">矩阵间的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E4%BB%B7"><span class="toc-text">等价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E5%90%8C"><span class="toc-text">合同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC"><span class="toc-text">相似</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pytorch%E4%B8%AD%E7%9A%84log-softmax"><span class="toc-text">pytorch中的log_softmax</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#softmax"><span class="toc-text">softmax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log-softmax"><span class="toc-text">log_softmax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8log-softmax"><span class="toc-text">为什么用log_softmax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1893,7 +1843,7 @@ comment_el = '#gitment-ctn';
 load_gitment = function () {
   if ($(comment_el).length) {
     var gitment = new Gitment({
-      id: "2021/06/29/线性代数杂项/",
+      id: "2022/11/29/pytorch中的log-softmax/",
       owner: 'adampan0527',
       repo: 'hexocomment',
       oauth: {
