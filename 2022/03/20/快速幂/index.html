@@ -502,8 +502,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/algorithms/" class="post-detail-header_category">
-              algorithms
+            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-detail-header_category">
+              算法
             </a>
           
         </span>
@@ -527,16 +527,16 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 class="bamboo-h-b" id="快速幂b3aoobdrg4w" style="color:!important">快速幂</h1><div></div>
+        <h1 class="bamboo-h-b" id="快速幂4r4fo973o6" style="color:!important">快速幂</h1><div></div>
 
 <p>快速幂在ACM中是非常常用的一种算法，是常在求$a^{n}$但n很大的时候用于加速运算的算法（通常会对某个质数p取模），那快速幂为什么快？有多快？能否拓展到其他运算符中呢？</p>
-<h2 class="bamboo-h-b" id="快速幂为什么快？有多快？2bt9sotjjkh" style="color:red!important">快速幂为什么快？有多快？</h2><div></div>
+<h2 class="bamboo-h-b" id="快速幂为什么快？有多快？6ke6pyluh88" style="color:red!important">快速幂为什么快？有多快？</h2><div></div>
 
 <p>要了解快速幂为什么快就要先了解快速幂是怎么实现的，从其思想来看就是将n转换成二进制，并将其看成是多个2^x^（x为整数）相加的结果，将本该进行n次的运算降低到logn次，我们求出最大的2^x^需要进行logn次运算，而将这最多有logn个的结果再进行logn次运算，因此最终的时间复杂度为logn！</p>
 <p>上代码！</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> p = <span class="number">1e9</span><span class="number">+7</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">quick_pow</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> n)</span></span>&#123;	<span class="comment">//求a的n次方对p取模的值</span></span><br><span class="line">    <span class="type">int</span> ans=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(n)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>) ans=(ans*a)%p;	<span class="comment">//如果n当前位上的值为1，意味着我们需要乘上这个a</span></span><br><span class="line">        a=a*a%p;	<span class="comment">//位数每往高处走一位，就意味着a做了平方操作</span></span><br><span class="line">        n&gt;&gt;=<span class="number">1</span>;		<span class="comment">//用n右移一位的方式来表示当前位数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans%p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 class="bamboo-h-b" id="快速幂能否拓展？202iiv9zg6k" style="color:red!important">快速幂能否拓展？</h2><div></div>
+<h2 class="bamboo-h-b" id="快速幂能否拓展？4bba6jdva1k" style="color:red!important">快速幂能否拓展？</h2><div></div>
 
 <p>答案是：可以！</p>
 <p>假设现在的运算符为op。</p>
@@ -558,8 +558,8 @@
         
         <div class="tags">
           
-            <a href="/tags/algorithms/" class="">
-              algorithms
+            <a href="/tags/%E7%AE%97%E6%B3%95/" class="">
+              算法
             </a>
           
         </div>
@@ -853,7 +853,7 @@ I/O系统层次及功能
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82b3aoobdrg4w"><span class="toc-text">快速幂</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB%EF%BC%9F%E6%9C%89%E5%A4%9A%E5%BF%AB%EF%BC%9F2bt9sotjjkh"><span class="toc-text">快速幂为什么快？有多快？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E8%83%BD%E5%90%A6%E6%8B%93%E5%B1%95%EF%BC%9F202iiv9zg6k"><span class="toc-text">快速幂能否拓展？</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%824r4fo973o6"><span class="toc-text">快速幂</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB%EF%BC%9F%E6%9C%89%E5%A4%9A%E5%BF%AB%EF%BC%9F6ke6pyluh88"><span class="toc-text">快速幂为什么快？有多快？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%B9%82%E8%83%BD%E5%90%A6%E6%8B%93%E5%B1%95%EF%BC%9F4bba6jdva1k"><span class="toc-text">快速幂能否拓展？</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1850,12 +1850,6 @@ I/O系统层次及功能
 
 <!-- 鼠标点击特效 -->
 <!-- 爱心点击 -->
-
-  
-    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script async src="/js/cursor/explosion.min.js"></script>
-  
 
 
 

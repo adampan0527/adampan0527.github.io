@@ -502,11 +502,7 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/408/" class="post-detail-header_category">
-              408
-            </a>
-          
-            <a href="/categories/408/%E8%80%83%E7%A0%94/" class="post-detail-header_category">
+            <a href="/categories/%E8%80%83%E7%A0%94/" class="post-detail-header_category">
               考研
             </a>
           
@@ -531,15 +527,15 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 class="bamboo-h-b" id="磁盘I/O1sonni8usmy" style="color:!important">磁盘I/O</h1><div></div>
+        <h1 class="bamboo-h-b" id="磁盘I/O20nooyzxg3i" style="color:!important">磁盘I/O</h1><div></div>
 
-<h2 class="bamboo-h-b" id="I/O系统层次及功能1pmh7zyv1mm" style="color:red!important">I/O系统层次及功能</h2><div></div>
+<h2 class="bamboo-h-b" id="I/O系统层次及功能aonwtdrgtz4" style="color:red!important">I/O系统层次及功能</h2><div></div>
 
-<h3 class="bamboo-h-b" id="用户层软件208q36modlt" style="color:blue!important">用户层软件</h3><div></div>
+<h3 class="bamboo-h-b" id="用户层软件2guyi8upawi" style="color:blue!important">用户层软件</h3><div></div>
 
 <p>用户层软件实现的是与用户进行交互的接口，用户可以通过调用用户层软件提供的I&#x2F;O库函数对设备进行操作</p>
 <p>用户软件必须通过一组系统调用来获取操作系统服务</p>
-<h3 class="bamboo-h-b" id="设备独立性软件2jlk2kewb6c" style="color:blue!important">设备独立性软件</h3><div></div>
+<h3 class="bamboo-h-b" id="设备独立性软件2oxl8q3oo5g" style="color:blue!important">设备独立性软件</h3><div></div>
 
 <p>什么是设备独立性？</p>
 <p>​	设备独立性指的是应用程序独立于具体使用的物理设备，从而引入了“逻辑设备”的概念</p>
@@ -559,7 +555,7 @@
 </li>
 <li>向用户层软件提供统一接口</li>
 </ol>
-<h3 class="bamboo-h-b" id="设备驱动程序6bdgqkdufpo" style="color:blue!important">设备驱动程序</h3><div></div>
+<h3 class="bamboo-h-b" id="设备驱动程序25vld49ozut" style="color:blue!important">设备驱动程序</h3><div></div>
 
 <p>通常也称“设备处理程序”，它是I&#x2F;O进程与设备控制器之间的通信程序， 又由于经常以进程的形式存在，所以称之为设备驱动程序。</p>
 <p>任务：</p>
@@ -581,7 +577,7 @@
 <li>整个系统设置一个进程</li>
 <li>不设置专门的处理程序，但为各类设备设置相应的设备处理程序</li>
 </ol>
-<h3 class="bamboo-h-b" id="中断处理层a873ot2v444" style="color:blue!important">中断处理层</h3><div></div>
+<h3 class="bamboo-h-b" id="中断处理层12avrx8dnw4" style="color:blue!important">中断处理层</h3><div></div>
 
 <p>中断处理层软件的主要工作是进行进程上下文的切换，对处理中断信号源进行测试，读取设备状态和修改进程状态。</p>
 <p>处理过程：</p>
@@ -592,7 +588,7 @@
 <li>中断处理</li>
 <li>恢复被中断进程的现场</li>
 </ol>
-<h2 class="bamboo-h-b" id="I/O缓冲34nqt1mfqge" style="color:red!important">I/O缓冲</h2><div></div>
+<h2 class="bamboo-h-b" id="I/O缓冲2g3rfg1v94p" style="color:red!important">I/O缓冲</h2><div></div>
 
 <p>设置缓冲区的目的是什么？</p>
 <ol>
@@ -600,7 +596,7 @@
 <li>减少对CPU的中断频率，放宽对CPU中断响应时间的限制</li>
 <li>提高CPU和IO设备之间的并行性</li>
 </ol>
-<h3 class="bamboo-h-b" id="缓冲区6980cdhnt1o" style="color:blue!important">缓冲区</h3><div></div>
+<h3 class="bamboo-h-b" id="缓冲区2ok5iv8s1io" style="color:blue!important">缓冲区</h3><div></div>
 
 <ol>
 <li><p>单缓冲</p>
@@ -610,10 +606,10 @@
 <p>数据从I&#x2F;O设备到缓冲区和从缓冲区到工作区可以同时进行</p>
 </li>
 </ol>
-<h2 class="bamboo-h-b" id="SPOOLing7ffwk0ab7l4" style="color:red!important">SPOOLing</h2><div></div>
+<h2 class="bamboo-h-b" id="SPOOLing6gu4gjt9zgo" style="color:red!important">SPOOLing</h2><div></div>
 
 <p>SPOOLing技术又称假脱机技术，其含义是在联机的情况下实现外围操作，这样就不会导致CPU近乎闲置</p>
-<h3 class="bamboo-h-b" id="SPOOLing技术的组成123mclv5118" style="color:blue!important">SPOOLing技术的组成</h3><div></div>
+<h3 class="bamboo-h-b" id="SPOOLing技术的组成2n71wl4f9hk" style="color:blue!important">SPOOLing技术的组成</h3><div></div>
 
 <ol>
 <li>输入井和输出井（位置：磁盘）</li>
@@ -621,14 +617,14 @@
 <li>输入进程和输出进程（由OS提供）</li>
 <li>井管理程序</li>
 </ol>
-<h3 class="bamboo-h-b" id="SPOOLing技术的特点1k5lglr1fpd" style="color:blue!important">SPOOLing技术的特点</h3><div></div>
+<h3 class="bamboo-h-b" id="SPOOLing技术的特点1dtegl16930" style="color:blue!important">SPOOLing技术的特点</h3><div></div>
 
 <ol>
 <li>提高了I&#x2F;O速度</li>
 <li>将独占设备改造为共享设备（后来的进程可以将需要输出的数据存放在缓冲区）</li>
 <li>实现了虚拟设备的功能</li>
 </ol>
-<h2 class="bamboo-h-b" id="错题2ks2yvocyue" style="color:red!important">错题</h2><div></div>
+<h2 class="bamboo-h-b" id="错题1u36p4yscia" style="color:red!important">错题</h2><div></div>
 
 <ol>
 <li><p>用户程序发出磁盘I&#x2F;O请求后，系统的正确处理流程是</p>
@@ -939,7 +935,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A3%81%E7%9B%98I/O1sonni8usmy"><span class="toc-text">磁盘I&#x2F;O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I/O%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E5%8F%8A%E5%8A%9F%E8%83%BD1pmh7zyv1mm"><span class="toc-text">I&#x2F;O系统层次及功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%B1%82%E8%BD%AF%E4%BB%B6208q36modlt"><span class="toc-text">用户层软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E7%8B%AC%E7%AB%8B%E6%80%A7%E8%BD%AF%E4%BB%B62jlk2kewb6c"><span class="toc-text">设备独立性软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F6bdgqkdufpo"><span class="toc-text">设备驱动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E5%B1%82a873ot2v444"><span class="toc-text">中断处理层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I/O%E7%BC%93%E5%86%B234nqt1mfqge"><span class="toc-text">I&#x2F;O缓冲</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA6980cdhnt1o"><span class="toc-text">缓冲区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SPOOLing7ffwk0ab7l4"><span class="toc-text">SPOOLing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SPOOLing%E6%8A%80%E6%9C%AF%E7%9A%84%E7%BB%84%E6%88%90123mclv5118"><span class="toc-text">SPOOLing技术的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPOOLing%E6%8A%80%E6%9C%AF%E7%9A%84%E7%89%B9%E7%82%B91k5lglr1fpd"><span class="toc-text">SPOOLing技术的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E9%A2%982ks2yvocyue"><span class="toc-text">错题</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A3%81%E7%9B%98I/O20nooyzxg3i"><span class="toc-text">磁盘I&#x2F;O</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I/O%E7%B3%BB%E7%BB%9F%E5%B1%82%E6%AC%A1%E5%8F%8A%E5%8A%9F%E8%83%BDaonwtdrgtz4"><span class="toc-text">I&#x2F;O系统层次及功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%B1%82%E8%BD%AF%E4%BB%B62guyi8upawi"><span class="toc-text">用户层软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E7%8B%AC%E7%AB%8B%E6%80%A7%E8%BD%AF%E4%BB%B62oxl8q3oo5g"><span class="toc-text">设备独立性软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8%E7%A8%8B%E5%BA%8F25vld49ozut"><span class="toc-text">设备驱动程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E5%B1%8212avrx8dnw4"><span class="toc-text">中断处理层</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I/O%E7%BC%93%E5%86%B22g3rfg1v94p"><span class="toc-text">I&#x2F;O缓冲</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA2ok5iv8s1io"><span class="toc-text">缓冲区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SPOOLing6gu4gjt9zgo"><span class="toc-text">SPOOLing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SPOOLing%E6%8A%80%E6%9C%AF%E7%9A%84%E7%BB%84%E6%88%902n71wl4f9hk"><span class="toc-text">SPOOLing技术的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPOOLing%E6%8A%80%E6%9C%AF%E7%9A%84%E7%89%B9%E7%82%B91dtegl16930"><span class="toc-text">SPOOLing技术的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E9%A2%981u36p4yscia"><span class="toc-text">错题</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1936,12 +1932,6 @@
 
 <!-- 鼠标点击特效 -->
 <!-- 爱心点击 -->
-
-  
-    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script async src="/js/cursor/explosion.min.js"></script>
-  
 
 
 
